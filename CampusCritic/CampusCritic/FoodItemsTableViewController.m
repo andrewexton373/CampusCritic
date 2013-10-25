@@ -7,14 +7,28 @@
 //
 
 #import "FoodItemsTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface FoodItemsTableViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *foodItemName;
 @property (weak, nonatomic) IBOutlet UILabel *foodItemPrice;
+@property NSArray *foodItems;
 
 @end
 
 @implementation FoodItemsTableViewController
+
+- (void) loadFoodInformationCallback: (NSArray*) foodItems error: (NSError*) error
+{
+    
+    if (!error) {
+        
+        self.foodItems = foodItems;
+        
+        [self.tableView reloadData];
+    }
+    
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,6 +48,10 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"foodInformation"];
+    [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodInformationCallback:error:)];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,21 +64,19 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.foodItems.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"customCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...

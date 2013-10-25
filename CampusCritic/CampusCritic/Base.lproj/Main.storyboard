@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="69" id="Z32-WC-ZSo">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="69" id="Z32-WC-ZSo">
                                 <rect key="frame" x="0.0" y="86" width="320" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z32-WC-ZSo" id="lVo-TS-VvT">
@@ -66,7 +66,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="xXV-2L-WF2" kind="push" id="tg4-qE-xXl"/>
+                                    <segue destination="nnq-Bd-tP6" kind="push" id="CxK-yQ-pWz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -86,21 +86,21 @@
             <point key="canvasLocation" x="113" y="113"/>
         </scene>
         <!--View Controller - Food Item-->
-        <scene sceneID="bQr-Sf-QXx">
+        <scene sceneID="Cwd-lF-WKw">
             <objects>
-                <viewController id="xXV-2L-WF2" sceneMemberID="viewController">
+                <viewController id="nnq-Bd-tP6" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="g2T-Py-vUK"/>
-                        <viewControllerLayoutGuide type="bottom" id="isu-s0-IRm"/>
+                        <viewControllerLayoutGuide type="top" id="bAO-fP-Hsk"/>
+                        <viewControllerLayoutGuide type="bottom" id="b60-Fi-vXN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TUZ-ry-GuZ">
+                    <view key="view" contentMode="scaleToFill" id="C9F-wo-OLT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Food Item" id="g3A-g1-BO4"/>
+                    <navigationItem key="navigationItem" title="Food Item" id="kTG-xi-y0Z"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rTx-b4-TmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJL-Ui-jKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="560" y="113"/>
         </scene>
