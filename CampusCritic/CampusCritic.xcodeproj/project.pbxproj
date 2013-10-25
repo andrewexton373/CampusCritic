@@ -21,6 +21,7 @@
 		16D25460181B0E70006079CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25442181B0E6F006079CD /* UIKit.framework */; };
 		16D25468181B0E70006079CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16D25466181B0E70006079CD /* InfoPlist.strings */; };
 		16D2546A181B0E70006079CD /* CampusCriticTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D25469181B0E70006079CD /* CampusCriticTests.m */; };
+		16D25475181B0EFC006079CD /* FoodItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D25474181B0EFC006079CD /* FoodItemsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		16D25465181B0E70006079CD /* CampusCriticTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CampusCriticTests-Info.plist"; sourceTree = "<group>"; };
 		16D25467181B0E70006079CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16D25469181B0E70006079CD /* CampusCriticTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusCriticTests.m; sourceTree = "<group>"; };
+		16D25473181B0EFC006079CD /* FoodItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodItemsTableViewController.h; sourceTree = "<group>"; };
+		16D25474181B0EFC006079CD /* FoodItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodItemsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				16D2544D181B0E6F006079CD /* AppDelegate.h */,
 				16D2544E181B0E6F006079CD /* AppDelegate.m */,
 				16D25450181B0E6F006079CD /* Main.storyboard */,
+				16D25473181B0EFC006079CD /* FoodItemsTableViewController.h */,
+				16D25474181B0EFC006079CD /* FoodItemsTableViewController.m */,
 				16D25453181B0E6F006079CD /* ViewController.h */,
 				16D25454181B0E6F006079CD /* ViewController.m */,
 				16D25456181B0E6F006079CD /* Images.xcassets */,
@@ -251,6 +256,7 @@
 			files = (
 				16D25455181B0E6F006079CD /* ViewController.m in Sources */,
 				16D2544F181B0E6F006079CD /* AppDelegate.m in Sources */,
+				16D25475181B0EFC006079CD /* FoodItemsTableViewController.m in Sources */,
 				16D2544B181B0E6F006079CD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
