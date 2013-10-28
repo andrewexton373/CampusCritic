@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FoodItemsTableCell.h"
 
-@interface FoodItemsTableViewController : UITableViewController
+@interface FoodItemsTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+
+@property (strong,nonatomic) NSMutableArray *filteredFoodItemsArray;
+@property IBOutlet UISearchBar *foodItemSearchBar;
 
 @end

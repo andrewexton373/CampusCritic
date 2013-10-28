@@ -8,10 +8,10 @@
 
 #import "FoodItemsTableViewController.h"
 #import <Parse/Parse.h>
+#import "FoodItemsTableCell.h"
 
 @interface FoodItemsTableViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *foodItemName;
-@property (weak, nonatomic) IBOutlet UILabel *foodItemPrice;
+
 @property NSArray *foodItems;
 
 @end
@@ -77,9 +77,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"customCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    FoodItemsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    
+    NSDictionary *foodItem = self.foodItems[indexPath.row];
+    
+    cell.foodItemName.text = foodItem[@"typeOfFood"];
+    cell.foodItemPrice.text = @"Need Price Data";
+    
+    UIImage *foodImage = [UIImage imageNamed: @"CCLogo.png"];
+    cell.foodItemImage.image = foodImage;
+    
+    UIImage *foodResturantImage = [UIImage imageNamed: @"SubwayLogo.png"];
+    cell.foodItemRestuantLogo.image = foodResturantImage;
     
     return cell;
 }
