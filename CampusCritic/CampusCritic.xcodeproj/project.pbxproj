@@ -36,6 +36,7 @@
 		16D2548E181E19CD006079CD /* CCLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D2548D181E19CD006079CD /* CCLogo.png */; };
 		16D25490181E1ADF006079CD /* SubwayLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D2548F181E1ADF006079CD /* SubwayLogo.png */; };
 		16D25495181E28B9006079CD /* NutritionFactsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D25494181E28B9006079CD /* NutritionFactsTemplate.png */; };
+		16D25498181F0F35006079CD /* NutritionFactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D25497181F0F35006079CD /* NutritionFactsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		16D2548D181E19CD006079CD /* CCLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CCLogo.png; sourceTree = "<group>"; };
 		16D2548F181E1ADF006079CD /* SubwayLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubwayLogo.png; sourceTree = "<group>"; };
 		16D25494181E28B9006079CD /* NutritionFactsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NutritionFactsTemplate.png; sourceTree = "<group>"; };
+		16D25496181F0F35006079CD /* NutritionFactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionFactsViewController.h; sourceTree = "<group>"; };
+		16D25497181F0F35006079CD /* NutritionFactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionFactsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 				16D2544D181B0E6F006079CD /* AppDelegate.h */,
 				16D2544E181B0E6F006079CD /* AppDelegate.m */,
 				16D25450181B0E6F006079CD /* Main.storyboard */,
+				16D25496181F0F35006079CD /* NutritionFactsViewController.h */,
+				16D25497181F0F35006079CD /* NutritionFactsViewController.m */,
 				16D2548A181E1585006079CD /* FoodItemsTableCell.h */,
 				16D2548B181E1585006079CD /* FoodItemsTableCell.m */,
 				16D25473181B0EFC006079CD /* FoodItemsTableViewController.h */,
@@ -316,6 +321,7 @@
 				16D25475181B0EFC006079CD /* FoodItemsTableViewController.m in Sources */,
 				16D2548C181E1585006079CD /* FoodItemsTableCell.m in Sources */,
 				16D2544B181B0E6F006079CD /* main.m in Sources */,
+				16D25498181F0F35006079CD /* NutritionFactsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
