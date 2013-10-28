@@ -291,6 +291,12 @@
                     <view key="view" contentMode="scaleToFill" id="ugy-54-7Op">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NutritionFactsTemplate.png" translatesAutoresizingMaskIntoConstraints="NO" id="h0d-eg-u1f">
+                                <rect key="frame" x="0.0" y="-19" width="320" height="502"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nutrition Facts" id="k9O-MV-gIt"/>
@@ -300,6 +306,9 @@
             <point key="canvasLocation" x="981" y="113"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NutritionFactsTemplate.png" width="1086" height="1138"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
