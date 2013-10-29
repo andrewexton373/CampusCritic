@@ -7,6 +7,7 @@
 //
 
 #import "SingleItemsViewController.h"
+#import "NutritionFactsViewController.h"
 
 @interface SingleItemsViewController ()
 
@@ -15,6 +16,17 @@
 @end
 
 @implementation SingleItemsViewController
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"nutritionFactsSegue"])
+    {
+        NutritionFactsViewController *nutritionFactsViewController =
+        [segue destinationViewController];
+        
+        nutritionFactsViewController.foodItem = _passedFoodItem;
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

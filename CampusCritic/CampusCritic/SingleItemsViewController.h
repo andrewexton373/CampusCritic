@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSString *passedFoodItemName;
 
+@property (nonatomic, strong) NSDictionary *passedFoodItem;
+
 @end

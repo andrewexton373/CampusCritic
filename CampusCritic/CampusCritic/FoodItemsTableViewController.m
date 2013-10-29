@@ -43,6 +43,8 @@
         long row = [myIndexPath row];
         NSDictionary *foodItem = self.foodItems[row];
         
+        singleItemViewController.passedFoodItem = foodItem;
+        
         singleItemViewController.passedFoodItemName = [NSString stringWithFormat:@"%@", foodItem[@"typeOfFood"]];
     }
 }

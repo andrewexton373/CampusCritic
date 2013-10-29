@@ -38,6 +38,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    //Set Labels from Passed Food Item Dictionary
+    
+    self.foodItemName.text = self.foodItem[@"typeOfFood"];
+    self.servingSize.text = self.foodItem[@"servingSize"];
+    self.calories.text = [NSString stringWithFormat:@"%@",self.foodItem[@"Calories"]];
+    self.totalFat.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"totalFatG"]];
+    self.saturatedFat.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"saturatedFatG"]];
+    self.cholesterol.text = [NSString stringWithFormat:@"%@ milligrams", self.foodItem[@"cholesterolMg"]];
+    self.sodium.text = [NSString stringWithFormat:@"%@ milligrams", self.foodItem[@"sodiumMg"]];
+    self.totalCarbohydrate.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"carbsG"]];
+    self.sugars.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"sugarG"]];
+    self.protein.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"proteinG"]];
+    
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,4 +10,8 @@
 
 @interface NutritionFactsViewController : UIViewController
 
+@property (nonatomic, weak) NSDictionary *foodItem;
+
+@property (nonatomic, strong) NSDictionary *passedFoodItem;
+
 @end
