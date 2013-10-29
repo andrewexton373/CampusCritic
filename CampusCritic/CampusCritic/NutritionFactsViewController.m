@@ -11,7 +11,6 @@
 @interface NutritionFactsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *foodItemName;
 @property (weak, nonatomic) IBOutlet UILabel *servingSize;
-@property (weak, nonatomic) IBOutlet UILabel *amountPerServing;
 @property (weak, nonatomic) IBOutlet UILabel *calories;
 @property (weak, nonatomic) IBOutlet UILabel *totalFat;
 @property (weak, nonatomic) IBOutlet UILabel *saturatedFat;

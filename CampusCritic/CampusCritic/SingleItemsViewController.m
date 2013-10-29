@@ -8,6 +8,7 @@
 
 #import "SingleItemsViewController.h"
 #import "NutritionFactsViewController.h"
+#import "DLStarRatingControl.h"
 
 @interface SingleItemsViewController ()
 
@@ -42,7 +43,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    _foodItemName.title = _passedFoodItemName;
+    _foodItemName.title = _passedFoodItem[@"typeOfFood"];
+    
+    // setup a control with 3 fractional stars at a size of 320x230
+    DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 190, 320, 230) andStars:3 isFractional:YES];
+    [self.view addSubview:ratingControl];
     
 }
 

@@ -38,6 +38,15 @@
 		16D25495181E28B9006079CD /* NutritionFactsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D25494181E28B9006079CD /* NutritionFactsTemplate.png */; };
 		16D25498181F0F35006079CD /* NutritionFactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D25497181F0F35006079CD /* NutritionFactsViewController.m */; };
 		16D2549B181F62F9006079CD /* SingleItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D2549A181F62F9006079CD /* SingleItemsViewController.m */; };
+		16D254AE18203D21006079CD /* DLStarRatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D254A218203D21006079CD /* DLStarRatingControl.m */; };
+		16D254AF18203D21006079CD /* DLStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D254A418203D21006079CD /* DLStarView.m */; };
+		16D254B018203D21006079CD /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254A618203D21006079CD /* star.png */; };
+		16D254B118203D21006079CD /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254A718203D21006079CD /* star@2x.png */; };
+		16D254B218203D21006079CD /* star_highlighted-darker.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254A818203D21006079CD /* star_highlighted-darker.png */; };
+		16D254B318203D21006079CD /* star_highlighted-darker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254A918203D21006079CD /* star_highlighted-darker@2x.png */; };
+		16D254B418203D21006079CD /* star_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254AA18203D21006079CD /* star_highlighted.png */; };
+		16D254B518203D21006079CD /* star_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254AB18203D21006079CD /* star_highlighted@2x.png */; };
+		16D254B618203D21006079CD /* UIView+Subviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D254AD18203D21006079CD /* UIView+Subviews.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +100,18 @@
 		16D25497181F0F35006079CD /* NutritionFactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionFactsViewController.m; sourceTree = "<group>"; };
 		16D25499181F62F9006079CD /* SingleItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleItemsViewController.h; sourceTree = "<group>"; };
 		16D2549A181F62F9006079CD /* SingleItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleItemsViewController.m; sourceTree = "<group>"; };
+		16D254A118203D21006079CD /* DLStarRatingControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLStarRatingControl.h; sourceTree = "<group>"; };
+		16D254A218203D21006079CD /* DLStarRatingControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLStarRatingControl.m; sourceTree = "<group>"; };
+		16D254A318203D21006079CD /* DLStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLStarView.h; sourceTree = "<group>"; };
+		16D254A418203D21006079CD /* DLStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLStarView.m; sourceTree = "<group>"; };
+		16D254A618203D21006079CD /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		16D254A718203D21006079CD /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		16D254A818203D21006079CD /* star_highlighted-darker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlighted-darker.png"; sourceTree = "<group>"; };
+		16D254A918203D21006079CD /* star_highlighted-darker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlighted-darker@2x.png"; sourceTree = "<group>"; };
+		16D254AA18203D21006079CD /* star_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_highlighted.png; sourceTree = "<group>"; };
+		16D254AB18203D21006079CD /* star_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlighted@2x.png"; sourceTree = "<group>"; };
+		16D254AC18203D21006079CD /* UIView+Subviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Subviews.h"; sourceTree = "<group>"; };
+		16D254AD18203D21006079CD /* UIView+Subviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Subviews.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +207,7 @@
 				16D2548F181E1ADF006079CD /* SubwayLogo.png */,
 				16D2548D181E19CD006079CD /* CCLogo.png */,
 				16D25494181E28B9006079CD /* NutritionFactsTemplate.png */,
+				16D254A018203D21006079CD /* DLStarRating */,
 				16D25456181B0E6F006079CD /* Images.xcassets */,
 				16D25445181B0E6F006079CD /* Supporting Files */,
 			);
@@ -219,6 +241,33 @@
 				16D25466181B0E70006079CD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16D254A018203D21006079CD /* DLStarRating */ = {
+			isa = PBXGroup;
+			children = (
+				16D254A118203D21006079CD /* DLStarRatingControl.h */,
+				16D254A218203D21006079CD /* DLStarRatingControl.m */,
+				16D254A318203D21006079CD /* DLStarView.h */,
+				16D254A418203D21006079CD /* DLStarView.m */,
+				16D254A518203D21006079CD /* images */,
+				16D254AC18203D21006079CD /* UIView+Subviews.h */,
+				16D254AD18203D21006079CD /* UIView+Subviews.m */,
+			);
+			path = DLStarRating;
+			sourceTree = "<group>";
+		};
+		16D254A518203D21006079CD /* images */ = {
+			isa = PBXGroup;
+			children = (
+				16D254A618203D21006079CD /* star.png */,
+				16D254A718203D21006079CD /* star@2x.png */,
+				16D254A818203D21006079CD /* star_highlighted-darker.png */,
+				16D254A918203D21006079CD /* star_highlighted-darker@2x.png */,
+				16D254AA18203D21006079CD /* star_highlighted.png */,
+				16D254AB18203D21006079CD /* star_highlighted@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,9 +348,15 @@
 			files = (
 				16D25495181E28B9006079CD /* NutritionFactsTemplate.png in Resources */,
 				16D2548E181E19CD006079CD /* CCLogo.png in Resources */,
+				16D254B118203D21006079CD /* star@2x.png in Resources */,
 				16D25457181B0E6F006079CD /* Images.xcassets in Resources */,
 				16D25449181B0E6F006079CD /* InfoPlist.strings in Resources */,
+				16D254B018203D21006079CD /* star.png in Resources */,
+				16D254B218203D21006079CD /* star_highlighted-darker.png in Resources */,
+				16D254B418203D21006079CD /* star_highlighted.png in Resources */,
+				16D254B318203D21006079CD /* star_highlighted-darker@2x.png in Resources */,
 				16D25490181E1ADF006079CD /* SubwayLogo.png in Resources */,
+				16D254B518203D21006079CD /* star_highlighted@2x.png in Resources */,
 				16D25452181B0E6F006079CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,12 +376,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16D254AE18203D21006079CD /* DLStarRatingControl.m in Sources */,
+				16D254AF18203D21006079CD /* DLStarView.m in Sources */,
 				16D25455181B0E6F006079CD /* ViewController.m in Sources */,
 				16D2549B181F62F9006079CD /* SingleItemsViewController.m in Sources */,
 				16D2544F181B0E6F006079CD /* AppDelegate.m in Sources */,
 				16D25475181B0EFC006079CD /* FoodItemsTableViewController.m in Sources */,
 				16D2548C181E1585006079CD /* FoodItemsTableCell.m in Sources */,
 				16D2544B181B0E6F006079CD /* main.m in Sources */,
+				16D254B618203D21006079CD /* UIView+Subviews.m in Sources */,
 				16D25498181F0F35006079CD /* NutritionFactsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
