@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042769DC1820581600452B79 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042769DB1820581600452B79 /* Parse.framework */; };
 		16D2543F181B0E6F006079CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D2543E181B0E6F006079CD /* Foundation.framework */; };
 		16D25441181B0E6F006079CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25440181B0E6F006079CD /* CoreGraphics.framework */; };
 		16D25443181B0E6F006079CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25442181B0E6F006079CD /* UIKit.framework */; };
@@ -22,7 +23,6 @@
 		16D25468181B0E70006079CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16D25466181B0E70006079CD /* InfoPlist.strings */; };
 		16D2546A181B0E70006079CD /* CampusCriticTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D25469181B0E70006079CD /* CampusCriticTests.m */; };
 		16D25475181B0EFC006079CD /* FoodItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D25474181B0EFC006079CD /* FoodItemsTableViewController.m */; };
-		16D25477181B11DC006079CD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25476181B11DC006079CD /* Parse.framework */; };
 		16D25479181B1208006079CD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25478181B1208006079CD /* AudioToolbox.framework */; };
 		16D2547B181B1210006079CD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D2547A181B1210006079CD /* CFNetwork.framework */; };
 		16D2547D181B121A006079CD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D2547C181B121A006079CD /* CoreLocation.framework */; };
@@ -60,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042769DB1820581600452B79 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../Dropbox/School/Y1Q1/CPE 123 LAB/CampusCritic/parsetest/Parse.framework"; sourceTree = "<group>"; };
 		16D2543B181B0E6F006079CD /* CampusCritic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusCritic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D2543E181B0E6F006079CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		16D25440181B0E6F006079CD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042769DC1820581600452B79 /* Parse.framework in Frameworks */,
 				16D25489181B1245006079CD /* SystemConfiguration.framework in Frameworks */,
 				16D25487181B123D006079CD /* StoreKit.framework in Frameworks */,
 				16D25485181B1236006079CD /* Security.framework in Frameworks */,
@@ -130,7 +132,6 @@
 				16D2547B181B1210006079CD /* CFNetwork.framework in Frameworks */,
 				16D25479181B1208006079CD /* AudioToolbox.framework in Frameworks */,
 				16D25443181B0E6F006079CD /* UIKit.framework in Frameworks */,
-				16D25477181B11DC006079CD /* Parse.framework in Frameworks */,
 				16D2543F181B0E6F006079CD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +171,7 @@
 		16D2543D181B0E6F006079CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				042769DB1820581600452B79 /* Parse.framework */,
 				16D25488181B1245006079CD /* SystemConfiguration.framework */,
 				16D25486181B123D006079CD /* StoreKit.framework */,
 				16D25484181B1236006079CD /* Security.framework */,
@@ -515,6 +517,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/andrewexton/Desktop/CampusCritic/CampusCritic,
+					"/Users/Mac/Dropbox/School/Y1Q1/CPE\\ 123\\ LAB/CampusCritic/parsetest",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusCritic/CampusCritic-Prefix.pch";
@@ -532,6 +535,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/andrewexton/Desktop/CampusCritic/CampusCritic,
+					"/Users/Mac/Dropbox/School/Y1Q1/CPE\\ 123\\ LAB/CampusCritic/parsetest",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusCritic/CampusCritic-Prefix.pch";
@@ -602,6 +606,7 @@
 				16D2546F181B0E70006079CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16D25470181B0E70006079CD /* Build configuration list for PBXNativeTarget "CampusCriticTests" */ = {
 			isa = XCConfigurationList;
@@ -610,6 +615,7 @@
 				16D25472181B0E70006079CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
