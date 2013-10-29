@@ -70,7 +70,7 @@
                                     <outlet property="foodItemName" destination="O5c-t8-Jp4" id="FMk-bc-paQ"/>
                                     <outlet property="foodItemPrice" destination="Elk-KN-5bV" id="Hcj-TS-r0y"/>
                                     <outlet property="foodItemRestuantLogo" destination="N9P-gM-ha3" id="Lcs-OY-S7c"/>
-                                    <segue destination="Xgy-gZ-NxG" kind="push" id="0dk-DG-wzw"/>
+                                    <segue destination="Xgy-gZ-NxG" kind="push" identifier="foodSelected" id="0dk-DG-wzw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -226,10 +226,10 @@
             </objects>
             <point key="canvasLocation" x="577" y="-589"/>
         </scene>
-        <!--View Controller - Food Item Name-->
+        <!--Single Items View Controller - Food Item Name-->
         <scene sceneID="BNO-Dz-oE1">
             <objects>
-                <viewController id="Xgy-gZ-NxG" sceneMemberID="viewController">
+                <viewController id="Xgy-gZ-NxG" customClass="SingleItemsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6v9-y3-vjy"/>
                         <viewControllerLayoutGuide type="bottom" id="iDx-OI-TRs"/>
@@ -285,7 +285,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Food Item Name" id="lI5-cX-A6t"/>
+                    <navigationItem key="navigationItem" title="Food Item Name" id="dPE-9l-L10"/>
+                    <connections>
+                        <outlet property="foodItemName" destination="dPE-9l-L10" id="2dh-aV-Vns"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZE-ck-scb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

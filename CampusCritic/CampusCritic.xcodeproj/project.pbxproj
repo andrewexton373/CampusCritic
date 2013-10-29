@@ -37,6 +37,7 @@
 		16D25490181E1ADF006079CD /* SubwayLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D2548F181E1ADF006079CD /* SubwayLogo.png */; };
 		16D25495181E28B9006079CD /* NutritionFactsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D25494181E28B9006079CD /* NutritionFactsTemplate.png */; };
 		16D25498181F0F35006079CD /* NutritionFactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D25497181F0F35006079CD /* NutritionFactsViewController.m */; };
+		16D2549B181F62F9006079CD /* SingleItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D2549A181F62F9006079CD /* SingleItemsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		16D25494181E28B9006079CD /* NutritionFactsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NutritionFactsTemplate.png; sourceTree = "<group>"; };
 		16D25496181F0F35006079CD /* NutritionFactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionFactsViewController.h; sourceTree = "<group>"; };
 		16D25497181F0F35006079CD /* NutritionFactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionFactsViewController.m; sourceTree = "<group>"; };
+		16D25499181F62F9006079CD /* SingleItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleItemsViewController.h; sourceTree = "<group>"; };
+		16D2549A181F62F9006079CD /* SingleItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleItemsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				16D2544D181B0E6F006079CD /* AppDelegate.h */,
 				16D2544E181B0E6F006079CD /* AppDelegate.m */,
 				16D25450181B0E6F006079CD /* Main.storyboard */,
+				16D25499181F62F9006079CD /* SingleItemsViewController.h */,
+				16D2549A181F62F9006079CD /* SingleItemsViewController.m */,
 				16D25496181F0F35006079CD /* NutritionFactsViewController.h */,
 				16D25497181F0F35006079CD /* NutritionFactsViewController.m */,
 				16D2548A181E1585006079CD /* FoodItemsTableCell.h */,
@@ -317,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16D25455181B0E6F006079CD /* ViewController.m in Sources */,
+				16D2549B181F62F9006079CD /* SingleItemsViewController.m in Sources */,
 				16D2544F181B0E6F006079CD /* AppDelegate.m in Sources */,
 				16D25475181B0EFC006079CD /* FoodItemsTableViewController.m in Sources */,
 				16D2548C181E1585006079CD /* FoodItemsTableCell.m in Sources */,

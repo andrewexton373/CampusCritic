@@ -9,6 +9,7 @@
 #import "FoodItemsTableViewController.h"
 #import <Parse/Parse.h>
 #import "FoodItemsTableCell.h"
+#import "SingleItemsViewController.h"
 
 @interface FoodItemsTableViewController ()
 
@@ -27,7 +28,23 @@
         
         [self.tableView reloadData];
     }
-    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"foodSelected"])
+    {
+        SingleItemsViewController *singleItemViewController =
+        [segue destinationViewController];
+        
+        NSIndexPath *myIndexPath = [self.tableView
+                                    indexPathForSelectedRow];
+        
+        long row = [myIndexPath row];
+        NSDictionary *foodItem = self.foodItems[row];
+        
+        singleItemViewController.passedFoodItemName = [NSString stringWithFormat:@"%@", foodItem[@"typeOfFood"]];
+    }
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -134,16 +151,18 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
+
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+*/
 
- */
 
 @end
