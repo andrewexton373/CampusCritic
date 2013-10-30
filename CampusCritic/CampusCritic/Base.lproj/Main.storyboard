@@ -290,10 +290,10 @@
             </objects>
             <point key="canvasLocation" x="577" y="113"/>
         </scene>
-        <!--View Controller - Contribute-->
+        <!--Contribute View Controller - Contribute-->
         <scene sceneID="klx-Of-C0M">
             <objects>
-                <viewController id="nqY-Fb-So9" sceneMemberID="viewController">
+                <viewController id="nqY-Fb-So9" customClass="ContributeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uaO-JC-ZH6"/>
                         <viewControllerLayoutGuide type="bottom" id="0bU-uz-wcK"/>
@@ -346,21 +346,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yxg-d8-2YY">
-                                <rect key="frame" x="28" y="300" width="272" height="29"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOP-n5-1We">
+                                <rect key="frame" x="20" y="351" width="91" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="1 Star"/>
-                                    <segment title="2 Stars"/>
-                                    <segment title="3 Stars"/>
-                                    <segment title="4 Stars"/>
-                                    <segment title="5 Stars"/>
-                                </segments>
-                            </segmentedControl>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contribute" id="Jnw-OI-fus"/>
+                    <connections>
+                        <outlet property="userRating" destination="WOP-n5-1We" id="Ywy-tS-xQa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFi-JW-Chb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

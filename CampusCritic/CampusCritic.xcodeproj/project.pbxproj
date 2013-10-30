@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		042769DC1820581600452B79 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042769DB1820581600452B79 /* Parse.framework */; };
+		042769DF18205CBE00452B79 /* ContributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042769DE18205CBE00452B79 /* ContributeViewController.m */; };
 		16D2543F181B0E6F006079CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D2543E181B0E6F006079CD /* Foundation.framework */; };
 		16D25441181B0E6F006079CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25440181B0E6F006079CD /* CoreGraphics.framework */; };
 		16D25443181B0E6F006079CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25442181B0E6F006079CD /* UIKit.framework */; };
@@ -61,6 +62,8 @@
 
 /* Begin PBXFileReference section */
 		042769DB1820581600452B79 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../Dropbox/School/Y1Q1/CPE 123 LAB/CampusCritic/parsetest/Parse.framework"; sourceTree = "<group>"; };
+		042769DD18205CBE00452B79 /* ContributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributeViewController.h; sourceTree = "<group>"; };
+		042769DE18205CBE00452B79 /* ContributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributeViewController.m; sourceTree = "<group>"; };
 		16D2543B181B0E6F006079CD /* CampusCritic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusCritic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D2543E181B0E6F006079CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		16D25440181B0E6F006079CD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -198,6 +201,8 @@
 				16D25450181B0E6F006079CD /* Main.storyboard */,
 				16D25499181F62F9006079CD /* SingleItemsViewController.h */,
 				16D2549A181F62F9006079CD /* SingleItemsViewController.m */,
+				042769DD18205CBE00452B79 /* ContributeViewController.h */,
+				042769DE18205CBE00452B79 /* ContributeViewController.m */,
 				16D25496181F0F35006079CD /* NutritionFactsViewController.h */,
 				16D25497181F0F35006079CD /* NutritionFactsViewController.m */,
 				16D2548A181E1585006079CD /* FoodItemsTableCell.h */,
@@ -379,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16D254AE18203D21006079CD /* DLStarRatingControl.m in Sources */,
+				042769DF18205CBE00452B79 /* ContributeViewController.m in Sources */,
 				16D254AF18203D21006079CD /* DLStarView.m in Sources */,
 				16D25455181B0E6F006079CD /* ViewController.m in Sources */,
 				16D2549B181F62F9006079CD /* SingleItemsViewController.m in Sources */,

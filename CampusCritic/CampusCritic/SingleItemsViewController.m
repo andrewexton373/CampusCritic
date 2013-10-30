@@ -9,6 +9,7 @@
 #import "SingleItemsViewController.h"
 #import "NutritionFactsViewController.h"
 #import "DLStarRatingControl.h"
+#import "DLStarView.h"
 #import <Parse/Parse.h>
 
 @interface SingleItemsViewController ()
@@ -46,12 +47,14 @@
     
     _foodItemName.title = _passedFoodItem[@"typeOfFood"];
     
-    NSInteger *rating = [_passedFoodItem[@"rating"] integerValue];
+    float rating = [_passedFoodItem[@"rating"] floatValue];
     
     // setup a control with 3 fractional stars at a size of 320x230
-    DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 190, 320, 230) andStars:rating isFractional:YES];
+    DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 190, 320, 230) andStars:5 isFractional:YES];
+    ratingControl.rating = rating;
+    [ratingControl setEnabled:NO];
     [self.view addSubview:ratingControl];
-    
+
 }
 
 - (void)didReceiveMemoryWarning
