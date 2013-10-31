@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "FoodItemsTableCell.h"
 
-@interface FoodItemsTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+@interface FoodItemsTableViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate> {
+    
+    NSArray *searchResults;
+}
 
 @property (strong,nonatomic) NSMutableArray *filteredFoodItemsArray;
-@property IBOutlet UISearchBar *foodItemSearchBar;
+//@property IBOutlet UISearchBar *foodItemSearchBar;
 
 @end

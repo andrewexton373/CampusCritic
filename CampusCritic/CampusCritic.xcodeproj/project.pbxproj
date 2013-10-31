@@ -22,7 +22,6 @@
 		16D25468181B0E70006079CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16D25466181B0E70006079CD /* InfoPlist.strings */; };
 		16D2546A181B0E70006079CD /* CampusCriticTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D25469181B0E70006079CD /* CampusCriticTests.m */; };
 		16D25475181B0EFC006079CD /* FoodItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D25474181B0EFC006079CD /* FoodItemsTableViewController.m */; };
-		16D25477181B11DC006079CD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25476181B11DC006079CD /* Parse.framework */; };
 		16D25479181B1208006079CD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25478181B1208006079CD /* AudioToolbox.framework */; };
 		16D2547B181B1210006079CD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D2547A181B1210006079CD /* CFNetwork.framework */; };
 		16D2547D181B121A006079CD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D2547C181B121A006079CD /* CoreLocation.framework */; };
@@ -38,6 +37,7 @@
 		16D25495181E28B9006079CD /* NutritionFactsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D25494181E28B9006079CD /* NutritionFactsTemplate.png */; };
 		16D25498181F0F35006079CD /* NutritionFactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D25497181F0F35006079CD /* NutritionFactsViewController.m */; };
 		16D2549B181F62F9006079CD /* SingleItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D2549A181F62F9006079CD /* SingleItemsViewController.m */; };
+		F2206E251820427F001FA7E7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2206E241820427F001FA7E7 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,6 @@
 		16D25469181B0E70006079CD /* CampusCriticTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusCriticTests.m; sourceTree = "<group>"; };
 		16D25473181B0EFC006079CD /* FoodItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodItemsTableViewController.h; sourceTree = "<group>"; };
 		16D25474181B0EFC006079CD /* FoodItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodItemsTableViewController.m; sourceTree = "<group>"; };
-		16D25476181B11DC006079CD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		16D25478181B1208006079CD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		16D2547A181B1210006079CD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		16D2547C181B121A006079CD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -91,6 +90,7 @@
 		16D25497181F0F35006079CD /* NutritionFactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionFactsViewController.m; sourceTree = "<group>"; };
 		16D25499181F62F9006079CD /* SingleItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleItemsViewController.h; sourceTree = "<group>"; };
 		16D2549A181F62F9006079CD /* SingleItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleItemsViewController.m; sourceTree = "<group>"; };
+		F2206E241820427F001FA7E7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2206E251820427F001FA7E7 /* Parse.framework in Frameworks */,
 				16D25489181B1245006079CD /* SystemConfiguration.framework in Frameworks */,
 				16D25487181B123D006079CD /* StoreKit.framework in Frameworks */,
 				16D25485181B1236006079CD /* Security.framework in Frameworks */,
@@ -109,7 +110,6 @@
 				16D2547B181B1210006079CD /* CFNetwork.framework in Frameworks */,
 				16D25479181B1208006079CD /* AudioToolbox.framework in Frameworks */,
 				16D25443181B0E6F006079CD /* UIKit.framework in Frameworks */,
-				16D25477181B11DC006079CD /* Parse.framework in Frameworks */,
 				16D2543F181B0E6F006079CD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +149,7 @@
 		16D2543D181B0E6F006079CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F2206E241820427F001FA7E7 /* Parse.framework */,
 				16D25488181B1245006079CD /* SystemConfiguration.framework */,
 				16D25486181B123D006079CD /* StoreKit.framework */,
 				16D25484181B1236006079CD /* Security.framework */,
@@ -158,7 +159,6 @@
 				16D2547C181B121A006079CD /* CoreLocation.framework */,
 				16D2547A181B1210006079CD /* CFNetwork.framework */,
 				16D25478181B1208006079CD /* AudioToolbox.framework */,
-				16D25476181B11DC006079CD /* Parse.framework */,
 				16D2543E181B0E6F006079CD /* Foundation.framework */,
 				16D25440181B0E6F006079CD /* CoreGraphics.framework */,
 				16D25442181B0E6F006079CD /* UIKit.framework */,
@@ -189,8 +189,9 @@
 				16D25456181B0E6F006079CD /* Images.xcassets */,
 				16D25445181B0E6F006079CD /* Supporting Files */,
 			);
-			path = CampusCritic;
-			sourceTree = "<group>";
+			name = CampusCritic;
+			path = /Users/agreen13/Desktop/CampusCritic/CampusCritic/CampusCritic;
+			sourceTree = "<absolute>";
 		};
 		16D25445181B0E6F006079CD /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -457,6 +458,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/andrewexton/Desktop/CampusCritic/CampusCritic,
+					/Users/agreen13/Desktop/CampusCritic/CampusCritic,
+					/Users/agreen13/Desktop,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusCritic/CampusCritic-Prefix.pch";
@@ -474,6 +477,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/andrewexton/Desktop/CampusCritic/CampusCritic,
+					/Users/agreen13/Desktop/CampusCritic/CampusCritic,
+					/Users/agreen13/Desktop,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusCritic/CampusCritic-Prefix.pch";
@@ -544,6 +549,7 @@
 				16D2546F181B0E70006079CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16D25470181B0E70006079CD /* Build configuration list for PBXNativeTarget "CampusCriticTests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +558,7 @@
 				16D25472181B0E70006079CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

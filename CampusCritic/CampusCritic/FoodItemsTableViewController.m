@@ -11,7 +11,7 @@
 #import "FoodItemsTableCell.h"
 #import "SingleItemsViewController.h"
 
-@interface FoodItemsTableViewController ()
+@interface FoodItemsTableViewController  ()
 
 @property NSArray *foodItems;
 
@@ -89,12 +89,24 @@
 {
     // Return the number of rows in the section.
     return self.foodItems.count;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [searchResults count];
+        
+    } else {
+        return [_filteredFoodItemsArray count];
+        
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
+    
     static NSString *CellIdentifier = @"customCell";
-    FoodItemsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    FoodItemsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
     
@@ -109,8 +121,37 @@
     UIImage *foodResturantImage = [UIImage imageNamed: @"SubwayLogo.png"];
     cell.foodItemRestuantLogo.image = foodResturantImage;
     
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
+    } else {
+        cell.textLabel.text = [_filteredFoodItemsArray objectAtIndex:indexPath.row];
+    }
+    
     return cell;
 }
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate
+                                    predicateWithFormat:@"SELF contains[cd] %@",
+                                    searchText];
+    
+    searchResults = [_filteredFoodItemsArray filteredArrayUsingPredicate:resultPredicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller
+shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
+}
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
