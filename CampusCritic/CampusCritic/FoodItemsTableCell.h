@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *foodItemName;
 @property (weak, nonatomic) IBOutlet UILabel *foodItemPrice;
-@property (weak, nonatomic) IBOutlet UIImageView *foodItemRestuantLogo;
+@property (weak, nonatomic) IBOutlet UILabel *subRestaurant;
 @property (weak, nonatomic) IBOutlet UIImageView *foodItemImage;
 
 @end

@@ -100,14 +100,14 @@
     
     NSDictionary *foodItem = self.foodItems[indexPath.row];
     
-    cell.foodItemName.text = foodItem[@"typeOfFood"];
-    cell.foodItemPrice.text = @"Need Price Data";
+    cell.foodItemName.text = foodItem[@"foodName"];
+    cell.foodItemPrice.text = foodItem[@"foodPrice"];
     
     UIImage *foodImage = [UIImage imageNamed: @"CCLogo.png"];
     cell.foodItemImage.image = foodImage;
     
-    UIImage *foodResturantImage = [UIImage imageNamed: @"SubwayLogo.png"];
-    cell.foodItemRestuantLogo.image = foodResturantImage;
+    NSString *subRestaurant = foodItem[@"subRestaurant"];
+    cell.subRestaurant.text = subRestaurant;
     
     return cell;
 }

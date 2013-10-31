@@ -46,10 +46,6 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N9P-gM-ha3">
-                                            <rect key="frame" x="83" y="36" width="70" height="25"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0H-Jf-gY5">
                                             <rect key="frame" x="161" y="39" width="7" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -63,13 +59,20 @@
                                             <color key="textColor" red="0.094117656349999995" green="0.54509806630000002" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="subRes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gka-Ap-cPO">
+                                            <rect key="frame" x="83" y="39" width="58" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="foodItemImage" destination="L0W-Gy-L4K" id="ypB-l7-OfP"/>
                                     <outlet property="foodItemName" destination="O5c-t8-Jp4" id="FMk-bc-paQ"/>
                                     <outlet property="foodItemPrice" destination="Elk-KN-5bV" id="Hcj-TS-r0y"/>
-                                    <outlet property="foodItemRestuantLogo" destination="N9P-gM-ha3" id="Lcs-OY-S7c"/>
+                                    <outlet property="subRestaurant" destination="Gka-Ap-cPO" id="GM0-di-oA0"/>
                                     <segue destination="Xgy-gZ-NxG" kind="push" identifier="foodSelected" id="0dk-DG-wzw"/>
                                 </connections>
                             </tableViewCell>
