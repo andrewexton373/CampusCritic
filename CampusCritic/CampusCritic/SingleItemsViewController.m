@@ -45,7 +45,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    _foodItemName.title = _passedFoodItem[@"typeOfFood"];
+    _foodItemName.title = _passedFoodItem[@"foodName"];
     
     float rating = [_passedFoodItem[@"rating"] floatValue];
     

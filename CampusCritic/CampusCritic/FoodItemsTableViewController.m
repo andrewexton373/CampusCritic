@@ -66,7 +66,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    PFQuery *query = [PFQuery queryWithClassName:@"foodInformation"];
+    PFQuery *query = [PFQuery queryWithClassName:@"foodInformationCSV"];
     [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodInformationCallback:error:)];
     
 }
@@ -101,12 +101,12 @@
     NSDictionary *foodItem = self.foodItems[indexPath.row];
     
     cell.foodItemName.text = foodItem[@"foodName"];
-    cell.foodItemPrice.text = foodItem[@"foodPrice"];
+    cell.foodItemPrice.text = [NSString stringWithFormat:@"$%@",foodItem[@"foodPrice"]];
     
     UIImage *foodImage = [UIImage imageNamed: @"CCLogo.png"];
     cell.foodItemImage.image = foodImage;
     
-    NSString *subRestaurant = foodItem[@"subRestaurant"];
+    NSString *subRestaurant = foodItem[@"subRestaurantName"];
     cell.subRestaurant.text = subRestaurant;
     
     return cell;
