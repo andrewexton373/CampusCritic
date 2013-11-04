@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040EDC441828336F0041D17C /* NutritionFacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EDC431828336F0041D17C /* NutritionFacts.png */; };
 		042769DC1820581600452B79 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042769DB1820581600452B79 /* Parse.framework */; };
 		042769DF18205CBE00452B79 /* ContributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042769DE18205CBE00452B79 /* ContributeViewController.m */; };
 		16D2543F181B0E6F006079CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D2543E181B0E6F006079CD /* Foundation.framework */; };
@@ -35,7 +36,6 @@
 		16D25489181B1245006079CD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25488181B1245006079CD /* SystemConfiguration.framework */; };
 		16D2548C181E1585006079CD /* FoodItemsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D2548B181E1585006079CD /* FoodItemsTableCell.m */; };
 		16D2548E181E19CD006079CD /* CCLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D2548D181E19CD006079CD /* CCLogo.png */; };
-		16D25495181E28B9006079CD /* NutritionFactsTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D25494181E28B9006079CD /* NutritionFactsTemplate.png */; };
 		16D25498181F0F35006079CD /* NutritionFactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D25497181F0F35006079CD /* NutritionFactsViewController.m */; };
 		16D2549B181F62F9006079CD /* SingleItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D2549A181F62F9006079CD /* SingleItemsViewController.m */; };
 		16D254AE18203D21006079CD /* DLStarRatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D254A218203D21006079CD /* DLStarRatingControl.m */; };
@@ -60,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040EDC431828336F0041D17C /* NutritionFacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NutritionFacts.png; sourceTree = "<group>"; };
 		042769DB1820581600452B79 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../Dropbox/School/Y1Q1/CPE 123 LAB/CampusCritic/parsetest/Parse.framework"; sourceTree = "<group>"; };
 		042769DD18205CBE00452B79 /* ContributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributeViewController.h; sourceTree = "<group>"; };
 		042769DE18205CBE00452B79 /* ContributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributeViewController.m; sourceTree = "<group>"; };
@@ -97,7 +98,6 @@
 		16D2548A181E1585006079CD /* FoodItemsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodItemsTableCell.h; sourceTree = "<group>"; };
 		16D2548B181E1585006079CD /* FoodItemsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodItemsTableCell.m; sourceTree = "<group>"; };
 		16D2548D181E19CD006079CD /* CCLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CCLogo.png; sourceTree = "<group>"; };
-		16D25494181E28B9006079CD /* NutritionFactsTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NutritionFactsTemplate.png; sourceTree = "<group>"; };
 		16D25496181F0F35006079CD /* NutritionFactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionFactsViewController.h; sourceTree = "<group>"; };
 		16D25497181F0F35006079CD /* NutritionFactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionFactsViewController.m; sourceTree = "<group>"; };
 		16D25499181F62F9006079CD /* SingleItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleItemsViewController.h; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 				16D25453181B0E6F006079CD /* ViewController.h */,
 				16D25454181B0E6F006079CD /* ViewController.m */,
 				16D2548D181E19CD006079CD /* CCLogo.png */,
-				16D25494181E28B9006079CD /* NutritionFactsTemplate.png */,
+				040EDC431828336F0041D17C /* NutritionFacts.png */,
 				16D254A018203D21006079CD /* DLStarRating */,
 				16D25456181B0E6F006079CD /* Images.xcassets */,
 				16D25445181B0E6F006079CD /* Supporting Files */,
@@ -350,12 +350,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16D25495181E28B9006079CD /* NutritionFactsTemplate.png in Resources */,
 				16D2548E181E19CD006079CD /* CCLogo.png in Resources */,
 				16D254B118203D21006079CD /* star@2x.png in Resources */,
 				16D25457181B0E6F006079CD /* Images.xcassets in Resources */,
 				16D25449181B0E6F006079CD /* InfoPlist.strings in Resources */,
 				16D254B018203D21006079CD /* star.png in Resources */,
+				040EDC441828336F0041D17C /* NutritionFacts.png in Resources */,
 				16D254B218203D21006079CD /* star_highlighted-darker.png in Resources */,
 				16D254B418203D21006079CD /* star_highlighted.png in Resources */,
 				16D254B318203D21006079CD /* star_highlighted-darker@2x.png in Resources */,
