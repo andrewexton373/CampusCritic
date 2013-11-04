@@ -9,7 +9,6 @@
 #import "NutritionFactsViewController.h"
 
 @interface NutritionFactsViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *foodItemName;
 @property (weak, nonatomic) IBOutlet UILabel *servingSize;
 @property (weak, nonatomic) IBOutlet UILabel *calories;
 @property (weak, nonatomic) IBOutlet UILabel *totalFat;
@@ -19,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalCarbohydrate;
 @property (weak, nonatomic) IBOutlet UILabel *sugars;
 @property (weak, nonatomic) IBOutlet UILabel *protein;
+@property (weak, nonatomic) IBOutlet UINavigationItem *foodNameTitle;
 
 @end
 
@@ -40,9 +40,10 @@
     
     //Set Labels from Passed Food Item Dictionary
     
-    self.foodItemName.text = self.foodItem[@"typeOfFood"];
+    self.foodNameTitle.title = self.foodItem[@"foodName"];
+    
     self.servingSize.text = self.foodItem[@"servingSize"];
-    self.calories.text = [NSString stringWithFormat:@"%@",self.foodItem[@"Calories"]];
+    self.calories.text = [NSString stringWithFormat:@"%@",self.foodItem[@"calories"]];
     self.totalFat.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"totalFatG"]];
     self.saturatedFat.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"saturatedFatG"]];
     self.cholesterol.text = [NSString stringWithFormat:@"%@ milligrams", self.foodItem[@"cholesterolMg"]];
@@ -50,8 +51,6 @@
     self.totalCarbohydrate.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"carbsG"]];
     self.sugars.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"sugarG"]];
     self.protein.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"proteinG"]];
-    
-
 }
 
 - (void)didReceiveMemoryWarning
