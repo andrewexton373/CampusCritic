@@ -403,7 +403,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saturated Fat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JT-Di-gnA">
-                                <rect key="frame" x="79" y="327" width="150" height="21"/>
+                                <rect key="frame" x="72" y="327" width="189" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <nil key="highlightedColor"/>
@@ -427,7 +427,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sugars" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBS-ZM-kJk">
-                                <rect key="frame" x="79" y="301" width="150" height="21"/>
+                                <rect key="frame" x="72" y="301" width="189" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                 <nil key="highlightedColor"/>
@@ -452,7 +452,7 @@
                         <outlet property="sodium" destination="9zM-sy-NX7" id="U5t-hS-utc"/>
                         <outlet property="sugars" destination="gBS-ZM-kJk" id="KmJ-U7-NJa"/>
                         <outlet property="totalCarbohydrate" destination="Atl-dP-sqx" id="iHm-Xw-HFD"/>
-                        <outlet property="totalFat" destination="0JT-Di-gnA" id="nLl-pe-I1z"/>
+                        <outlet property="totalFat" destination="1MM-R8-zIp" id="o5D-cB-fFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t46-yg-Z4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
