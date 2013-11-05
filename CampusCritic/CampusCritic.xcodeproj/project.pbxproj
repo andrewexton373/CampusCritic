@@ -10,6 +10,7 @@
 		040EDC441828336F0041D17C /* NutritionFacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EDC431828336F0041D17C /* NutritionFacts.png */; };
 		042769DC1820581600452B79 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042769DB1820581600452B79 /* Parse.framework */; };
 		042769DF18205CBE00452B79 /* ContributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042769DE18205CBE00452B79 /* ContributeViewController.m */; };
+		16AD6B711828C781006926B7 /* OrganizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AD6B6F1828C781006926B7 /* OrganizeViewController.m */; };
 		16D2543F181B0E6F006079CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D2543E181B0E6F006079CD /* Foundation.framework */; };
 		16D25441181B0E6F006079CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25440181B0E6F006079CD /* CoreGraphics.framework */; };
 		16D25443181B0E6F006079CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25442181B0E6F006079CD /* UIKit.framework */; };
@@ -64,6 +65,8 @@
 		042769DB1820581600452B79 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../Dropbox/School/Y1Q1/CPE 123 LAB/CampusCritic/parsetest/Parse.framework"; sourceTree = "<group>"; };
 		042769DD18205CBE00452B79 /* ContributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributeViewController.h; sourceTree = "<group>"; };
 		042769DE18205CBE00452B79 /* ContributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributeViewController.m; sourceTree = "<group>"; };
+		16AD6B6E1828C781006926B7 /* OrganizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizeViewController.h; sourceTree = "<group>"; };
+		16AD6B6F1828C781006926B7 /* OrganizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizeViewController.m; sourceTree = "<group>"; };
 		16D2543B181B0E6F006079CD /* CampusCritic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusCritic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D2543E181B0E6F006079CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		16D25440181B0E6F006079CD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -197,6 +200,8 @@
 				16D2544D181B0E6F006079CD /* AppDelegate.h */,
 				16D2544E181B0E6F006079CD /* AppDelegate.m */,
 				16D25450181B0E6F006079CD /* Main.storyboard */,
+				16AD6B6E1828C781006926B7 /* OrganizeViewController.h */,
+				16AD6B6F1828C781006926B7 /* OrganizeViewController.m */,
 				16D25499181F62F9006079CD /* SingleItemsViewController.h */,
 				16D2549A181F62F9006079CD /* SingleItemsViewController.m */,
 				042769DD18205CBE00452B79 /* ContributeViewController.h */,
@@ -388,6 +393,7 @@
 				16D25475181B0EFC006079CD /* FoodItemsTableViewController.m in Sources */,
 				16D2548C181E1585006079CD /* FoodItemsTableCell.m in Sources */,
 				16D2544B181B0E6F006079CD /* main.m in Sources */,
+				16AD6B711828C781006926B7 /* OrganizeViewController.m in Sources */,
 				16D254B618203D21006079CD /* UIView+Subviews.m in Sources */,
 				16D25498181F0F35006079CD /* NutritionFactsViewController.m in Sources */,
 			);
