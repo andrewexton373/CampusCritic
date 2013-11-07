@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mJB-yb-zzT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mJB-yb-zzT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -29,7 +29,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="69" id="KeK-gd-55O" customClass="FoodItemsTableCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="69"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KeK-gd-55O" id="ARW-Ee-bgT">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="68"/>
@@ -189,7 +189,7 @@
                     <navigationItem key="navigationItem" title="Organize" id="ywc-6T-wvP">
                         <barButtonItem key="leftBarButtonItem" systemItem="save" id="Wkm-Xr-ReS">
                             <connections>
-                                <segue destination="tpW-uc-ac3" kind="push" identifier="organizeToTable" id="5PP-8D-xX8"/>
+                                <segue destination="BmI-yd-KQr" kind="unwind" unwindAction="unwindFromOrganizationPicker:" id="aKL-HY-yGf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -198,6 +198,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEF-Av-rfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BmI-yd-KQr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="577" y="-589"/>
         </scene>
@@ -224,7 +225,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yBJ-5y-lq3">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="0.0" y="64" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -440,7 +441,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="5PP-8D-xX8"/>
-    </inferredMetricsTieBreakers>
 </document>
