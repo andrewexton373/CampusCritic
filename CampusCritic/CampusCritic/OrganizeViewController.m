@@ -26,23 +26,6 @@
     return self;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"organizeToTable"])
-    {
-        //Set Destination View Controller
-        FoodItemsTableViewController *foodItemsTableViewController = [segue destinationViewController];
-        
-        //Pass Sort Option to Table View
-        foodItemsTableViewController.passedSortOption = self.selectedSortOption;
-        
-        //Pass Filters to Table View
-        foodItemsTableViewController.veganFilter = vegan;
-        foodItemsTableViewController.vegatarianFilter = vegatarian;
-        foodItemsTableViewController.glutenFreeFilter = glutenFree;
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
