@@ -29,7 +29,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="69" id="KeK-gd-55O" customClass="FoodItemsTableCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="69"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KeK-gd-55O" id="ARW-Ee-bgT">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="68"/>
@@ -85,7 +85,7 @@
                     <navigationItem key="navigationItem" title="Campus Critic" id="BKC-ri-f18">
                         <barButtonItem key="rightBarButtonItem" title="Organize" id="ScZ-kk-FMN">
                             <connections>
-                                <segue destination="682-om-k2h" kind="push" id="Pii-TK-t6F"/>
+                                <segue destination="682-om-k2h" kind="push" identifier="tableToOrganize" id="Pii-TK-t6F"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -109,98 +109,9 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sort Options:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRj-ln-l7y">
                                 <rect key="frame" x="82" y="319" width="156" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QWX-nd-VhR">
-                                <rect key="frame" x="0.0" y="65" width="320" height="163"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <sections>
-                                    <tableViewSection headerTitle="Filters" id="v82-fg-Aob">
-                                        <cells>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="b42-m8-pA3">
-                                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b42-m8-pA3" id="Eyt-g9-A6k">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vegan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZP-lD-9DE">
-                                                            <rect key="frame" x="20" y="11" width="48" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <accessibility key="accessibilityConfiguration">
-                                                                <bool key="isElement" value="NO"/>
-                                                            </accessibility>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xrk-GP-a1u">
-                                                            <rect key="frame" x="251" y="6" width="51" height="31"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <accessibility key="accessibilityConfiguration">
-                                                                <bool key="isElement" value="NO"/>
-                                                            </accessibility>
-                                                        </switch>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KeD-PF-cRi">
-                                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KeD-PF-cRi" id="F2R-Ye-GLK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vegatarian" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfP-HA-Row">
-                                                            <rect key="frame" x="20" y="11" width="81" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <accessibility key="accessibilityConfiguration">
-                                                                <bool key="isElement" value="NO"/>
-                                                            </accessibility>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VtF-U2-NU8">
-                                                            <rect key="frame" x="251" y="6" width="51" height="31"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <accessibility key="accessibilityConfiguration">
-                                                                <bool key="isElement" value="NO"/>
-                                                            </accessibility>
-                                                        </switch>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OTr-Fx-WGJ">
-                                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OTr-Fx-WGJ" id="Fu2-wD-8iT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gluten Free" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INy-by-2Hu">
-                                                            <rect key="frame" x="20" y="11" width="89" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <accessibility key="accessibilityConfiguration">
-                                                                <bool key="isElement" value="NO"/>
-                                                            </accessibility>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZW-Bv-ve9">
-                                                            <rect key="frame" x="251" y="6" width="51" height="31"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <accessibility key="accessibilityConfiguration">
-                                                                <bool key="isElement" value="NO"/>
-                                                            </accessibility>
-                                                        </switch>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </cells>
-                                    </tableViewSection>
-                                </sections>
-                            </tableView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gXV-uW-BuW">
                                 <rect key="frame" x="0.0" y="348" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -209,10 +120,79 @@
                                     <outlet property="delegate" destination="682-om-k2h" id="jbP-92-yOi"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gluten Free" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INy-by-2Hu">
+                                <rect key="frame" x="48" y="127" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZW-Bv-ve9">
+                                <rect key="frame" x="223" y="122" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <connections>
+                                    <action selector="glutenFreeSwitch:" destination="682-om-k2h" eventType="valueChanged" id="Vle-Ns-92g"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vegetarian" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfP-HA-Row">
+                                <rect key="frame" x="48" y="175" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VtF-U2-NU8">
+                                <rect key="frame" x="223" y="170" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <connections>
+                                    <action selector="vegetarianSwitch:" destination="682-om-k2h" eventType="valueChanged" id="c9u-qF-zxl"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vegan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZP-lD-9DE">
+                                <rect key="frame" x="48" y="223" width="48" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xrk-GP-a1u">
+                                <rect key="frame" x="223" y="218" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <connections>
+                                    <action selector="veganSwitch:" destination="682-om-k2h" eventType="valueChanged" id="aTD-oM-phg"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filters:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GG-P3-3U9">
+                                <rect key="frame" x="82" y="75" width="156" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Organize" id="ywc-6T-wvP"/>
+                    <navigationItem key="navigationItem" title="Organize" id="ywc-6T-wvP">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="Wkm-Xr-ReS">
+                            <connections>
+                                <segue destination="tpW-uc-ac3" kind="push" identifier="organizeToTable" id="5PP-8D-xX8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="sortOptionPicker" destination="gXV-uW-BuW" id="YYE-5E-jCV"/>
                     </connections>
@@ -244,7 +224,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yBJ-5y-lq3">
-                                        <rect key="frame" x="0.0" y="64" width="150" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -460,4 +440,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="5PP-8D-xX8"/>
+    </inferredMetricsTieBreakers>
 </document>

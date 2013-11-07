@@ -8,13 +8,14 @@
 
 #import "OrganizeViewController.h"
 
+
 @interface OrganizeViewController ()
 
 @end
 
 @implementation OrganizeViewController
 
-@synthesize sortOptionsArray, sortOptionPicker;
+@synthesize sortOptionsArray, sortOptionPicker, selectedSortOption, vegan, vegatarian, glutenFree;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,6 +24,23 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"organizeToTable"])
+    {
+        //Set Destination View Controller
+        FoodItemsTableViewController *foodItemsTableViewController = [segue destinationViewController];
+        
+        //Pass Sort Option to Table View
+        foodItemsTableViewController.passedSortOption = self.selectedSortOption;
+        
+        //Pass Filters to Table View
+        foodItemsTableViewController.veganFilter = vegan;
+        foodItemsTableViewController.vegatarianFilter = vegatarian;
+        foodItemsTableViewController.glutenFreeFilter = glutenFree;
+    }
 }
 
 - (void)viewDidLoad
@@ -61,24 +79,29 @@
     
     NSLog(@"Selected Sort Option: %@", self.sortOptionsArray[row]);
     
-    switch (row) {
-        case 0:
-            
-            break;
-        case 1:
-            
-            break;
-        case 2:
-            
-            break;
-        case 3:
-            
-            break;
-            
-        default:
-            
-            break;
+    self.selectedSortOption = self.sortOptionsArray[row];
+    
+}
+
+
+- (IBAction)veganSwitch:(UISwitch*)sender
+{
+    if (sender.on) {
+        self.vegan = true;
+    } else {
+        self.vegan = false;
     }
+}
+
+- (IBAction)vegetarianSwitch:(UISwitch*)sender
+{
+
+
+}
+
+- (IBAction)glutenFreeSwitch:(UISwitch*)sender
+{
+
 }
 
 

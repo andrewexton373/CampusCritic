@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "FoodItemsTableCell.h"
 #import "SingleItemsViewController.h"
+#import "OrganizeViewController.h"
 
 @interface FoodItemsTableViewController ()
 
@@ -19,13 +20,18 @@
 
 @implementation FoodItemsTableViewController
 
+@synthesize passedSortOption, filteredFoodItemsArray, foodItemSearchBar, sortedFoodItems;
+
 - (void) loadFoodInformationCallback: (NSArray*) foodItems error: (NSError*) error
 {
     
+    //If there was not an error loading foodItems from Parse...
     if (!error) {
         
+        //Set foodItems Array from Data from Parse
         self.foodItems = foodItems;
         
+        //Reload tableView
         [self.tableView reloadData];
     }
 }
@@ -34,16 +40,31 @@
 {
     if ([[segue identifier] isEqualToString:@"foodSelected"])
     {
-        SingleItemsViewController *singleItemViewController =
-        [segue destinationViewController];
+        //Set Destination View Controller
+        SingleItemsViewController *singleItemViewController = [segue destinationViewController];
         
-        NSIndexPath *myIndexPath = [self.tableView
-                                    indexPathForSelectedRow];
+        //Store Selected Table View Row in myIndexPath Object
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
+        //Get Row From myIndexPath Object
         long row = [myIndexPath row];
+        
+        //Get foodItem Dictionary from foodItems Array @ Row
         NSDictionary *foodItem = self.foodItems[row];
         
+        
+        //Pass foodItem NSDictionary to singleItemViewController (Review View)
         singleItemViewController.passedFoodItem = foodItem;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"tableToOrganize"])
+    {
+        
+        //Set Destination View Controller
+        OrganizeViewController *organizeViewController = [segue destinationViewController];
+        
+        //Pass foodItems Array to Organize View (For Filters, but Obsolete now)
+        organizeViewController.passedFoodItems = self.foodItems;
     }
 }
 
@@ -66,6 +87,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    
+    //Set up query object and query from Parse in background
     PFQuery *query = [PFQuery queryWithClassName:@"foodInformationCSV"];
     [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodInformationCallback:error:)];
     
@@ -98,8 +121,10 @@
     
     // Configure the cell...
     
+    //Get single foodItem from foodItems Array @ Row
     NSDictionary *foodItem = self.foodItems[indexPath.row];
     
+    //Set single cell data
     cell.foodItemName.text = foodItem[@"foodName"];
     cell.foodItemPrice.text = [NSString stringWithFormat:@"$%@",foodItem[@"foodPrice"]];
     

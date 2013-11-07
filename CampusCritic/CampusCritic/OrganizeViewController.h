@@ -7,9 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FoodItemsTableViewController.h"
 
 @interface OrganizeViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIPickerView *sortOptionPicker;
+
+@property (nonatomic, strong) NSArray *passedFoodItems;
+@property bool vegan;
+@property bool vegatarian;
+@property bool glutenFree;
+
+
+- (IBAction)veganSwitch:(id)sender;
+- (IBAction)vegetarianSwitch:(id)sender;
+- (IBAction)glutenFreeSwitch:(id)sender;
+
 @property (strong, nonatomic) NSArray *sortOptionsArray;
+@property (strong, nonatomic) NSString *selectedSortOption;
 
 @end

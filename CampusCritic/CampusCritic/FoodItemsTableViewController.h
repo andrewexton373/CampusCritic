@@ -14,4 +14,12 @@
 @property (strong,nonatomic) NSMutableArray *filteredFoodItemsArray;
 @property IBOutlet UISearchBar *foodItemSearchBar;
 
+@property (strong, nonatomic) NSString *passedSortOption;
+
+@property BOOL veganFilter;
+@property BOOL vegatarianFilter;
+@property BOOL glutenFreeFilter;
+
+@property (strong, nonatomic) NSArray *sortedFoodItems;
+
 @end
