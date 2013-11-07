@@ -123,16 +123,18 @@
         
         NSLog(@"Sorted By Rating");
         
+        NSLog(@"Unsorted Array: %@", self.foodItems);
+        
         self.foodItems = [self.foodItems sortedArrayUsingComparator:^(NSDictionary *obj1, NSDictionary *obj2) {
             NSDictionary *food1 = obj1;
             NSDictionary *food2 = obj2;
-            NSNumber *rating1 = food1[@"Rating"];
-            NSNumber *rating2 = food2[@"Rating"];
+            NSNumber *rating1 = food1[@"rating"];
+            NSNumber *rating2 = food2[@"rating"];
             
             return [rating1 compare:rating2];
         }];
         
-        NSLog(@"%@", self.foodItems);
+        NSLog(@"Sorted Array: %@", self.foodItems);
         
         [self.tableView reloadData];
         

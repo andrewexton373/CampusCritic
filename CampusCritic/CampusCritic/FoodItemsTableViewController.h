@@ -21,6 +21,6 @@
 @property BOOL glutenFreeFilter;
 
 @property (strong, nonatomic) NSArray *sortedFoodItems;
-@property NSArray *foodItems;
+@property (strong, nonatomic) NSArray *foodItems;
 
 @end
