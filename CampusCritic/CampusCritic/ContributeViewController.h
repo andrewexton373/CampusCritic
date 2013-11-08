@@ -13,4 +13,6 @@
     IBOutlet UILabel *userRating;
 }
 
+@property (strong, nonatomic) IBOutlet UILabel *userRating;
+
 @end

@@ -10,11 +10,11 @@
 
 @interface ContributeViewController ()
 
-@property (nonatomic, strong) UILabel *userRating;
-
 @end
 
 @implementation ContributeViewController
+
+@synthesize userRating;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,8 +31,14 @@
 	// Do any additional setup after loading the view.
     
     DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 220, 320, 230) andStars:5 isFractional:NO];
+    ratingControl.delegate = self;
     [self.view addSubview:ratingControl];
     
+}
+
+-(void)newRating:(DLStarRatingControl *)control :(float)rating
+{
+    self.userRating.text = [NSString stringWithFormat:@"%f", rating];
 }
 
 - (void)didReceiveMemoryWarning
