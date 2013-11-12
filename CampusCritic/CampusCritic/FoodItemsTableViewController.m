@@ -106,7 +106,6 @@
 - (IBAction) unwindFromOrganizationPicker:(UIStoryboardSegue*) segue
 {
     OrganizeViewController *organizationViewController = segue.sourceViewController;
-    self.passedSortOption = organizationViewController.selectedSortOption;
     
     //Pass Sort Option to Table View
     self.passedSortOption = organizationViewController.selectedSortOption;
@@ -117,9 +116,33 @@
     self.glutenFreeFilter = organizationViewController.glutenFree;
     self.dairyFreeFilter = organizationViewController.dairyFree;
     
-    //Begin work on switch, filters already passed here
+    //Working switches (with NSLog output)
+    
     if (self.veganFilter == TRUE) {
         NSLog(@"The vegan switch is on");
+        //begin working on the vegan filter here
+        /*
+         
+         - (NSArray *)arrangeObjects:(NSArray *)objects {
+         
+         if (searchString == nil) {
+         return [super arrangeObjects:objects];
+         }
+         
+         NSMutableArray *filteredObjects = [NSMutableArray arrayWithCapacity:[objects count]];
+         NSEnumerator *objectsEnumerator = [objects objectEnumerator];
+         id item;
+         
+         while (item = [objectsEnumerator nextObject]) {
+         if ([[item valueForKeyPath:@"title"] rangeOfString:searchString options:NSAnchoredSearch].location != NSNotFound) {
+         [filteredObjects addObject:item];
+         }
+         }
+         return [super arrangeObjects:filteredObjects];
+         }
+         
+         */
+        
     }
     else {
         NSLog(@"The vegan switch is off");
@@ -143,12 +166,11 @@
         NSLog(@"The dairy free switch is off");
     }
     
-    //End work on switch
     
-    if ([self.passedSortOption  isEqual: @"Alphabetically"]) {
+    if ([self.passedSortOption  isEqualToString: @"Alphabetically"]) {
         
         NSSortDescriptor *sortDescriptor;
-        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"typeOfFood"
+        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"foodName"
                                                      ascending:YES
                                                       selector:@selector(localizedCaseInsensitiveCompare:)];
         NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
