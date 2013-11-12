@@ -48,6 +48,10 @@
 		16D254B418203D21006079CD /* star_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254AA18203D21006079CD /* star_highlighted.png */; };
 		16D254B518203D21006079CD /* star_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254AB18203D21006079CD /* star_highlighted@2x.png */; };
 		16D254B618203D21006079CD /* UIView+Subviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D254AD18203D21006079CD /* UIView+Subviews.m */; };
+		16FD24141832B16700F01CAD /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD24121832B16700F01CAD /* ContentViewController.m */; };
+		16FD24151832B16700F01CAD /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16FD24131832B16700F01CAD /* ContentViewController.xib */; };
+		16FD24191832B3F600F01CAD /* ReviewPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD24171832B3F600F01CAD /* ReviewPagesViewController.m */; };
+		16FD241A1832B3F600F01CAD /* ReviewPagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16FD24181832B3F600F01CAD /* ReviewPagesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +120,12 @@
 		16D254AB18203D21006079CD /* star_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlighted@2x.png"; sourceTree = "<group>"; };
 		16D254AC18203D21006079CD /* UIView+Subviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Subviews.h"; sourceTree = "<group>"; };
 		16D254AD18203D21006079CD /* UIView+Subviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Subviews.m"; sourceTree = "<group>"; };
+		16FD24111832B16700F01CAD /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentViewController.h; path = ../ContentViewController.h; sourceTree = "<group>"; };
+		16FD24121832B16700F01CAD /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentViewController.m; path = ../ContentViewController.m; sourceTree = "<group>"; };
+		16FD24131832B16700F01CAD /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentViewController.xib; path = ../ContentViewController.xib; sourceTree = "<group>"; };
+		16FD24161832B3F600F01CAD /* ReviewPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewPagesViewController.h; sourceTree = "<group>"; };
+		16FD24171832B3F600F01CAD /* ReviewPagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewPagesViewController.m; sourceTree = "<group>"; };
+		16FD24181832B3F600F01CAD /* ReviewPagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewPagesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +205,12 @@
 		16D25444181B0E6F006079CD /* CampusCritic */ = {
 			isa = PBXGroup;
 			children = (
+				16FD24111832B16700F01CAD /* ContentViewController.h */,
+				16FD24121832B16700F01CAD /* ContentViewController.m */,
+				16FD24131832B16700F01CAD /* ContentViewController.xib */,
+				16FD24161832B3F600F01CAD /* ReviewPagesViewController.h */,
+				16FD24171832B3F600F01CAD /* ReviewPagesViewController.m */,
+				16FD24181832B3F600F01CAD /* ReviewPagesViewController.xib */,
 				16D2544D181B0E6F006079CD /* AppDelegate.h */,
 				16D2544E181B0E6F006079CD /* AppDelegate.m */,
 				16D25450181B0E6F006079CD /* Main.storyboard */,
@@ -361,6 +377,8 @@
 				040EDC441828336F0041D17C /* NutritionFacts.png in Resources */,
 				16D254B218203D21006079CD /* star_highlighted-darker.png in Resources */,
 				16D254B418203D21006079CD /* star_highlighted.png in Resources */,
+				16FD241A1832B3F600F01CAD /* ReviewPagesViewController.xib in Resources */,
+				16FD24151832B16700F01CAD /* ContentViewController.xib in Resources */,
 				16D254B318203D21006079CD /* star_highlighted-darker@2x.png in Resources */,
 				16D254B518203D21006079CD /* star_highlighted@2x.png in Resources */,
 				16D25452181B0E6F006079CD /* Main.storyboard in Resources */,
@@ -386,12 +404,14 @@
 				042769DF18205CBE00452B79 /* ContributeViewController.m in Sources */,
 				16D254AF18203D21006079CD /* DLStarView.m in Sources */,
 				16D25455181B0E6F006079CD /* ViewController.m in Sources */,
+				16FD24141832B16700F01CAD /* ContentViewController.m in Sources */,
 				16D2549B181F62F9006079CD /* SingleItemsViewController.m in Sources */,
 				16D2544F181B0E6F006079CD /* AppDelegate.m in Sources */,
 				16D25475181B0EFC006079CD /* FoodItemsTableViewController.m in Sources */,
 				16D2548C181E1585006079CD /* FoodItemsTableCell.m in Sources */,
 				16D2544B181B0E6F006079CD /* main.m in Sources */,
 				16AD6B711828C781006926B7 /* OrganizeViewController.m in Sources */,
+				16FD24191832B3F600F01CAD /* ReviewPagesViewController.m in Sources */,
 				16D254B618203D21006079CD /* UIView+Subviews.m in Sources */,
 				16D25498181F0F35006079CD /* NutritionFactsViewController.m in Sources */,
 			);
