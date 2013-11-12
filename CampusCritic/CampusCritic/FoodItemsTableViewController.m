@@ -101,92 +101,6 @@
     PFQuery *query = [PFQuery queryWithClassName:@"foodInformationCSV"];
     [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodInformationCallback:error:)];
     
-    //@"Alphabetically", @"By Rating", @"By Price", @"By Calories"
-    
-    NSLog(@"Passed Sort Option: %@", self.passedSortOption);
-    
-    if ([self.passedSortOption  isEqual: @"Alphabetically"]) {
-        
-        NSLog(@"Sorted Alphabetically");
-        
-        NSSortDescriptor *sortDescriptor;
-        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"typeOfFood"
-                                                     ascending:YES
-                                                      selector:@selector(localizedCaseInsensitiveCompare:)];
-        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-        self.foodItems = [self.foodItems sortedArrayUsingDescriptors:sortDescriptors];
-        
-        [self.tableView reloadData];
-        
-    } else if ([self.passedSortOption  isEqualToString: @"By Rating"]) {
-        
-        NSLog(@"Sorted By Rating");
-        
-        NSLog(@"Unsorted Array: %@", self.foodItems);
-        
-        self.foodItems = [self.foodItems sortedArrayUsingComparator:^(NSDictionary *obj1, NSDictionary *obj2) {
-            NSDictionary *food1 = obj1;
-            NSDictionary *food2 = obj2;
-            NSNumber *rating1 = food1[@"rating"];
-            NSNumber *rating2 = food2[@"rating"];
-            
-            return [rating1 compare:rating2];
-        }];
-        
-        NSLog(@"Sorted Array: %@", self.foodItems);
-        
-        [self.tableView reloadData];
-        
-    } else if ([self.passedSortOption  isEqualToString: @"By Price"]) {
-        
-        NSLog(@"Sorted By Price");
-        
-        self.foodItems = [self.foodItems sortedArrayUsingComparator:^(NSDictionary *obj1, NSDictionary *obj2) {
-            NSDictionary *food1 = obj1;
-            NSDictionary *food2 = obj2;
-            NSNumber *price1 = food1[@"Price"];
-            NSNumber *price2 = food2[@"Price"];
-            
-            return [price1 compare:price2];
-        }];
-        
-        NSLog(@"%@", self.foodItems);
-        
-        [self.tableView reloadData];
-        
-    } else if ([self.passedSortOption  isEqualToString: @"By Calories"]) {
-        
-        NSLog(@"Sorted By Calories");
-        
-        self.foodItems = [self.foodItems sortedArrayUsingComparator:^(id obj1, id obj2) {
-            NSDictionary *food1 = obj1;
-            NSDictionary *food2 = obj2;
-            NSNumber *calories1 = food1[@"Calories"];
-            NSNumber *calories2 = food2[@"Calories"];
-            
-            return [calories1 compare:calories2];
-        }];
-        
-        [self.tableView reloadData];
-        
-    } else if ([self.passedSortOption isEqual:NULL]) {
-        
-        //Sort foodItems Array Alphabetically by foodItem[@"foodName"] (Default)
-        NSSortDescriptor *sortDescriptor;
-        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"foodName"
-                                                     ascending:YES
-                                                      selector:@selector(localizedCaseInsensitiveCompare:)];
-        
-        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-        
-        //Return Alphabetically Sorted Array
-        self.foodItems = [self.foodItems sortedArrayUsingDescriptors:sortDescriptors];
-        
-        //Reload tableView
-        [self.tableView reloadData];
-        
-    }
-    
 }
 
 - (IBAction) unwindFromOrganizationPicker:(UIStoryboardSegue*) segue
@@ -202,11 +116,7 @@
     self.vegetarianFilter = organizationViewController.vegetarian;
     self.glutenFreeFilter = organizationViewController.glutenFree;
     
-    NSLog(@"Passed Sort Option: %@", self.passedSortOption);
-    
     if ([self.passedSortOption  isEqual: @"Alphabetically"]) {
-        
-        NSLog(@"Sorted Alphabetically");
         
         NSSortDescriptor *sortDescriptor;
         sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"typeOfFood"
@@ -219,10 +129,6 @@
         
     } else if ([self.passedSortOption  isEqualToString: @"By Rating"]) {
         
-        NSLog(@"Sorted By Rating");
-        
-        NSLog(@"Unsorted Array: %@", self.foodItems);
-        
         self.foodItems = [self.foodItems sortedArrayUsingComparator:^(id obj1, id obj2) {
             NSDictionary *food1 = obj1;
             NSDictionary *food2 = obj2;
@@ -232,13 +138,9 @@
             return [rating2 compare:rating1];
         }];
         
-        NSLog(@"Sorted Array: %@", self.foodItems);
-        
         [self.tableView reloadData];
         
     } else if ([self.passedSortOption  isEqualToString: @"By Price"]) {
-        
-        NSLog(@"Sorted By Price");
         
         self.foodItems = [self.foodItems sortedArrayUsingComparator:^(id obj1, id obj2) {
             NSDictionary *food1 = obj1;
@@ -249,13 +151,9 @@
             return [price1 compare:price2];
         }];
         
-        NSLog(@"%@", self.foodItems);
-        
         [self.tableView reloadData];
         
     } else if ([self.passedSortOption  isEqualToString: @"By Calories"]) {
-        
-        NSLog(@"Sorted By Calories");
         
         self.foodItems = [self.foodItems sortedArrayUsingComparator:^(id obj1, id obj2) {
             NSDictionary *food1 = obj1;
