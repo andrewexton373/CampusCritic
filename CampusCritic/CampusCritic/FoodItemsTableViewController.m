@@ -199,7 +199,7 @@
     
     //Pass Filters to Table View
     self.veganFilter = organizationViewController.vegan;
-    self.vegatarianFilter = organizationViewController.vegatarian;
+    self.vegetarianFilter = organizationViewController.vegetarian;
     self.glutenFreeFilter = organizationViewController.glutenFree;
     
     NSLog(@"Passed Sort Option: %@", self.passedSortOption);

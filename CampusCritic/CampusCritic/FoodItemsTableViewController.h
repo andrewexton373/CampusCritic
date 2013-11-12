@@ -17,7 +17,7 @@
 @property (strong, nonatomic) NSString *passedSortOption;
 
 @property BOOL veganFilter;
-@property BOOL vegatarianFilter;
+@property BOOL vegetarianFilter;
 @property BOOL glutenFreeFilter;
 
 @property (strong, nonatomic) NSArray *sortedFoodItems;
