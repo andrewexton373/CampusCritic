@@ -100,5 +100,18 @@
     }
 }
 
+- (IBAction)dairyFreeSwitch:(UISwitch*)sender
+{
+    
+    
+    if (sender.on) {
+        self.dairyFree = true;
+        NSLog(@"Dairy Free Switch on");
+    } else {
+        self.dairyFree = false;
+    }
+
+}
+
 
 @end

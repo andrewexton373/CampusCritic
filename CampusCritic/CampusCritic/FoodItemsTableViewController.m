@@ -18,7 +18,7 @@
 
 @implementation FoodItemsTableViewController
 
-@synthesize passedSortOption, filteredFoodItemsArray, foodItemSearchBar, sortedFoodItems, foodItems;
+@synthesize passedSortOption, filteredFoodItemsArray, foodItemSearchBar, sortedFoodItems, foodItems, veganFilter, vegetarianFilter, glutenFreeFilter, dairyFreeFilter;
 
 - (void) loadFoodInformationCallback: (NSArray*) foodItems error: (NSError*) error
 {
@@ -115,6 +115,35 @@
     self.veganFilter = organizationViewController.vegan;
     self.vegetarianFilter = organizationViewController.vegetarian;
     self.glutenFreeFilter = organizationViewController.glutenFree;
+    self.dairyFreeFilter = organizationViewController.dairyFree;
+    
+    //Begin work on switch, filters already passed here
+    if (self.veganFilter == TRUE) {
+        NSLog(@"The vegan switch is on");
+    }
+    else {
+        NSLog(@"The vegan switch is off");
+    }
+    if (self.vegetarianFilter == TRUE) {
+        NSLog(@"The vegetarian switch is on");
+    }
+    else {
+        NSLog(@"The vegetarian switch is off");
+    }
+    if (self.glutenFreeFilter == TRUE) {
+        NSLog(@"The gluten free switch is on");
+    }
+    else {
+        NSLog(@"The gluten free switch is off");
+    }
+    if (self.dairyFreeFilter == TRUE) {
+        NSLog(@"The dairy free switch is on");
+    }
+    else {
+        NSLog(@"The dairy free switch is off");
+    }
+    
+    //End work on switch
     
     if ([self.passedSortOption  isEqual: @"Alphabetically"]) {
         
@@ -183,6 +212,7 @@
         [self.tableView reloadData];
         
     }
+    
 }
 
 - (void)didReceiveMemoryWarning
