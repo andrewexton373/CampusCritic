@@ -20,9 +20,6 @@
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    UIViewController *paVC = [[UIViewController alloc]init];
-    [[self window] setRootViewController:paVC];
-    
     return YES;
 }
 							

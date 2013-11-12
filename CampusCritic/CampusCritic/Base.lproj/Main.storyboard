@@ -254,6 +254,14 @@
                                 </items>
                                 <color key="barTintColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
                             </toolbar>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0oH-B4-bZ8">
+                                <rect key="frame" x="0.0" y="324" width="320" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="Wkm-jI-hHA" kind="embed" id="SOB-bv-Dng"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -468,6 +476,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t46-yg-Z4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="981" y="113"/>
+        </scene>
+        <!--Review Pages View Controller-->
+        <scene sceneID="xAQ-1N-cSH">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Wkm-jI-hHA" customClass="ReviewPagesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Wp-n1-cet"/>
+                        <viewControllerLayoutGuide type="bottom" id="uFl-nO-E8l"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JZC-dx-Sua">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdJ-oF-2oD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="896"/>
         </scene>
     </scenes>
     <resources>

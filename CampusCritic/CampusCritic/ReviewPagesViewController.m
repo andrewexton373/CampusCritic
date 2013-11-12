@@ -8,6 +8,7 @@
 
 #import "ReviewPagesViewController.h"
 #import "ContentViewController.h"
+#import "SingleItemsViewController.h"
 
 @interface ReviewPagesViewController ()
 
@@ -28,6 +29,7 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
@@ -40,8 +42,11 @@
     self.userReviewsText = [[NSMutableArray alloc]init];
     
     for (int i = 0; i < 10; i++) {
-        [self.userReviewsText addObject:[NSString stringWithFormat:@"Random Text Review Goes Here and this is # %d", i]];
+        [self.userReviewsText addObject:[NSString stringWithFormat:@"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. %d", i]];
     }
+    
+    
+    
     
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
@@ -54,14 +59,15 @@
     [[self pageViewController]setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     [self.pageViewController.view setFrame:self.view.bounds];
-    [self.pageViewController addChildViewController:self.pageViewController];
+    
+    //[self.pageViewController addChildViewController:self.pageViewController];
     
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
  
     NSUInteger index = [self indexOfViewController:(ContentViewController *)viewController];
@@ -74,7 +80,7 @@
     
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     
     NSUInteger index = [self indexOfViewController:(ContentViewController *)viewController];

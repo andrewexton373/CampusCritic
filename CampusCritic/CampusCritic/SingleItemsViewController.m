@@ -9,6 +9,8 @@
 #import "SingleItemsViewController.h"
 #import "NutritionFactsViewController.h"
 #import "ContributeViewController.h"
+#import "ReviewPagesViewController.h"
+#import "ContentViewController.h"
 #import "DLStarRatingControl.h"
 #import "DLStarView.h"
 #import <Parse/Parse.h>
