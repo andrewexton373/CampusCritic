@@ -9,6 +9,7 @@
 #import "ReviewPagesViewController.h"
 #import "ContentViewController.h"
 #import "SingleItemsViewController.h"
+#import <Parse/Parse.h>
 
 @interface ReviewPagesViewController ()
 
@@ -27,44 +28,50 @@
     return self;
 }
 
+- (void) loadFoodInformationCallback: (NSArray*) foodItemReviews error: (NSError*) error
+{
+    
+    //If there was not an error loading foodItems from Parse...
+    if (!error) {
+        
+        //Set foodItems Array from Data from Parse
+        self.foodItemReviews = foodItemReviews;
+        
+        NSLog(foodItemReviews);
+        
+        /*
+        self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+        
+        [self.pageViewController setDataSource:self];
+        
+        ContentViewController *initialVC = [self viewControllerAtIndex:0];
+        
+        NSArray *viewControllers = [NSArray arrayWithObject:initialVC];
+        
+        [[self pageViewController]setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+        
+        [self.pageViewController.view setFrame:self.view.bounds];
+        
+        //[self.pageViewController addChildViewController:self.pageViewController];
+        
+        [self.view addSubview:self.pageViewController.view];
+        [self.pageViewController didMoveToParentViewController:self];
+        */
+    }
+}
+
 - (void)viewDidLoad
 {
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.userNames = [[NSMutableArray alloc]init];
+    SingleItemsViewController *siVC = [[SingleItemsViewController alloc]init];
     
-    for (int i = 0; i < 10; i++) {
-        [self.userNames addObject:[NSString stringWithFormat:@"User Name %d", i]];
-    }
-    
-    self.userReviewsText = [[NSMutableArray alloc]init];
-    
-    for (int i = 0; i < 10; i++) {
-        [self.userReviewsText addObject:[NSString stringWithFormat:@"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. %d", i]];
-    }
-    
-    
-    
-    
-    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
-    [self.pageViewController setDataSource:self];
-    
-    ContentViewController *initialVC = [self viewControllerAtIndex:0];
-    
-    NSArray *viewControllers = [NSArray arrayWithObject:initialVC];
-    
-    [[self pageViewController]setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    
-    [self.pageViewController.view setFrame:self.view.bounds];
-    
-    //[self.pageViewController addChildViewController:self.pageViewController];
-    
-    [self.view addSubview:self.pageViewController.view];
-    [self.pageViewController didMoveToParentViewController:self];
-    
+    PFQuery *query = [PFQuery queryWithClassName:@"Reviews"];
+    [query whereKey:@"foodItem" equalTo:[NSString stringWithFormat:@"%@", siVC.passedFoodItem[@"objectId"]]];
+    [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodInformationCallback:error:)];
+
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
@@ -94,18 +101,18 @@
 }
 
 - (NSUInteger) indexOfViewController:(ContentViewController *)viewController {
-    return [self.userReviewsText indexOfObject:viewController.dataObject1];
+    return [self.foodItemReviews indexOfObject:viewController.dataObject1];
 }
 
 - (ContentViewController *) viewControllerAtIndex:(NSInteger)index {
     
-    if (index > self.userReviewsText.count - 1) {
+    if (index > self.foodItemReviews.count - 1) {
         return nil;
     }
     
     ContentViewController *cVC = [[ContentViewController alloc]init];
-    [cVC setDataObject1:[self.userReviewsText objectAtIndex:index]];
-    [cVC setDataObject2:[self.userNames objectAtIndex:index]];
+    [cVC setDataObject1:[self.foodItemReviews[index] objectForKey:@"userReview"]];
+    [cVC setDataObject2:[self.foodItemReviews[index] objectForKey:@"userName"]];
     
     return cVC;
     
