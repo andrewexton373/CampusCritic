@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) NSArray *passedFoodItems;
 @property bool vegan;
-@property bool vegatarian;
+@property bool vegetarian;
 @property bool glutenFree;
 
 

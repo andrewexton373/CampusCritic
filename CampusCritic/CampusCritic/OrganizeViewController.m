@@ -15,7 +15,7 @@
 
 @implementation OrganizeViewController
 
-@synthesize sortOptionsArray, sortOptionPicker, selectedSortOption, vegan, vegatarian, glutenFree;
+@synthesize sortOptionsArray, sortOptionPicker, selectedSortOption, vegan, vegetarian, glutenFree;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -69,8 +69,10 @@
 
 - (IBAction)veganSwitch:(UISwitch*)sender
 {
+    
     if (sender.on) {
         self.vegan = true;
+        NSLog(@"Vegan Switch on");
     } else {
         self.vegan = false;
     }
@@ -78,13 +80,24 @@
 
 - (IBAction)vegetarianSwitch:(UISwitch*)sender
 {
-
-
+    
+    if (sender.on) {
+        self.vegetarian = true;
+        NSLog(@"Vegetarian Switch on");
+    } else {
+        self.vegetarian = false;
+    }
 }
 
 - (IBAction)glutenFreeSwitch:(UISwitch*)sender
 {
-
+    
+    if (sender.on) {
+        self.glutenFree = true;
+        NSLog(@"Gluten Free Switch on");
+    } else {
+        self.glutenFree = false;
+    }
 }
 
 
