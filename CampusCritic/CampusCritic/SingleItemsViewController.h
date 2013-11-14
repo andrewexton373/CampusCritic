@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SingleItemsViewController : UIViewController<UIPageViewControllerDataSource>
+@interface SingleItemsViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *passedFoodItem;
-
-@property (nonatomic, strong) UIPageViewController *pageViewController;
 
 @end
