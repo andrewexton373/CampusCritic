@@ -8,6 +8,7 @@
 
 #import "SingleItemsViewController.h"
 #import "NutritionFactsViewController.h"
+#import "ContributeViewController.h"
 #import "DLStarRatingControl.h"
 #import "DLStarView.h"
 #import <Parse/Parse.h>
@@ -23,14 +24,21 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"nutritionFactsSegue"])
+    
     {
-        NutritionFactsViewController *nutritionFactsViewController =
-        [segue destinationViewController];
-        
-        nutritionFactsViewController.foodItem = _passedFoodItem;
-    }
-}
 
+        NutritionFactsViewController *nutritionFactsViewController = [segue destinationViewController];
+    }
+    
+    if ([[segue identifier] isEqualToString:@"toContribute"])
+    {
+        ContributeViewController *contributeViewController = [segue destinationViewController];
+        
+        contributeViewController.passedFoodItem = _passedFoodItem;
+    }
+    
+}
+    
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
