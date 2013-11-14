@@ -27,6 +27,28 @@
     return self;
 }
 
+- (void) loadFoodReviewsCallback: (NSArray*) foodReviews error: (NSError*) error
+{
+    
+    //If there was not an error loading foodItems from Parse...
+    if (!error) {
+        
+        //Set foodItems Array from Data from Parse
+        self.foodReviews = foodReviews;
+        
+        NSLog([NSString stringWithFormat:@"%@", self.foodReviews]);
+        
+    }
+}
+
+
+- (void)viewWillAppear
+{
+    
+
+    
+}
+
 - (void)viewDidLoad
 {
     
@@ -45,6 +67,9 @@
         [self.userReviewsText addObject:[NSString stringWithFormat:@"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. %d", i]];
     }
     
+    PFQuery *query = [PFQuery queryWithClassName:@"Reviews"];
+    [query whereKey:@"foodItem" equalTo:(@"0xQkV1Afaj")];
+    [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodReviewsCallback:error:)];
     
     
     
