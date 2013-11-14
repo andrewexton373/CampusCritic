@@ -11,7 +11,7 @@
 @interface ReviewPagesViewController : UIViewController<UIPageViewControllerDataSource>
 
 @property (nonatomic, strong) UIPageViewController *pageViewController;
-
-@property (nonatomic, strong) NSArray *foodItemReviews;
+@property (nonatomic, strong) NSMutableArray *userReviewsText;
+@property (nonatomic, strong) NSMutableArray *userNames;
 
 @end
