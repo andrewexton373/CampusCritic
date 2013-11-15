@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		040EDC441828336F0041D17C /* NutritionFacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EDC431828336F0041D17C /* NutritionFacts.png */; };
 		042769DF18205CBE00452B79 /* ContributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042769DE18205CBE00452B79 /* ContributeViewController.m */; };
+		0918DF5B1836A41600E832CD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0918DF5A1836A41600E832CD /* Parse.framework */; };
 		1692152218355D4300936D24 /* ReviewPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1692152018355D4300936D24 /* ReviewPagesViewController.m */; };
 		1692152318355D4300936D24 /* ReviewPagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1692152118355D4300936D24 /* ReviewPagesViewController.xib */; };
 		1692152718355D5800936D24 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1692152518355D5800936D24 /* ContentViewController.m */; };
@@ -68,6 +69,7 @@
 		040EDC431828336F0041D17C /* NutritionFacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NutritionFacts.png; sourceTree = "<group>"; };
 		042769DD18205CBE00452B79 /* ContributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributeViewController.h; sourceTree = "<group>"; };
 		042769DE18205CBE00452B79 /* ContributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributeViewController.m; sourceTree = "<group>"; };
+		0918DF5A1836A41600E832CD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1692151F18355D4300936D24 /* ReviewPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewPagesViewController.h; sourceTree = "<group>"; };
 		1692152018355D4300936D24 /* ReviewPagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewPagesViewController.m; sourceTree = "<group>"; };
 		1692152118355D4300936D24 /* ReviewPagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewPagesViewController.xib; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				16D2547D181B121A006079CD /* CoreLocation.framework in Frameworks */,
 				16D25441181B0E6F006079CD /* CoreGraphics.framework in Frameworks */,
 				16D2547B181B1210006079CD /* CFNetwork.framework in Frameworks */,
+				0918DF5B1836A41600E832CD /* Parse.framework in Frameworks */,
 				16D25479181B1208006079CD /* AudioToolbox.framework in Frameworks */,
 				16D25443181B0E6F006079CD /* UIKit.framework in Frameworks */,
 				16D2543F181B0E6F006079CD /* Foundation.framework in Frameworks */,
@@ -184,6 +187,7 @@
 		16D2543D181B0E6F006079CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0918DF5A1836A41600E832CD /* Parse.framework */,
 				3CAC2A31182C381C0097B739 /* Parse.framework */,
 				16D25488181B1245006079CD /* SystemConfiguration.framework */,
 				16D25486181B123D006079CD /* StoreKit.framework */,
@@ -546,6 +550,7 @@
 					"/Users/Mac/Dropbox/School/Y1Q1/CPE\\ 123\\ LAB/CampusCritic/parsetest",
 					/Users/andrewexton/CampusCritic/CampusCritic,
 					/Users/cneyman/Desktop,
+					/Users/michellelam/Desktop/CampusCritic/CampusCritic,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusCritic/CampusCritic-Prefix.pch";
@@ -566,6 +571,7 @@
 					"/Users/Mac/Dropbox/School/Y1Q1/CPE\\ 123\\ LAB/CampusCritic/parsetest",
 					/Users/andrewexton/CampusCritic/CampusCritic,
 					/Users/cneyman/Desktop,
+					/Users/michellelam/Desktop/CampusCritic/CampusCritic,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusCritic/CampusCritic-Prefix.pch";

@@ -16,6 +16,8 @@
 @interface SingleItemsViewController ()
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *foodItemName;
+@property (strong, nonatomic) IBOutlet UIImageView *image;
+
 
 @end
 
@@ -62,7 +64,33 @@
     ratingControl.rating = rating;
     [ratingControl setEnabled:NO];
     [self.view addSubview:ratingControl];
+    
 
+    NSString *urlstring = @"http://2.bp.blogspot.com/-FRXRSYuhE0c/UWGCSprGLGI/AAAAAAAAAFA/vntZWxraEjI/s320/Fish%2BIphone%2BWallpaper.jpg";
+    NSURL *url = [NSURL URLWithString:urlstring];
+    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
+    UIImageView *image = [ini
+                          
+    PFQuery *query = 
+    
+    
+   /* PFQuery *query = [PFQuery queryWithClassName:@"pictures"];
+    [query getObjectInBackgroundWithId:@"ZehLFqKUYk"
+                                 block:^(PFObject *uploadedPictures, NSError *error) {
+                                     {
+                                         if (!error) {
+                                             PFFile *imageFile = [uploadedPictures objectForKey:@"uploadedPictures"];
+                                             [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                                                 if (!error) {
+                                                     UIImage *image = [UIImage imageWithData:data];
+                                                     image = [UIImage imageWithData:@"imageData"];
+                                                     imagedata =
+                                                 }
+                                             }];
+                                         }
+                                     }];
+ 
+    */
 }
 
 - (void)didReceiveMemoryWarning
