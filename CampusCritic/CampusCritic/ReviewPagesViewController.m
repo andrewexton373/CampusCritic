@@ -16,7 +16,7 @@
 
 @implementation ReviewPagesViewController
 
-@synthesize pageViewController;
+@synthesize pageViewController, userNames, userReviews;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,43 +27,69 @@
     return self;
 }
 
+- (void) loadFoodReviewsCallback: (NSArray*) foodReviews error: (NSError*) error
+{
+    
+    //If there was not an error loading foodItems from Parse...
+    if (!error) {
+        
+        //Set foodItems Array from Data from Parse
+        self.foodReviews = foodReviews;
+        
+        self.userReviews = [NSMutableArray arrayWithCapacity:self.foodReviews.count];
+        self.userNames = [NSMutableArray arrayWithCapacity:self.foodReviews.count];
+        
+        for (id review in self.foodReviews) {
+            [self.userReviews addObject:[review objectForKey:@"userReview"]];
+            [self.userNames addObject:[review objectForKey:@"userName"]];
+        }
+        
+        NSLog(@"%@", self.userReviews);
+        NSLog(@"%@", self.userNames);
+        
+        NSLog(@"%@", self.userReviews[1]);
+        
+        //If foodReviews has a review entry, then add the pages subview
+        if ([self.foodReviews count] != 0) {
+
+            self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+            
+            [self.pageViewController setDataSource:self];
+            
+            ContentViewController *initialVC = [self viewControllerAtIndex:0];
+            
+            NSArray *viewControllers = [NSArray arrayWithObject:initialVC];
+            
+            [[self pageViewController]setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+            
+            [self.pageViewController.view setFrame:self.view.bounds];
+            
+            //[self.pageViewController addChildViewController:self.pageViewController];
+            
+            [self.view addSubview:self.pageViewController.view];
+            [self.pageViewController didMoveToParentViewController:self];
+            
+        }
+    }
+}
+
+
+- (void)viewWillAppear
+{
+    
+
+    
+}
+
 - (void)viewDidLoad
 {
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.userNames = [[NSMutableArray alloc]init];
-    
-    for (int i = 0; i < 10; i++) {
-        [self.userNames addObject:[NSString stringWithFormat:@"User Name %d", i]];
-    }
-    
-    self.userReviewsText = [[NSMutableArray alloc]init];
-    
-    for (int i = 0; i < 10; i++) {
-        [self.userReviewsText addObject:[NSString stringWithFormat:@"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. %d", i]];
-    }
-    
-    
-    
-    
-    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
-    [self.pageViewController setDataSource:self];
-    
-    ContentViewController *initialVC = [self viewControllerAtIndex:0];
-    
-    NSArray *viewControllers = [NSArray arrayWithObject:initialVC];
-    
-    [[self pageViewController]setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    
-    [self.pageViewController.view setFrame:self.view.bounds];
-    
-    //[self.pageViewController addChildViewController:self.pageViewController];
-    
-    [self.view addSubview:self.pageViewController.view];
-    [self.pageViewController didMoveToParentViewController:self];
+    PFQuery *query = [PFQuery queryWithClassName:@"Reviews"];
+    [query whereKey:@"foodItem" equalTo:self.foodItem];
+    [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodReviewsCallback:error:)];
     
 }
 
@@ -75,7 +101,9 @@
     if (index==NSNotFound) {
         return nil;
     }
+    
     index++;
+    
     return [self viewControllerAtIndex:index];
     
 }
@@ -88,24 +116,29 @@
     if (index==0 || index==NSNotFound) {
         return nil;
     }
+    
     index--;
+    
     return [self viewControllerAtIndex:index];
     
 }
 
 - (NSUInteger) indexOfViewController:(ContentViewController *)viewController {
-    return [self.userReviewsText indexOfObject:viewController.dataObject1];
+    
+    return [self.userReviews indexOfObject:viewController.dataObject1];
+    
 }
 
 - (ContentViewController *) viewControllerAtIndex:(NSInteger)index {
     
-    if (index > self.userReviewsText.count - 1) {
+    if (index > self.foodReviews.count - 1) {
         return nil;
     }
     
     ContentViewController *cVC = [[ContentViewController alloc]init];
-    [cVC setDataObject1:[self.userReviewsText objectAtIndex:index]];
-    [cVC setDataObject2:[self.userNames objectAtIndex:index]];
+    
+    [cVC setDataObject1:self.userReviews[index]];
+    [cVC setDataObject2:self.userNames[index]];
     
     return cVC;
     
