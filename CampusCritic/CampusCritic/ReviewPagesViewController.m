@@ -16,7 +16,7 @@
 
 @implementation ReviewPagesViewController
 
-@synthesize pageViewController;
+@synthesize pageViewController, userNames, userReviews;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,8 +36,18 @@
         //Set foodItems Array from Data from Parse
         self.foodReviews = foodReviews;
         
-        NSLog(@"%@", self.foodReviews);
+        self.userReviews = [NSMutableArray arrayWithCapacity:self.foodReviews.count];
+        self.userNames = [NSMutableArray arrayWithCapacity:self.foodReviews.count];
         
+        for (id review in self.foodReviews) {
+            [self.userReviews addObject:[review objectForKey:@"userReview"]];
+            [self.userNames addObject:[review objectForKey:@"userName"]];
+        }
+        
+        NSLog(@"%@", self.userReviews);
+        NSLog(@"%@", self.userNames);
+        
+        NSLog(@"%@", self.userReviews[1]);
         
         //If foodReviews has a review entry, then add the pages subview
         if ([self.foodReviews count] != 0) {
@@ -91,7 +101,9 @@
     if (index==NSNotFound) {
         return nil;
     }
+    
     index++;
+    
     return [self viewControllerAtIndex:index];
     
 }
@@ -104,14 +116,16 @@
     if (index==0 || index==NSNotFound) {
         return nil;
     }
+    
     index--;
+    
     return [self viewControllerAtIndex:index];
     
 }
 
 - (NSUInteger) indexOfViewController:(ContentViewController *)viewController {
     
-    return [self.foodReviews indexOfObject:viewController.dataObject1];
+    return [self.userReviews indexOfObject:viewController.dataObject1];
     
 }
 
@@ -121,11 +135,10 @@
         return nil;
     }
     
-    NSDictionary *foodReview = [self.foodReviews objectAtIndex:index];
-    
     ContentViewController *cVC = [[ContentViewController alloc]init];
-    [cVC setDataObject1:foodReview[@"userReview"]];
-    [cVC setDataObject2:foodReview[@"userName"]];
+    
+    [cVC setDataObject1:self.userReviews[index]];
+    [cVC setDataObject2:self.userNames[index]];
     
     return cVC;
     
