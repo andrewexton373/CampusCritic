@@ -8,6 +8,7 @@
 
 #import "SingleItemsViewController.h"
 #import "NutritionFactsViewController.h"
+#import "ReviewPagesViewController.h"
 #import "DLStarRatingControl.h"
 #import "DLStarView.h"
 #import <Parse/Parse.h>
@@ -28,6 +29,15 @@
         [segue destinationViewController];
         
         nutritionFactsViewController.foodItem = _passedFoodItem;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"reviewsContainer"])
+    {
+        
+        ReviewPagesViewController *vC = [segue destinationViewController];
+        
+        vC.foodItem = self.passedFoodItem;
+        
     }
 }
 

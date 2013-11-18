@@ -259,7 +259,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="zjC-fc-rPu" kind="embed" id="hQe-sY-WNf"/>
+                                    <segue destination="zjC-fc-rPu" kind="embed" identifier="reviewsContainer" id="hQe-sY-WNf"/>
                                 </connections>
                             </containerView>
                         </subviews>
