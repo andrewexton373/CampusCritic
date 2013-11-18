@@ -89,10 +89,14 @@
         itemReview[@"userRating"] = self.userRating;
         
         if ([self.userName.text isEqual:@""]) {
-            [self.userName.text isEqual: @"Anonymous"];
+            
+            itemReview[@"userName"] = @"Anonymous";
+            
+        } else {
+            
+            itemReview[@"userName"] = self.userName.text;
+            
         }
-        
-        itemReview[@"userName"] = self.userName.text;
         
         [itemReview saveInBackgroundWithTarget:self selector:@selector(saveCallback:error:)];
         
@@ -104,7 +108,7 @@
     
     if (!error) {
         
-        [self performSegueWithIdentifier: @"saveToThankYou" sender: self];
+        [self performSegueWithIdentifier: @"saveToThankYou" sender:self];
         
     }
 }

@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSDictionary *passedFoodItem;
 
+@property float ratingAverage;
+
 @end

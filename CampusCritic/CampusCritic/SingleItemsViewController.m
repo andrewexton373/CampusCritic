@@ -48,7 +48,39 @@
         
     }
 }
+
+- (void) loadFoodReviewsCallback: (NSArray*) foodReviews error: (NSError*) error
+{
     
+    //If there was not an error loading foodItems from Parse...
+    if (!error) {
+        
+        if (foodReviews.count != 0) {
+            
+            float ratingSum = 0;
+            
+            for (id review in foodReviews) {
+                
+                ratingSum = ratingSum + [review[@"userRating"] integerValue];
+                
+            }
+            
+            self.ratingAverage = ratingSum / foodReviews.count;
+            
+            NSLog(@"%f", self.ratingAverage);
+            
+            // setup a control with 3 fractional stars at a size of 320x230
+            DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 190, 320, 230) andStars:5 isFractional:YES];
+            ratingControl.rating = self.ratingAverage;
+            [ratingControl setEnabled:NO];
+            [self.view addSubview:ratingControl];
+            
+        }
+        
+    }
+}
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -63,15 +95,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    PFQuery *query = [PFQuery queryWithClassName:@"Reviews"];
+    [query whereKey:@"foodItem" equalTo:self.passedFoodItem];
+    [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodReviewsCallback:error:)];
+    
     _foodItemName.title = _passedFoodItem[@"foodName"];
-    
-    float rating = [_passedFoodItem[@"rating"] floatValue];
-    
-    // setup a control with 3 fractional stars at a size of 320x230
-    DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 190, 320, 230) andStars:5 isFractional:YES];
-    ratingControl.rating = rating;
-    [ratingControl setEnabled:NO];
-    [self.view addSubview:ratingControl];
 
 }
 
