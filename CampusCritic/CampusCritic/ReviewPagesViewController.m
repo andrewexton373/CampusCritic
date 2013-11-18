@@ -36,22 +36,19 @@
         //Set foodItems Array from Data from Parse
         self.foodReviews = foodReviews;
         
-        self.userReviews = [NSMutableArray arrayWithCapacity:self.foodReviews.count];
-        self.userNames = [NSMutableArray arrayWithCapacity:self.foodReviews.count];
-        
-        for (id review in self.foodReviews) {
-            [self.userReviews addObject:[review objectForKey:@"userReview"]];
-            [self.userNames addObject:[review objectForKey:@"userName"]];
-        }
-        
-        NSLog(@"%@", self.userReviews);
-        NSLog(@"%@", self.userNames);
-        
-        NSLog(@"%@", self.userReviews[1]);
+
         
         //If foodReviews has a review entry, then add the pages subview
-        if ([self.foodReviews count] != 0) {
-
+        if (self.foodReviews.count != 0) {
+            
+            self.userReviews = [NSMutableArray arrayWithCapacity:self.foodReviews.count];
+            self.userNames = [NSMutableArray arrayWithCapacity:self.foodReviews.count];
+            
+            for (id review in self.foodReviews) {
+                [self.userReviews addObject:[review objectForKey:@"userReview"]];
+                [self.userNames addObject:[review objectForKey:@"userName"]];
+            }
+            
             self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
             
             [self.pageViewController setDataSource:self];

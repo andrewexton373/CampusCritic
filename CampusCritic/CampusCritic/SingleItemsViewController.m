@@ -9,6 +9,7 @@
 #import "SingleItemsViewController.h"
 #import "NutritionFactsViewController.h"
 #import "ContributeViewController.h"
+#import "ReviewPagesViewController.h"
 #import "DLStarRatingControl.h"
 #import "DLStarView.h"
 #import <Parse/Parse.h>
@@ -37,6 +38,14 @@
         contributeViewController.passedFoodItem = _passedFoodItem;
     }
     
+    if ([[segue identifier] isEqualToString:@"reviewsContainer"])
+    {
+        
+        ReviewPagesViewController *vC = [segue destinationViewController];
+        
+        vC.foodItem = self.passedFoodItem;
+        
+    }
 }
     
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
