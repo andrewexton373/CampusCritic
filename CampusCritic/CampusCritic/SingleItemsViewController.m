@@ -27,15 +27,16 @@
     if ([[segue identifier] isEqualToString:@"nutritionFactsSegue"])
     
     {
-
         NutritionFactsViewController *nutritionFactsViewController = [segue destinationViewController];
+        
+        nutritionFactsViewController.foodItem = self.passedFoodItem;
     }
     
     if ([[segue identifier] isEqualToString:@"toContribute"])
     {
         ContributeViewController *contributeViewController = [segue destinationViewController];
         
-        contributeViewController.passedFoodItem = _passedFoodItem;
+        contributeViewController.passedFoodItem = self.passedFoodItem;
     }
     
     if ([[segue identifier] isEqualToString:@"reviewsContainer"])

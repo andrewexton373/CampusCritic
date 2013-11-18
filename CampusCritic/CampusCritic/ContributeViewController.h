@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *userReview;
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 
-@property (weak, nonatomic) PFObject *passedFoodItem;
+@property (weak, nonatomic) NSDictionary *passedFoodItem;
 
 - (IBAction)saveTriggered:(id)sender;
 

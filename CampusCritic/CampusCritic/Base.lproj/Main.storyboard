@@ -379,7 +379,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="mJB-yb-zzT" kind="modal" id="E1y-4d-4Dl"/>
+                        <segue destination="mJB-yb-zzT" kind="modal" modalTransitionStyle="crossDissolve" id="E1y-4d-4Dl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hN4-pA-Yq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
