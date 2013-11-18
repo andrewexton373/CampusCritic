@@ -36,8 +36,6 @@
         //Set foodItems Array from Data from Parse
         self.foodReviews = foodReviews;
         
-
-        
         //If foodReviews has a review entry, then add the pages subview
         if (self.foodReviews.count != 0) {
             
