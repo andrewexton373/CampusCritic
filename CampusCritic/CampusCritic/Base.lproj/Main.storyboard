@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mJB-yb-zzT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mJB-yb-zzT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -27,9 +27,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="wRt-g1-uXG">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="tpW-uc-ac3" id="Nmk-s4-rdI"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="69" id="KeK-gd-55O" customClass="FoodItemsTableCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="69"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KeK-gd-55O" id="ARW-Ee-bgT">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="68"/>
@@ -89,8 +97,20 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="U0D-zc-OeY" id="anx-As-6aY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gw9-tf-hkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="U0D-zc-OeY">
+                    <connections>
+                        <outlet property="delegate" destination="tpW-uc-ac3" id="zfQ-9k-hnJ"/>
+                        <outlet property="searchBar" destination="wRt-g1-uXG" id="Sk8-Io-hVl"/>
+                        <outlet property="searchContentsController" destination="tpW-uc-ac3" id="btA-Nh-jiB"/>
+                        <outlet property="searchResultsDataSource" destination="tpW-uc-ac3" id="iOP-O0-3I6"/>
+                        <outlet property="searchResultsDelegate" destination="tpW-uc-ac3" id="BY4-tL-IEU"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="113" y="113"/>
         </scene>
