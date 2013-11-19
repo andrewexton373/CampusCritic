@@ -33,6 +33,11 @@
     return self;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:YES animated: YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,6 +56,12 @@
     self.totalCarbohydrate.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"carbsG"]];
     self.sugars.text = [NSString stringWithFormat:@"Sugars %@ grams", self.foodItem[@"sugarG"]];
     self.protein.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"proteinG"]];
+}
+
+-(void) viewDidLayoutSubviews
+{
+    [scroller setScrollEnabled: YES];
+    [scroller setContentSize:CGSizeMake (0, 550) ];  //scroller stuff
 }
 
 - (void)didReceiveMemoryWarning

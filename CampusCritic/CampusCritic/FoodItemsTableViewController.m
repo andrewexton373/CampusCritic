@@ -45,6 +45,11 @@
     }
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:YES animated: YES];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"foodSelected"])

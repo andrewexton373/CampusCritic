@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NutritionFactsViewController : UIViewController
+@interface NutritionFactsViewController : UIViewController {
+    
+    __weak IBOutlet UIScrollView *scroller;
+    
+}
 
 @property (nonatomic, weak) NSDictionary *foodItem;
 

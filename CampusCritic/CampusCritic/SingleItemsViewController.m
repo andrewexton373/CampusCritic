@@ -49,6 +49,11 @@
     }
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:NO animated: YES];
+}
+
 - (void) loadFoodReviewsCallback: (NSArray*) foodReviews error: (NSError*) error
 {
     

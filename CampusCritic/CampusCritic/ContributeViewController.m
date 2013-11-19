@@ -16,6 +16,11 @@
 
 @synthesize userRating;
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:YES animated: YES];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
