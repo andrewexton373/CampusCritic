@@ -252,7 +252,8 @@
     
     //Set single cell data
     cell.foodItemName.text = foodItem[@"foodName"];
-    cell.foodItemPrice.text = [NSString stringWithFormat:@"$%@",foodItem[@"foodPrice"]];
+    
+    cell.foodItemPrice.text = [NSString stringWithFormat:@"$%.2f", [foodItem[@"foodPrice"] floatValue]];
     
     UIImage *foodImage = [UIImage imageNamed: @"CCLogo.png"];
     cell.foodItemImage.image = foodImage;

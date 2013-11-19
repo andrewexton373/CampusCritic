@@ -68,14 +68,6 @@
     }
 }
 
-
-- (void)viewWillAppear
-{
-    
-
-    
-}
-
 - (void)viewDidLoad
 {
     
@@ -93,7 +85,7 @@
  
     NSUInteger index = [self indexOfViewController:(ContentViewController *)viewController];
     
-    if (index==NSNotFound) {
+    if (index==NSNotFound || index==self.userReviews.count - 1) {
         return nil;
     }
     
