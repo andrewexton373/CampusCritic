@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iCarousel.h"
 
 @interface SingleItemsViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *passedFoodItem;
-@property (strong, nonatomic) IBOutlet PFImageView *image1;
+@property (readonly) BOOL isDataAvailable;
+@property (nonatomic, readonly, getter = isWrapEnabled) BOOL wrapEnabled;
+@property (strong, nonatomic) IBOutlet iCarousel *carousel;
+
+
+
 
 @end
