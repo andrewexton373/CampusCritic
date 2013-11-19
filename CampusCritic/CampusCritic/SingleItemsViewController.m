@@ -65,13 +65,23 @@
     [ratingControl setEnabled:NO];
     [self.view addSubview:ratingControl];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"pictures"];
 
-    NSString *urlstring = @"http://2.bp.blogspot.com/-FRXRSYuhE0c/UWGCSprGLGI/AAAAAAAAAFA/vntZWxraEjI/s320/Fish%2BIphone%2BWallpaper.jpg";
-    NSURL *url = [NSURL URLWithString:urlstring];
-    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
-    UIImageView *image = [ini
-                          
-    PFQuery *query = 
+    PFObject *object_image1 = [[query getFirstObject] objectForKey:@"ZehLFqKUYk"];
+  //  PFImageView *image1 =[PFObject *object_image1:@"ZehLFqKUYk"];
+    PFImageView *image1 = [[PFImageView alloc] init];
+    
+    PFFile *userImageFile = anotherPhoto[@"imageFile"];
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:imageData];
+        }
+    }];
+    
+ //   UICollectionViewCell *cell1 = [UICollectionView ];
+
+    
+    
     
     
    /* PFQuery *query = [PFQuery queryWithClassName:@"pictures"];

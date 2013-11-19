@@ -11,5 +11,6 @@
 @interface SingleItemsViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *passedFoodItem;
+@property (strong, nonatomic) IBOutlet PFImageView *image1;
 
 @end
