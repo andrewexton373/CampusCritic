@@ -9,12 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
 
-@interface SingleItemsViewController : UIViewController
+@interface SingleItemsViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
 @property (nonatomic, strong) NSDictionary *passedFoodItem;
-@property (readonly) BOOL isDataAvailable;
-@property (nonatomic, readonly, getter = isWrapEnabled) BOOL wrapEnabled;
-@property (strong, nonatomic) IBOutlet iCarousel *carousel;
+
 
 
 

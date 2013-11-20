@@ -240,8 +240,8 @@
                                     <segue destination="zjC-fc-rPu" kind="embed" id="hQe-sY-WNf"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qkf-CG-mk1" customClass="iCarousel">
-                                <rect key="frame" x="0.0" y="64" width="320" height="259"/>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qkf-CG-mk1">
+                                <rect key="frame" x="0.0" y="64" width="320" height="261"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -253,7 +253,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Food Item Name" id="dPE-9l-L10"/>
                     <connections>
-                        <outlet property="carousel" destination="Qkf-CG-mk1" id="Vdx-ow-vxT"/>
+                        <outlet property="carouselContainerView" destination="Qkf-CG-mk1" id="68N-Ha-bvQ"/>
                         <outlet property="foodItemName" destination="dPE-9l-L10" id="2dh-aV-Vns"/>
                     </connections>
                 </viewController>
@@ -467,8 +467,8 @@
                         <viewControllerLayoutGuide type="top" id="Faq-zs-Bvz"/>
                         <viewControllerLayoutGuide type="bottom" id="IRE-BM-30g"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UaM-Lm-Hbm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="259"/>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UaM-Lm-Hbm" customClass="iCarousel">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="261"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -476,6 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLG-ha-D9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="81" y="-296"/>
         </scene>
     </scenes>
     <resources>
