@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		040EDC441828336F0041D17C /* NutritionFacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EDC431828336F0041D17C /* NutritionFacts.png */; };
+		04187DAA183C6EF8009E448A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04187DA9183C6EF8009E448A /* MBProgressHUD.m */; };
 		042769DF18205CBE00452B79 /* ContributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042769DE18205CBE00452B79 /* ContributeViewController.m */; };
 		1692152218355D4300936D24 /* ReviewPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1692152018355D4300936D24 /* ReviewPagesViewController.m */; };
 		1692152318355D4300936D24 /* ReviewPagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1692152118355D4300936D24 /* ReviewPagesViewController.xib */; };
@@ -66,6 +67,8 @@
 
 /* Begin PBXFileReference section */
 		040EDC431828336F0041D17C /* NutritionFacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NutritionFacts.png; sourceTree = "<group>"; };
+		04187DA8183C6EF8009E448A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		04187DA9183C6EF8009E448A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		042769DD18205CBE00452B79 /* ContributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributeViewController.h; sourceTree = "<group>"; };
 		042769DE18205CBE00452B79 /* ContributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributeViewController.m; sourceTree = "<group>"; };
 		1692151F18355D4300936D24 /* ReviewPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewPagesViewController.h; sourceTree = "<group>"; };
@@ -162,6 +165,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04187DAB183C6EFE009E448A /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				04187DA8183C6EF8009E448A /* MBProgressHUD.h */,
+				04187DA9183C6EF8009E448A /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		16D25432181B0E6F006079CD = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +242,7 @@
 				1692152618355D5800936D24 /* ContentViewController.xib */,
 				16D2548D181E19CD006079CD /* CCLogo.png */,
 				040EDC431828336F0041D17C /* NutritionFacts.png */,
+				04187DAB183C6EFE009E448A /* MBProgressHUD */,
 				16D254A018203D21006079CD /* DLStarRating */,
 				16D25456181B0E6F006079CD /* Images.xcassets */,
 				16D25445181B0E6F006079CD /* Supporting Files */,
@@ -407,6 +420,7 @@
 				16D2549B181F62F9006079CD /* SingleItemsViewController.m in Sources */,
 				16D2544F181B0E6F006079CD /* AppDelegate.m in Sources */,
 				16D25475181B0EFC006079CD /* FoodItemsTableViewController.m in Sources */,
+				04187DAA183C6EF8009E448A /* MBProgressHUD.m in Sources */,
 				16D2548C181E1585006079CD /* FoodItemsTableCell.m in Sources */,
 				1692152718355D5800936D24 /* ContentViewController.m in Sources */,
 				16D2544B181B0E6F006079CD /* main.m in Sources */,

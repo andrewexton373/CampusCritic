@@ -119,9 +119,21 @@
     
     
     //Set up query object and query from Parse in background
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+	[self.navigationController.view addSubview:HUD];
+	
+	HUD.delegate = self;
+	HUD.labelText = @"Fetching Food Data...";
+	
+	[HUD showWhileExecuting:@selector(myTask) onTarget:self withObject:nil animated:YES];
+}
+
+- (void)myTask {
     PFQuery *query = [PFQuery queryWithClassName:@"foodInformationCSV"];
     [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodInformationCallback:error:)];
     
+    sleep(2);
 }
 
 - (IBAction) unwindFromOrganizationPicker:(UIStoryboardSegue*) segue

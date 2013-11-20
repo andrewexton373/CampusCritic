@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "FoodItemsTableCell.h"
+#import "MBProgressHUD.h"
 
-@interface FoodItemsTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate> {
+@interface FoodItemsTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, MBProgressHUDDelegate> {
     
-
+    MBProgressHUD *HUD;
+    
+	long long expectedLength;
+	long long currentLength;
 }
 
 @property (strong,nonatomic) NSMutableArray *filteredFoodItemsArray;
