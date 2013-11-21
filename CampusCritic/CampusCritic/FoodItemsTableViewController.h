@@ -11,7 +11,7 @@
 #import "Reachability.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 
-@interface FoodItemsTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate> {
+@interface FoodItemsTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, MBProgressHUDDelegate> {
     
 }
 

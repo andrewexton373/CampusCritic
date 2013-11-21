@@ -141,6 +141,7 @@
         
     }
     
+    sleep(2);
 }
 
 - (IBAction) unwindFromOrganizationPicker:(UIStoryboardSegue*) segue
