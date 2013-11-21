@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "FoodItemsTableCell.h"
+#import "Reachability.h"
+#import <SystemConfiguration/SystemConfiguration.h>
 
 @interface FoodItemsTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate> {
     
-
 }
+
+@property NetworkStatus internetConnectionStatus;
 
 @property (strong,nonatomic) NSMutableArray *filteredFoodItemsArray;
 @property IBOutlet UISearchBar *foodItemSearchBar;

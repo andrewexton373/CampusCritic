@@ -18,7 +18,7 @@
 
 @implementation FoodItemsTableViewController
 
-@synthesize passedSortOption, filteredFoodItemsArray, foodItemSearchBar, sortedFoodItems, foodItems, searchResults, usingSearch;
+@synthesize passedSortOption, filteredFoodItemsArray, foodItemSearchBar, sortedFoodItems, foodItems, searchResults, usingSearch, internetConnectionStatus;
 
 
 - (void) loadFoodInformationCallback: (NSArray*) foodItems error: (NSError*) error
@@ -119,8 +119,27 @@
     
     
     //Set up query object and query from Parse in background
-    PFQuery *query = [PFQuery queryWithClassName:@"foodInformationCSV"];
-    [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodInformationCallback:error:)];
+    
+    
+    
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    internetConnectionStatus = [reachability currentReachabilityStatus];
+    
+    if (internetConnectionStatus != NotReachable) {
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"foodInformationCSV"];
+        [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodInformationCallback:error:)];
+        
+    } else {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error!"
+                                                        message: @"An active internet connection is needed to download food data."
+                                                       delegate: nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+    }
     
 }
 
