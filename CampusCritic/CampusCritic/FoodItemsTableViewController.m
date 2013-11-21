@@ -116,33 +116,164 @@
     self.glutenFreeFilter = organizationViewController.glutenFree;
     self.dairyFreeFilter = organizationViewController.dairyFree;
     
+    /*
+     // INDIVIDUAL ARRAYS (NOT NECESSARY WITH WORKING FULL ARRAY)
+     
+    //Vegan Switch Array
+    
+    NSIndexSet *veganFoods = [self.foodItems indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        NSDictionary *food = obj;
+        int intVal = idx;
+        BOOL veganVal = [[[self.foodItems objectAtIndex:intVal] valueForKey:@"vegan"] boolValue];
+        if ((self.veganFilter == TRUE) && (veganVal == TRUE))
+            return YES;
+        else {
+            return NO;
+        }
+    }];
+    
+    NSArray *veganArray = [self.foodItems objectsAtIndexes:veganFoods];
+    NSLog(@"Vegan Array: %@", veganArray);
+    
+    // Vegetarian Switch Array
+    
+    NSIndexSet *vegetarianFoods = [self.foodItems indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        NSDictionary *food = obj;
+        int intVal = idx;
+        BOOL vegetarianVal = [[[self.foodItems objectAtIndex:intVal] valueForKey:@"vegetarian"] boolValue];
+        if ((self.vegetarianFilter == TRUE) && (vegetarianVal == TRUE))
+            return YES;
+        else {
+            return NO;
+        }
+    }];
+    
+    NSArray *vegetarianArray = [self.foodItems objectsAtIndexes:vegetarianFoods];
+    NSLog(@"Vegetarian Array: %@", vegetarianArray);
+    
+    // Gluten Free Switch Array
+    
+    NSIndexSet *glutenFreeFoods = [self.foodItems indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        NSDictionary *food = obj;
+        int intVal = idx;
+        BOOL glutenFreeVal = [[[self.foodItems objectAtIndex:intVal] valueForKey:@"glutenFree"] boolValue];
+        if ((self.glutenFreeFilter == TRUE) && (glutenFreeVal == TRUE))
+            return YES;
+        else {
+            return NO;
+        }
+    }];
+    
+    NSArray *glutenFreeArray = [self.foodItems objectsAtIndexes:glutenFreeFoods];
+    NSLog(@"Gluten Free Array: %@", glutenFreeArray);
+    
+    // Dairy Free Switch Array
+    
+    NSIndexSet *dairyFreeFoods = [self.foodItems indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        NSDictionary *food = obj;
+        int intVal = idx;
+        BOOL dairyFreeVal = [[[self.foodItems objectAtIndex:intVal] valueForKey:@"dairyFree"] boolValue];
+        if ((self.dairyFreeFilter == TRUE) && (dairyFreeVal == TRUE))
+            return YES;
+        else {
+            return NO;
+        }
+    }];
+    
+
+    
+    NSArray *dairyFreeArray = [self.foodItems objectsAtIndexes:dairyFreeFoods];
+    NSLog(@"Dairy Free Array: %@", dairyFreeArray);
+     
+     */
+    
+    //full filter rough, not working!!
+    
+    NSIndexSet *filteredFoods = [self.foodItems indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        //NSDictionary *food = obj;
+        int intVal = idx;
+        BOOL veganVal = [[[self.foodItems objectAtIndex:intVal] valueForKey:@"vegan"] boolValue];
+        BOOL vegetarianVal = [[[self.foodItems objectAtIndex:intVal] valueForKey:@"vegetarian"] boolValue];
+        BOOL glutenFreeVal = [[[self.foodItems objectAtIndex:intVal] valueForKey:@"glutenFree"] boolValue];
+        BOOL dairyFreeVal = [[[self.foodItems objectAtIndex:intVal] valueForKey:@"dairyFree"] boolValue];
+        
+        //no filters
+        if ((self.veganFilter == FALSE) && (self.vegetarianFilter == FALSE) && (self.glutenFreeFilter == FALSE) && (self.dairyFreeFilter == FALSE))
+            return YES;
+        
+        //vegan filter only
+        if ((self.veganFilter == TRUE) && (veganVal == TRUE) && (self.vegetarianFilter == FALSE) && (self.glutenFreeFilter == FALSE) && (self.dairyFreeFilter == FALSE)){
+            return YES;}
+        
+        //vegetarian filter only
+        if ((self.veganFilter == FALSE) && (self.vegetarianFilter == TRUE) && (vegetarianVal == TRUE) && (self.glutenFreeFilter == FALSE) && (self.dairyFreeFilter == FALSE)){
+            return YES;}
+        
+        //gluten free filter only
+        if ((self.veganFilter == FALSE) && (self.vegetarianFilter == FALSE) && (self.glutenFreeFilter == TRUE) && (glutenFreeVal == TRUE) && (self.dairyFreeFilter == FALSE)){
+            return YES;}
+        
+        //dairy free filter only
+        if ((self.veganFilter == FALSE) && (self.vegetarianFilter == FALSE) && (self.glutenFreeFilter == FALSE) && (self.dairyFreeFilter == TRUE) && (dairyFreeVal == TRUE)){
+            return YES;}
+        
+        //vegan and vegetarian filter
+        if ((self.veganFilter == TRUE) && (veganVal == TRUE) && (self.vegetarianFilter == TRUE) && (vegetarianVal == TRUE) && (self.glutenFreeFilter == FALSE) && (self.dairyFreeFilter == FALSE)) {
+            return YES;}
+        
+        //vegan and gluten free filter
+        if ((self.veganFilter == TRUE) && (veganVal == TRUE) && (self.vegetarianFilter == FALSE) && (self.glutenFreeFilter == TRUE) && (glutenFreeVal == TRUE) && (self.dairyFreeFilter == FALSE)) {
+            return YES;}
+        
+        //vegan and dairy free filter
+        if ((self.veganFilter == TRUE) && (veganVal == TRUE) && (self.vegetarianFilter == FALSE) && (self.glutenFreeFilter == FALSE) && (self.dairyFreeFilter == TRUE) && (dairyFreeVal == TRUE)) {
+            return YES;}
+        
+        //vegetarian and gluten free filter
+        if ((self.veganFilter == FALSE) && (self.vegetarianFilter == TRUE) && (vegetarianVal == TRUE) && (self.glutenFreeFilter == TRUE) && (glutenFreeVal == TRUE) && (self.dairyFreeFilter == FALSE)) {
+            return YES;}
+        
+        //vegetarian and dairy free filter
+        if ((self.veganFilter == FALSE) && (self.vegetarianFilter == TRUE) && (vegetarianVal == TRUE) && (self.glutenFreeFilter == FALSE) && (self.dairyFreeFilter == TRUE) && (dairyFreeVal == TRUE)) {
+            return YES;}
+        
+        //gluten free and dairy free filter
+        if ((self.veganFilter == FALSE) && (self.vegetarianFilter == FALSE) && (self.glutenFreeFilter == TRUE) && (glutenFreeVal == TRUE) && (self.dairyFreeFilter == FALSE) && (dairyFreeVal == TRUE)) {
+            return YES;}
+        
+        //vegan, vegeterian and gluten free filter
+        if ((self.veganFilter == TRUE) && (veganVal == TRUE) && (self.vegetarianFilter == TRUE) && (vegetarianVal == TRUE) && (self.glutenFreeFilter == TRUE) && (glutenFreeVal == TRUE) && (self.dairyFreeFilter == FALSE)) {
+            return YES;}
+        
+        //vegan, vegetarian and dairy free filter
+        if ((self.veganFilter == TRUE) && (veganVal == TRUE) && (self.vegetarianFilter == TRUE) && (vegetarianVal == TRUE) && (self.glutenFreeFilter == FALSE) && (self.dairyFreeFilter == TRUE) && (dairyFreeVal == TRUE)) {
+            return YES;}
+        
+        //vegan, gluten free and dairy free filter
+        if ((self.veganFilter == TRUE) && (veganVal == TRUE) && (self.vegetarianFilter == FALSE) && (self.glutenFreeFilter == TRUE) && (glutenFreeVal == TRUE) && (self.dairyFreeFilter == TRUE) && (dairyFreeVal == TRUE)) {
+            return YES;}
+        
+        //vegetarian, gluten free and dairy free filter
+        if ((self.veganFilter == FALSE) && (self.vegetarianFilter == TRUE) && (vegetarianVal == TRUE) && (self.glutenFreeFilter == TRUE) && (glutenFreeVal == TRUE) && (self.dairyFreeFilter == TRUE) && (dairyFreeVal == TRUE)) {
+            return YES;}
+        
+        //vegan, vegetarian, gluten free and dairy free filter
+        if ((self.veganFilter == TRUE) && (veganVal == TRUE) && (self.vegetarianFilter == TRUE) && (vegetarianVal == TRUE) && (self.glutenFreeFilter == TRUE) && (glutenFreeVal == TRUE) && (self.dairyFreeFilter == TRUE) && (dairyFreeVal == TRUE)) {
+            return YES;}
+        
+        
+            return NO;
+    }];
+    
+    NSArray *filteredArray = [self.foodItems objectsAtIndexes:filteredFoods];
+    NSLog(@"Filtered Array: %@", filteredArray);
+    
+    
     //Working switches (with NSLog output)
+
     
     if (self.veganFilter == TRUE) {
         NSLog(@"The vegan switch is on");
-        //begin working on the vegan filter here
-        /*
-         
-         - (NSArray *)arrangeObjects:(NSArray *)objects {
-         
-         if (searchString == nil) {
-         return [super arrangeObjects:objects];
-         }
-         
-         NSMutableArray *filteredObjects = [NSMutableArray arrayWithCapacity:[objects count]];
-         NSEnumerator *objectsEnumerator = [objects objectEnumerator];
-         id item;
-         
-         while (item = [objectsEnumerator nextObject]) {
-         if ([[item valueForKeyPath:@"title"] rangeOfString:searchString options:NSAnchoredSearch].location != NSNotFound) {
-         [filteredObjects addObject:item];
-         }
-         }
-         return [super arrangeObjects:filteredObjects];
-         }
-         
-         */
-        
     }
     else {
         NSLog(@"The vegan switch is off");
@@ -166,6 +297,7 @@
         NSLog(@"The dairy free switch is off");
     }
     
+    //sorting
     
     if ([self.passedSortOption  isEqualToString: @"Alphabetically"]) {
         
