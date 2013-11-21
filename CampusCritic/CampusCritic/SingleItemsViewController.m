@@ -22,6 +22,8 @@
 
 @implementation SingleItemsViewController
 
+@synthesize carousel, items;
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"nutritionFactsSegue"])
@@ -100,7 +102,49 @@
     [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodReviewsCallback:error:)];
     
     _foodItemName.title = _passedFoodItem[@"foodName"];
+    
+    
+    self.items = [NSMutableArray array];
+    for (int i = 0; i < 1000; i++)
+    {
+        [self.items addObject:@(i)];
+    }
+    
+    carousel.dataSource = self;
+    carousel.delegate = self;
+    
+    carousel.type = iCarouselTypeLinear;
 
+}
+
+- (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
+{
+    //return the total number of items in the carousel
+    return [self.items count];
+}
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
+{
+    
+    //create new view if no view is available for recycling
+    if (view == nil)
+    {
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 180.0f, 180.0f)];
+        ((UIImageView *)view).image = [UIImage imageNamed:@"foodPic.png"];
+        view.contentMode = UIViewContentModeCenter;
+    }
+    else
+    {
+        //get a reference to the label in the recycled view
+    }
+    
+    //set item label
+    //remember to always set any properties of your carousel item
+    //views outside of the `if (view == nil) {...}` check otherwise
+    //you'll get weird issues with carousel item content appearing
+    //in the wrong place in the carousel
+    
+    return view;
 }
 
 - (void)didReceiveMemoryWarning

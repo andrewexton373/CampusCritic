@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iCarousel.h"
 
-@interface SingleItemsViewController : UIViewController
+@interface SingleItemsViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
+
+@property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (strong, nonatomic) NSMutableArray *items;
 
 @property (nonatomic, strong) NSDictionary *passedFoodItem;
 
