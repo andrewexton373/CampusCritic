@@ -120,15 +120,18 @@
     
     //Set up query object and query from Parse in background
     
-    
-    
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
     internetConnectionStatus = [reachability currentReachabilityStatus];
     
     if (internetConnectionStatus != NotReachable) {
         
-        PFQuery *query = [PFQuery queryWithClassName:@"foodInformationCSV"];
-        [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodInformationCallback:error:)];
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        
+        HUD.delegate = self;
+        HUD.labelText = @"Fetching Food Data...";
+        
+        [HUD showWhileExecuting:@selector(myTask) onTarget:self withObject:nil animated:YES];
         
     } else {
         
@@ -140,6 +143,15 @@
         [alert show];
         
     }
+    
+    
+
+}
+
+- (void)myTask {
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"foodInformationCSV"];
+    [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodInformationCallback:error:)];
     
     sleep(2);
 }

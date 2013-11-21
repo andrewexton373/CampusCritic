@@ -177,6 +177,15 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
+        04187DAB183C6EFE009E448A /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				04187DA8183C6EF8009E448A /* MBProgressHUD.h */,
+				04187DA9183C6EF8009E448A /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		16D25432181B0E6F006079CD = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +255,7 @@
 				16D2548D181E19CD006079CD /* CCLogo.png */,
 				040EDC431828336F0041D17C /* NutritionFacts.png */,
 				16229C33183DBF2E00DEB144 /* Reachability */,
+				04187DAB183C6EFE009E448A /* MBProgressHUD */,
 				16D254A018203D21006079CD /* DLStarRating */,
 				16D25456181B0E6F006079CD /* Images.xcassets */,
 				16D25445181B0E6F006079CD /* Supporting Files */,

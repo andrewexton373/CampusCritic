@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "FoodItemsTableCell.h"
+#import "MBProgressHUD.h"
 #import "Reachability.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 
 @interface FoodItemsTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, MBProgressHUDDelegate> {
     
+    MBProgressHUD *HUD;
+    
+	long long expectedLength;
+	long long currentLength;
 }
 
 @property NetworkStatus internetConnectionStatus;
