@@ -30,6 +30,7 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,10 +38,6 @@
     
     _userReview.delegate = self;
     _userName.delegate = self;
-    
-    DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 220, 320, 230) andStars:5 isFractional:NO];
-    ratingControl.delegate = self;
-    [self.view addSubview:ratingControl];
     
 }
 
@@ -67,6 +64,15 @@
         return YES;
     }
 }
+
+
+
+-(void) viewDidLayoutSubviews
+{
+    [scroller setScrollEnabled: YES];
+    [scroller setContentSize:CGSizeMake (0, 550) ];  //scroller stuff
+}
+
 
 - (void)didReceiveMemoryWarning
 {

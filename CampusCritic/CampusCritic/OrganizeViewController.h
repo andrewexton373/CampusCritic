@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "FoodItemsTableViewController.h"
 
-@interface OrganizeViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate>
+@interface OrganizeViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate>{
+      __weak IBOutlet UIScrollView *scroller;
+}
 
 @property (weak, nonatomic) IBOutlet UIPickerView *sortOptionPicker;
 
