@@ -88,6 +88,9 @@
         itemReview[@"userReview"] = self.userReview.text;
         itemReview[@"userRating"] = self.userRating;
         
+        PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:self.passedPhotoUpload];
+        itemReview[@"userPhoto"] = imageFile;
+        
         if ([self.userName.text isEqual:@""]) {
             
             itemReview[@"userName"] = @"Anonymous";
@@ -102,6 +105,18 @@
         
     }
 
+}
+
+- (IBAction) unwindFromUserPhotoUpload:(UIStoryboardSegue*) segue
+{
+    
+    ImageViewController *imageViewController = segue.sourceViewController;
+    self.passedPhotoUpload = imageViewController.userImageUpload;
+
+}
+
+
+- (IBAction)uploadPhotoTriggered:(id)sender {
 }
 
 - (void)saveCallback:(NSNumber *)result error:(NSError *)error {

@@ -17,6 +17,7 @@
 		1692152318355D4300936D24 /* ReviewPagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1692152118355D4300936D24 /* ReviewPagesViewController.xib */; };
 		1692152718355D5800936D24 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1692152518355D5800936D24 /* ContentViewController.m */; };
 		1692152818355D5800936D24 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1692152618355D5800936D24 /* ContentViewController.xib */; };
+		16A1936518446A6C00A1CF50 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A1936418446A6C00A1CF50 /* ImageViewController.m */; };
 		16AD6B711828C781006926B7 /* OrganizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AD6B6F1828C781006926B7 /* OrganizeViewController.m */; };
 		16D2543F181B0E6F006079CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D2543E181B0E6F006079CD /* Foundation.framework */; };
 		16D25441181B0E6F006079CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D25440181B0E6F006079CD /* CoreGraphics.framework */; };
@@ -85,6 +86,8 @@
 		1692152418355D5800936D24 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		1692152518355D5800936D24 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		1692152618355D5800936D24 /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
+		16A1936318446A6C00A1CF50 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		16A1936418446A6C00A1CF50 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		16AD6B6E1828C781006926B7 /* OrganizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizeViewController.h; sourceTree = "<group>"; };
 		16AD6B6F1828C781006926B7 /* OrganizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizeViewController.m; sourceTree = "<group>"; };
 		16D2543B181B0E6F006079CD /* CampusCritic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusCritic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +255,8 @@
 				16D2549A181F62F9006079CD /* SingleItemsViewController.m */,
 				042769DD18205CBE00452B79 /* ContributeViewController.h */,
 				042769DE18205CBE00452B79 /* ContributeViewController.m */,
+				16A1936318446A6C00A1CF50 /* ImageViewController.h */,
+				16A1936418446A6C00A1CF50 /* ImageViewController.m */,
 				16D25496181F0F35006079CD /* NutritionFactsViewController.h */,
 				16D25497181F0F35006079CD /* NutritionFactsViewController.m */,
 				16D2548A181E1585006079CD /* FoodItemsTableCell.h */,
@@ -449,6 +454,7 @@
 				16D25455181B0E6F006079CD /* ViewController.m in Sources */,
 				16229C32183DBF2800DEB144 /* Reachability.m in Sources */,
 				16D2549B181F62F9006079CD /* SingleItemsViewController.m in Sources */,
+				16A1936518446A6C00A1CF50 /* ImageViewController.m in Sources */,
 				16D2544F181B0E6F006079CD /* AppDelegate.m in Sources */,
 				16229C3B183E8F2300DEB144 /* iCarousel.m in Sources */,
 				16D25475181B0EFC006079CD /* FoodItemsTableViewController.m in Sources */,

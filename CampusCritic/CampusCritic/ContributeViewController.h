@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DLStarRatingControl.h"
+#import "ImageViewController.h"
 #import <Parse/Parse.h>
 
 @interface ContributeViewController : UIViewController<DLStarRatingDelegate, UITextViewDelegate, UITextFieldDelegate> {
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 
 @property (weak, nonatomic) NSDictionary *passedFoodItem;
+@property (strong, nonatomic) NSData *passedPhotoUpload;
 
 - (IBAction)saveTriggered:(id)sender;
 

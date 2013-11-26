@@ -247,7 +247,7 @@
                                 <color key="barTintColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
                             </toolbar>
                             <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQD-Of-c1d">
-                                <rect key="frame" x="0.0" y="324" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="321" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -315,18 +315,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contributor's Name (Optional):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCb-SE-964">
-                                <rect key="frame" x="28" y="458" width="235" height="21"/>
+                                <rect key="frame" x="43" y="421" width="235" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ab2-EE-uBN">
-                                <rect key="frame" x="28" y="487" width="230" height="30"/>
+                                <rect key="frame" x="45" y="450" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBd-XP-K3X">
+                                <rect key="frame" x="95" y="530" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Upload Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadPhotoTriggered:" destination="nqY-Fb-So9" eventType="touchUpInside" id="wRP-O3-Dfu"/>
+                                    <segue destination="8Lk-XF-pl0" kind="push" id="XDA-pR-7W9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -492,6 +504,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICl-uG-ofa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="120" y="809"/>
+        </scene>
+        <!--Image View Controller - Upload Photo-->
+        <scene sceneID="mxC-Zf-d10">
+            <objects>
+                <viewController id="8Lk-XF-pl0" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PwY-iT-BqT"/>
+                        <viewControllerLayoutGuide type="bottom" id="IMK-Se-d28"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TOj-l8-D9w">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ElZ-E8-8EN">
+                                <rect key="frame" x="0.0" y="63" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OnA-lg-0fG">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Camera" id="Jz5-Bk-JPO">
+                                        <connections>
+                                            <action selector="takePicture:" destination="8Lk-XF-pl0" id="oeG-25-e64"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="051-zo-I4D"/>
+                                    <barButtonItem title="Gallery" id="7er-7j-sLF">
+                                        <connections>
+                                            <action selector="chooseFromGallery" destination="8Lk-XF-pl0" id="nCs-9M-sm1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Upload Photo" id="JLd-fW-Hu9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8BW-aB-lox">
+                            <connections>
+                                <segue destination="5bd-98-1iM" kind="unwind" unwindAction="unwindFromUserPhotoUpload:" id="KJK-hm-MBa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="ElZ-E8-8EN" id="h7q-yd-D3q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8f-hn-A2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5bd-98-1iM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="171" y="1179"/>
         </scene>
     </scenes>
     <resources>
