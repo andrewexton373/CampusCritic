@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) NSMutableArray *items;
+@property (strong, nonatomic) NSMutableArray *userPhotos;
 
 @property (nonatomic, strong) NSDictionary *passedFoodItem;
 

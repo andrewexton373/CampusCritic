@@ -61,21 +61,33 @@
             
             float ratingSum = 0;
             
+            NSMutableArray *fetchedPhotos = [[NSMutableArray alloc] init];
+            
+            self.userPhotos = [[NSMutableArray alloc] init];
+            
             for (id review in foodReviews) {
                 
                 ratingSum = ratingSum + [review[@"userRating"] integerValue];
                 
+                if (review[@"userPhoto"] != NULL) {
+                    NSData *photoData = [review[@"userPhoto"] getData];
+                    UIImage *userPhoto = [UIImage imageWithData:photoData];
+                    [self.userPhotos addObject:userPhoto];
+                    NSLog(@"Photo Downloaded: %@", review[@"userPhoto"]);
+                }
             }
             
-            self.ratingAverage = ratingSum / foodReviews.count;
+            NSLog(@"%@", self.userPhotos);
             
-            NSLog(@"%f", self.ratingAverage);
+            self.ratingAverage = ratingSum / foodReviews.count;
             
             // setup a control with 3 fractional stars at a size of 320x230
             DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 190, 320, 230) andStars:5 isFractional:YES];
             ratingControl.rating = self.ratingAverage;
             [ratingControl setEnabled:NO];
             [self.view addSubview:ratingControl];
+            
+            [carousel reloadData];
             
         }
         
@@ -103,13 +115,6 @@
     
     _foodItemName.title = _passedFoodItem[@"foodName"];
     
-    
-    self.items = [NSMutableArray array];
-    for (int i = 0; i < 1000; i++)
-    {
-        [self.items addObject:@(i)];
-    }
-    
     carousel.dataSource = self;
     carousel.delegate = self;
     
@@ -130,7 +135,7 @@
     if (view == nil)
     {
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 180.0f, 180.0f)];
-        ((UIImageView *)view).image = [UIImage imageNamed:@"foodPic.png"];
+        ((UIImageView *)view).image = self.userPhotos[index];
         view.contentMode = UIViewContentModeCenter;
     }
     else
