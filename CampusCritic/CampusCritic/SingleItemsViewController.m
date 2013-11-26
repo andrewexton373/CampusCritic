@@ -61,8 +61,6 @@
             
             float ratingSum = 0;
             
-            NSMutableArray *fetchedPhotos = [[NSMutableArray alloc] init];
-            
             self.userPhotos = [[NSMutableArray alloc] init];
             
             for (id review in foodReviews) {
@@ -94,6 +92,11 @@
         }
         
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.carousel removeFromSuperview];
 }
 
 

@@ -46,7 +46,7 @@
     UIGraphicsEndImageContext();
     
     // Extract Image as JPEG and Set userImageUpload to that Data
-    NSData *imageData = UIImageJPEGRepresentation(resizedImage, 0.05f);
+    NSData *imageData = UIImageJPEGRepresentation(resizedImage, 0.9f);
     self.userImageUpload = imageData;
     
 }
