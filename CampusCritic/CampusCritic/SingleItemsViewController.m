@@ -87,7 +87,9 @@
             [ratingControl setEnabled:NO];
             [self.view addSubview:ratingControl];
             
-            [carousel reloadData];
+            
+            
+            [self.carousel reloadData];
             
         }
         
@@ -125,7 +127,7 @@
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
     //return the total number of items in the carousel
-    return [self.items count];
+    return [self.userPhotos count];
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
@@ -134,8 +136,9 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 180.0f, 180.0f)];
-        ((UIImageView *)view).image = self.userPhotos[index];
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 210.0f, 210.0f)];
+        UIImage *image = self.userPhotos[index];        
+        ((UIImageView *)view).image = image;
         view.contentMode = UIViewContentModeCenter;
     }
     else
