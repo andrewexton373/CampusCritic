@@ -61,6 +61,13 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+    [self.navigationController setToolbarHidden:NO animated:YES];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

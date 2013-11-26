@@ -7,10 +7,14 @@
         <!--Navigation Controller-->
         <scene sceneID="g7D-3V-O9i">
             <objects>
-                <navigationController definesPresentationContext="YES" id="mJB-yb-zzT" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="mJB-yb-zzT" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S0H-Pz-zKj">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="uvk-rG-S8t">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="tpW-uc-ac3" kind="relationship" relationship="rootViewController" id="Xwi-RW-d3u"/>
                     </connections>
@@ -228,24 +232,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8v-sm-4i9">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Contribute" style="plain" id="5kX-mm-BsW">
-                                        <connections>
-                                            <segue destination="nqY-Fb-So9" kind="push" identifier="toContribute" id="gx0-O2-YTq"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NaP-Qr-lde"/>
-                                    <barButtonItem title="Nutrition Facts" style="plain" id="CzH-HJ-gBD">
-                                        <connections>
-                                            <segue destination="5y5-My-pg9" kind="push" identifier="nutritionFactsSegue" id="z8p-z2-Uot"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
-                            </toolbar>
                             <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQD-Of-c1d">
                                 <rect key="frame" x="0.0" y="321" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -261,6 +247,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Contribute" style="plain" id="5kX-mm-BsW">
+                            <connections>
+                                <segue destination="nqY-Fb-So9" kind="push" identifier="toContribute" id="gx0-O2-YTq"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="NaP-Qr-lde"/>
+                        <barButtonItem title="Nutrition Facts" style="plain" id="CzH-HJ-gBD">
+                            <connections>
+                                <segue destination="5y5-My-pg9" kind="push" identifier="nutritionFactsSegue" id="z8p-z2-Uot"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Food Item Name" id="dPE-9l-L10"/>
                     <connections>
                         <outlet property="carousel" destination="mJg-es-noM" id="8OW-MU-I2h"/>
@@ -315,20 +314,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contributor's Name (Optional):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCb-SE-964">
-                                <rect key="frame" x="43" y="421" width="235" height="21"/>
+                                <rect key="frame" x="43" y="396" width="235" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ab2-EE-uBN">
-                                <rect key="frame" x="45" y="450" width="230" height="30"/>
+                                <rect key="frame" x="45" y="425" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBd-XP-K3X">
-                                <rect key="frame" x="95" y="530" width="131" height="30"/>
+                                <rect key="frame" x="95" y="475" width="131" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Upload Photo">
@@ -350,7 +349,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="userName" destination="ab2-EE-uBN" id="8cr-TR-UoO"/>
+                        <outlet property="userName" destination="ab2-EE-uBN" id="Hxw-lR-gvn"/>
                         <outlet property="userReview" destination="eXQ-ya-mgZ" id="n6V-w4-bsP"/>
                         <segue destination="7kE-dX-8z7" kind="custom" identifier="saveToThankYou" id="SbU-m0-v3j"/>
                     </connections>
@@ -521,27 +520,22 @@
                                 <rect key="frame" x="0.0" y="63" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OnA-lg-0fG">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Camera" id="Jz5-Bk-JPO">
-                                        <connections>
-                                            <action selector="takePicture:" destination="8Lk-XF-pl0" id="oeG-25-e64"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="051-zo-I4D"/>
-                                    <barButtonItem title="Gallery" id="7er-7j-sLF">
-                                        <connections>
-                                            <action selector="chooseFromGallery" destination="8Lk-XF-pl0" id="nCs-9M-sm1"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem title="Camera" id="xQk-qa-fJu">
+                            <connections>
+                                <action selector="takePicture:" destination="8Lk-XF-pl0" id="Att-iN-x5q"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Fz9-ZA-5fx"/>
+                        <barButtonItem title="Gallery" id="XMl-5w-mIQ">
+                            <connections>
+                                <action selector="chooseFromGallery" destination="8Lk-XF-pl0" id="SbT-0V-n38"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Upload Photo" id="JLd-fW-Hu9">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="8BW-aB-lox">
                             <connections>
