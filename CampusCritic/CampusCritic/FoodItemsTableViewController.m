@@ -18,7 +18,7 @@
 
 @implementation FoodItemsTableViewController
 
-@synthesize passedSortOption, filteredFoodItemsArray, foodItemSearchBar, sortedFoodItems, foodItems, veganFilter, vegetarianFilter, glutenFreeFilter, dairyFreeFilter;
+@synthesize passedSortOption, filteredFoodItemsArray, foodItemSearchBar, sortedFoodItems, foodItems = _foodItems, veganFilter, vegetarianFilter, glutenFreeFilter, dairyFreeFilter;
 
 - (void) loadFoodInformationCallback: (NSArray*) foodItems error: (NSError*) error
 {
@@ -39,7 +39,6 @@
         
         //Return Alphabetically Sorted Array
         self.foodItems = [self.foodItems sortedArrayUsingDescriptors:sortDescriptors];
-         
         //Reload tableView
         [self.tableView reloadData];
     }
@@ -117,7 +116,7 @@
     self.dairyFreeFilter = organizationViewController.dairyFree;
     
     /*
-     // INDIVIDUAL ARRAYS (NOT NECESSARY WITH WORKING FULL ARRAY)
+     // INDIVIDUAL ARRAYS (NOT NECESSARY WITH WORKING FULL ARRAY, here to understand)
      
     //Vegan Switch Array
     
@@ -187,7 +186,7 @@
      
      */
     
-    //full filter rough, not working!!
+    //full filter
     
     NSIndexSet *filteredFoods = [self.foodItems indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         //NSDictionary *food = obj;
@@ -265,37 +264,17 @@
             return NO;
     }];
     
-    NSArray *filteredArray = [self.foodItems objectsAtIndexes:filteredFoods];
-    NSLog(@"Filtered Array: %@", filteredArray);
+    self.filteredArray = [self.foodItems objectsAtIndexes:filteredFoods];
+    NSLog(@"Filtered Array: %@", self.filteredArray);
     
+    /*
+     //changing the value of foodItems
+     
+    self.foodItems = filteredArray;
+    */
+    [self.tableView reloadData];
     
-    //Working switches (with NSLog output)
 
-    
-    if (self.veganFilter == TRUE) {
-        NSLog(@"The vegan switch is on");
-    }
-    else {
-        NSLog(@"The vegan switch is off");
-    }
-    if (self.vegetarianFilter == TRUE) {
-        NSLog(@"The vegetarian switch is on");
-    }
-    else {
-        NSLog(@"The vegetarian switch is off");
-    }
-    if (self.glutenFreeFilter == TRUE) {
-        NSLog(@"The gluten free switch is on");
-    }
-    else {
-        NSLog(@"The gluten free switch is off");
-    }
-    if (self.dairyFreeFilter == TRUE) {
-        NSLog(@"The dairy free switch is on");
-    }
-    else {
-        NSLog(@"The dairy free switch is off");
-    }
     
     //sorting
     
@@ -386,6 +365,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    
+    if (self.filteredArray.count != 0) {
+        return self.filteredArray.count;
+    } else {
+        return self.foodItems.count;
+    }
+    
     return self.foodItems.count;
 }
 
@@ -397,7 +383,15 @@
     // Configure the cell...
     
     //Get single foodItem from foodItems Array @ Row
-    NSDictionary *foodItem = self.foodItems[indexPath.row];
+    
+    NSDictionary *foodItem = [[NSDictionary alloc] init];
+    
+    if (self.filteredArray.count != 0) {
+       foodItem = self.filteredArray[indexPath.row];
+    } else {
+        foodItem = self.foodItems[indexPath.row];
+    }
+    
     
     //Set single cell data
     cell.foodItemName.text = foodItem[@"foodName"];

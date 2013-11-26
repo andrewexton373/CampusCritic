@@ -21,7 +21,10 @@
 @property bool glutenFreeFilter;
 @property bool dairyFreeFilter;
 
+@property bool usingFilter;
+
 @property (strong, nonatomic) NSArray *sortedFoodItems;
 @property (strong, nonatomic) NSArray *foodItems;
+@property (strong, nonatomic) NSArray *filteredArray;
 
 @end
