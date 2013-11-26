@@ -10,6 +10,7 @@
 		040EDC441828336F0041D17C /* NutritionFacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EDC431828336F0041D17C /* NutritionFacts.png */; };
 		04187DAA183C6EF8009E448A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04187DA9183C6EF8009E448A /* MBProgressHUD.m */; };
 		042769DF18205CBE00452B79 /* ContributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042769DE18205CBE00452B79 /* ContributeViewController.m */; };
+		12742AE118454672006F09A1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12742AE018454672006F09A1 /* Parse.framework */; };
 		16229C32183DBF2800DEB144 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 16229C31183DBF2800DEB144 /* Reachability.m */; };
 		16229C3B183E8F2300DEB144 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16229C3A183E8F2300DEB144 /* iCarousel.m */; };
 		16229C49183EADA400DEB144 /* foodPic.png in Resources */ = {isa = PBXBuildFile; fileRef = 16229C48183EADA400DEB144 /* foodPic.png */; };
@@ -56,7 +57,6 @@
 		16D254B418203D21006079CD /* star_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254AA18203D21006079CD /* star_highlighted.png */; };
 		16D254B518203D21006079CD /* star_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254AB18203D21006079CD /* star_highlighted@2x.png */; };
 		16D254B618203D21006079CD /* UIView+Subviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D254AD18203D21006079CD /* UIView+Subviews.m */; };
-		3CAC2A32182C381C0097B739 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CAC2A31182C381C0097B739 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +75,7 @@
 		04187DA9183C6EF8009E448A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		042769DD18205CBE00452B79 /* ContributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributeViewController.h; sourceTree = "<group>"; };
 		042769DE18205CBE00452B79 /* ContributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributeViewController.m; sourceTree = "<group>"; };
+		12742AE018454672006F09A1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Parse.framework/Parse.framework; sourceTree = "<group>"; };
 		16229C30183DBF2800DEB144 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		16229C31183DBF2800DEB144 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		16229C39183E8F2300DEB144 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
@@ -147,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CAC2A32182C381C0097B739 /* Parse.framework in Frameworks */,
+				12742AE118454672006F09A1 /* Parse.framework in Frameworks */,
 				16D25489181B1245006079CD /* SystemConfiguration.framework in Frameworks */,
 				16D25487181B123D006079CD /* StoreKit.framework in Frameworks */,
 				16D25485181B1236006079CD /* Security.framework in Frameworks */,
@@ -225,6 +226,7 @@
 		16D2543D181B0E6F006079CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				12742AE018454672006F09A1 /* Parse.framework */,
 				3CAC2A31182C381C0097B739 /* Parse.framework */,
 				16D25488181B1245006079CD /* SystemConfiguration.framework */,
 				16D25486181B123D006079CD /* StoreKit.framework */,
@@ -598,6 +600,7 @@
 					"/Users/Mac/Dropbox/School/Y1Q1/CPE\\ 123\\ LAB/CampusCritic/parsetest",
 					/Users/andrewexton/CampusCritic/CampusCritic,
 					/Users/cneyman/Desktop,
+					/Users/slakes/Desktop/Parse.framework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusCritic/CampusCritic-Prefix.pch";
@@ -618,6 +621,7 @@
 					"/Users/Mac/Dropbox/School/Y1Q1/CPE\\ 123\\ LAB/CampusCritic/parsetest",
 					/Users/andrewexton/CampusCritic/CampusCritic,
 					/Users/cneyman/Desktop,
+					/Users/slakes/Desktop/Parse.framework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusCritic/CampusCritic-Prefix.pch";
