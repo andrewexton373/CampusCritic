@@ -67,11 +67,13 @@
                 
                 ratingSum = ratingSum + [review[@"userRating"] integerValue];
                 
-                if (review[@"userPhoto"] != NULL) {
+                if (review[@"userPhoto"] != NULL && self.userPhotos.count < 5) {
                     NSData *photoData = [review[@"userPhoto"] getData];
                     UIImage *userPhoto = [UIImage imageWithData:photoData];
-                    [self.userPhotos addObject:userPhoto];
-                    NSLog(@"Photo Downloaded: %@", review[@"userPhoto"]);
+                    if (userPhoto != nil) {
+                        [self.userPhotos addObject:userPhoto];
+                        NSLog(@"Photo Was Added: %@", self.userPhotos);
+                    }
                 }
             }
             

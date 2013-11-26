@@ -56,6 +56,7 @@
 		16D254B418203D21006079CD /* star_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254AA18203D21006079CD /* star_highlighted.png */; };
 		16D254B518203D21006079CD /* star_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254AB18203D21006079CD /* star_highlighted@2x.png */; };
 		16D254B618203D21006079CD /* UIView+Subviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D254AD18203D21006079CD /* UIView+Subviews.m */; };
+		16E0A5FC18453CB300275E49 /* ThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0A5FB18453CB300275E49 /* ThankYouViewController.m */; };
 		3CAC2A32182C381C0097B739 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CAC2A31182C381C0097B739 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +140,8 @@
 		16D254AB18203D21006079CD /* star_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlighted@2x.png"; sourceTree = "<group>"; };
 		16D254AC18203D21006079CD /* UIView+Subviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Subviews.h"; sourceTree = "<group>"; };
 		16D254AD18203D21006079CD /* UIView+Subviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Subviews.m"; sourceTree = "<group>"; };
+		16E0A5FA18453CB300275E49 /* ThankYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThankYouViewController.h; sourceTree = "<group>"; };
+		16E0A5FB18453CB300275E49 /* ThankYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThankYouViewController.m; sourceTree = "<group>"; };
 		3CAC2A31182C381C0097B739 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,6 +260,8 @@
 				042769DE18205CBE00452B79 /* ContributeViewController.m */,
 				16A1936318446A6C00A1CF50 /* ImageViewController.h */,
 				16A1936418446A6C00A1CF50 /* ImageViewController.m */,
+				16E0A5FA18453CB300275E49 /* ThankYouViewController.h */,
+				16E0A5FB18453CB300275E49 /* ThankYouViewController.m */,
 				16D25496181F0F35006079CD /* NutritionFactsViewController.h */,
 				16D25497181F0F35006079CD /* NutritionFactsViewController.m */,
 				16D2548A181E1585006079CD /* FoodItemsTableCell.h */,
@@ -450,6 +455,7 @@
 			files = (
 				16D254AE18203D21006079CD /* DLStarRatingControl.m in Sources */,
 				042769DF18205CBE00452B79 /* ContributeViewController.m in Sources */,
+				16E0A5FC18453CB300275E49 /* ThankYouViewController.m in Sources */,
 				16D254AF18203D21006079CD /* DLStarView.m in Sources */,
 				16D25455181B0E6F006079CD /* ViewController.m in Sources */,
 				16229C32183DBF2800DEB144 /* Reachability.m in Sources */,
