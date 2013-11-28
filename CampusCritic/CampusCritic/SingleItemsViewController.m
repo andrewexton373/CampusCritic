@@ -63,19 +63,22 @@
             
             self.userPhotos = [[NSMutableArray alloc] init];
             
-            for (id review in foodReviews) {
+            for (PFObject *review in foodReviews) {
                 
                 ratingSum = ratingSum + [review[@"userRating"] integerValue];
                 
-                if (review[@"userPhoto"] != NULL) {
+                if (review[@"userPhoto"] != nil) {
                     NSData *photoData = [review[@"userPhoto"] getData];
-                    UIImage *userPhoto = [UIImage imageWithData:photoData];
-                    [self.userPhotos addObject:userPhoto];
-                    NSLog(@"Photo Downloaded: %@", review[@"userPhoto"]);
+                    UIImage *userImage = [UIImage imageWithData:photoData];
+                    if (userImage != NULL) {
+                        NSLog(@"User Image Added: %@", userImage);
+                        [self.userPhotos addObject:userImage];
+                    }
                 }
+                
             }
             
-            NSLog(@"%@", self.userPhotos);
+            NSLog(@"User Photos Array: %@", self.userPhotos);
             
             self.ratingAverage = ratingSum / foodReviews.count;
             
@@ -84,8 +87,6 @@
             ratingControl.rating = self.ratingAverage;
             [ratingControl setEnabled:NO];
             [self.view addSubview:ratingControl];
-            
-            
             
             [self.carousel reloadData];
             
@@ -147,8 +148,7 @@
     if (view == nil)
     {
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 210.0f, 210.0f)];
-        UIImage *image = self.userPhotos[index];        
-        ((UIImageView *)view).image = image;
+        ((UIImageView *)view).image = self.userPhotos[index];
         view.contentMode = UIViewContentModeCenter;
     }
     else

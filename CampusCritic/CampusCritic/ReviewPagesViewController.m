@@ -44,7 +44,11 @@
             
             for (id review in self.foodReviews) {
                 [self.userReviews addObject:[review objectForKey:@"userReview"]];
-                [self.userNames addObject:[review objectForKey:@"userName"]];
+                if (review[@"userName"] == nil) {
+                    [self.userNames addObject:@"Anonymous"];
+                } else {
+                    [self.userNames addObject:[review objectForKey:@"userName"]];
+                }
             }
             
             self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];

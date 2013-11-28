@@ -488,6 +488,7 @@
         <!--Review Pages View Controller-->
         <scene sceneID="VR6-Ok-RzM">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICl-uG-ofa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="zjC-fc-rPu" customClass="ReviewPagesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DwL-qU-9ua"/>
@@ -500,7 +501,6 @@
                     </view>
                     <toolbarItems/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ICl-uG-ofa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="120" y="809"/>
         </scene>
