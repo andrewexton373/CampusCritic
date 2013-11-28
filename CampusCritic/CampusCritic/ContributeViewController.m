@@ -44,7 +44,6 @@
 	// Do any additional setup after loading the view.
     
     _userReview.delegate = self;
-    _userName.delegate = self;
     
 }
 
@@ -99,16 +98,6 @@
         
         PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:self.passedPhotoUpload];
         itemReview[@"userPhoto"] = imageFile;
-        
-        if ([self.userName.text isEqual:@""]) {
-            
-            itemReview[@"userName"] = @"Anonymous";
-            
-        } else {
-            
-            itemReview[@"userName"] = self.userName.text;
-            
-        }
         
         [itemReview saveInBackgroundWithTarget:self selector:@selector(saveCallback:error:)];
         

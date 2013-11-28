@@ -19,7 +19,6 @@
 
 @property (strong, nonatomic) NSNumber *userRating;
 @property (weak, nonatomic) IBOutlet UITextView *userReview;
-@property (weak, nonatomic) IBOutlet UITextField *userName;
 
 @property (weak, nonatomic) NSDictionary *passedFoodItem;
 @property (strong, nonatomic) NSData *passedPhotoUpload;
