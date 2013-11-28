@@ -293,17 +293,18 @@
                                 <rect key="frame" x="40" y="63" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Provide Your Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fM-o8-xNY">
-                                <rect key="frame" x="81" y="222" width="157" height="21"/>
+                                <rect key="frame" x="81" y="202" width="157" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBd-XP-K3X">
-                                <rect key="frame" x="94" y="339" width="131" height="30"/>
+                                <rect key="frame" x="94" y="316" width="131" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Upload Photo">
@@ -315,7 +316,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A3p-hW-s8l" customClass="DLStarRatingControl">
-                                <rect key="frame" x="20" y="251" width="280" height="74"/>
+                                <rect key="frame" x="20" y="231" width="280" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -327,7 +328,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Contribute" id="Jnw-OI-fus">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bS9-aI-fjn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bS9-aI-fjn">
                             <connections>
                                 <action selector="saveTriggered:" destination="nqY-Fb-So9" id="6gY-7S-tze"/>
                             </connections>
@@ -335,7 +336,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="userReview" destination="eXQ-ya-mgZ" id="n6V-w4-bsP"/>
-                        <segue destination="7kE-dX-8z7" kind="custom" identifier="saveToThankYou" id="SbU-m0-v3j"/>
+                        <segue destination="7kE-dX-8z7" kind="push" identifier="contributeToThankYou" id="CTI-js-nTx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFi-JW-Chb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -368,14 +369,14 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="goHomeTriggered:" destination="7kE-dX-8z7" eventType="touchUpInside" id="WcV-RP-bQ3"/>
+                                    <action selector="returnTriggered:" destination="7kE-dX-8z7" eventType="touchUpInside" id="mvo-3e-0Ae"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ab2-EE-uBN">
                                 <rect key="frame" x="45" y="269" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To whom may we credit this review? (Optional)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="195" translatesAutoresizingMaskIntoConstraints="NO" id="urb-dG-myC">
                                 <rect key="frame" x="63" y="208" width="195" height="41"/>
@@ -387,6 +388,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NQk-OM-K0o"/>
                     <connections>
                         <outlet property="userName" destination="ab2-EE-uBN" id="IOa-nS-USp"/>
                         <segue destination="mJB-yb-zzT" kind="modal" identifier="thankYouToHome" modalTransitionStyle="crossDissolve" id="vlI-EN-fbe"/>

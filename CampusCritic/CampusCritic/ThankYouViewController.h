@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface ThankYouViewController : UIViewController
+@interface ThankYouViewController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 
-- (IBAction)goHomeTriggered:(id)sender;
+@property (strong, nonatomic) PFObject *passedItemReview;
+
+- (IBAction)returnTriggered:(id)sender;
 
 @end

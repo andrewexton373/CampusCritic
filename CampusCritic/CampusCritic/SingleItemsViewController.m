@@ -68,17 +68,17 @@
                 ratingSum = ratingSum + [review[@"userRating"] integerValue];
                 
                 if (review[@"userPhoto"] != nil) {
+                    
                     NSData *photoData = [review[@"userPhoto"] getData];
                     UIImage *userImage = [UIImage imageWithData:photoData];
+                    
                     if (userImage != NULL) {
-                        NSLog(@"User Image Added: %@", userImage);
                         [self.userPhotos addObject:userImage];
                     }
+                    
                 }
                 
             }
-            
-            NSLog(@"User Photos Array: %@", self.userPhotos);
             
             self.ratingAverage = ratingSum / foodReviews.count;
             

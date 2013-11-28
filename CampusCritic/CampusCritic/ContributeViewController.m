@@ -93,11 +93,29 @@
         PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:self.passedPhotoUpload];
         itemReview[@"userPhoto"] = imageFile;
         
-        [itemReview saveInBackgroundWithTarget:self selector:@selector(saveCallback:error:)];
+        NSLog(@"%@", itemReview);
+        
+        self.itemReview = itemReview;
+        
+        [self performSegueWithIdentifier:@"contributeToThankYou" sender:self];
         
     }
 
 }
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"contributeToThankYou"])
+        
+    {
+        ThankYouViewController *vc = [segue destinationViewController];
+        
+        vc.passedItemReview = self.itemReview;
+    }
+    
+}
+
 
 - (IBAction) unwindFromUserPhotoUpload:(UIStoryboardSegue*) segue
 {

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DLStarRatingControl.h"
 #import "ImageViewController.h"
+#import "ThankYouViewController.h"
 #import <Parse/Parse.h>
 
 @interface ContributeViewController : UIViewController<DLStarRatingDelegate, UITextViewDelegate, UITextFieldDelegate>
@@ -21,6 +22,8 @@
 
 @property (weak, nonatomic) NSDictionary *passedFoodItem;
 @property (strong, nonatomic) NSData *passedPhotoUpload;
+
+@property (strong, nonatomic) PFObject *itemReview;
 
 - (IBAction)saveTriggered:(id)sender;
 

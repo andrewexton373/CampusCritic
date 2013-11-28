@@ -29,6 +29,10 @@
         
         [self performSegueWithIdentifier: @"thankYouToHome" sender:self];
         
+    } else {
+        
+        NSLog(@"PARSE ERROR: %@", error);
+        
     }
 }
 
@@ -47,7 +51,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    
     self.userName.delegate = self;
 }
 
@@ -57,10 +60,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)goHomeTriggered:(id)sender
+
+- (IBAction)returnTriggered:(id)sender
 {
+   
+    NSLog(@"Passed Item Review:", self.passedItemReview);
     
-    PFObject *itemReview = [PFObject objectWithClassName:@"Reviews"];
+    PFObject *itemReview = self.passedItemReview;
     
     if ([self.userName.text isEqual:@""]) {
         
@@ -71,6 +77,8 @@
         itemReview[@"userName"] = self.userName.text;
         
     }
+    
+    NSLog(@"Item Review: %@", itemReview);
     
     [itemReview saveInBackgroundWithTarget:self
                                   selector:@selector(saveCallback:error:)];
