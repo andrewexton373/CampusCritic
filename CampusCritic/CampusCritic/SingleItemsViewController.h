@@ -7,11 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "DLStarRatingControl.h"
 #import "iCarousel.h"
+#import "SingleItemsViewController.h"
+#import "NutritionFactsViewController.h"
+#import "ContributeViewController.h"
+#import "ReviewPagesViewController.h"
+
 
 @interface SingleItemsViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (strong, nonatomic) IBOutlet DLStarRatingControl *stars;
+
 @property (strong, nonatomic) NSMutableArray *items;
 @property (strong, nonatomic) NSMutableArray *userPhotos;
 

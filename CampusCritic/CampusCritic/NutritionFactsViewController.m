@@ -47,6 +47,9 @@
     
     //Set Labels from Passed Food Item Dictionary
     
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
+    
     self.foodNameTitle.title = self.foodItem[@"foodName"];
     
     self.servingSize.text = self.foodItem[@"servingSize"];

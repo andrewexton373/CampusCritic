@@ -7,12 +7,6 @@
 //
 
 #import "SingleItemsViewController.h"
-#import "NutritionFactsViewController.h"
-#import "ContributeViewController.h"
-#import "ReviewPagesViewController.h"
-#import "DLStarRatingControl.h"
-#import "DLStarView.h"
-#import <Parse/Parse.h>
 
 @interface SingleItemsViewController ()
 
@@ -82,11 +76,13 @@
             
             self.ratingAverage = ratingSum / foodReviews.count;
             
-            // setup a control with 3 fractional stars at a size of 320x230
-            DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 190, 320, 230) andStars:5 isFractional:YES];
-            ratingControl.rating = self.ratingAverage;
-            [ratingControl setEnabled:NO];
-            [self.view addSubview:ratingControl];
+            
+            self.stars.isFractionalRatingEnabled = NO;
+            self.stars.enabled = NO;
+            
+            self.stars.rating = self.ratingAverage;
+            
+            [self.stars setEnabled:NO];
             
             [self.carousel reloadData];
             

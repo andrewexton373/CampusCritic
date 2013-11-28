@@ -230,11 +230,11 @@
                         <viewControllerLayoutGuide type="bottom" id="iDx-OI-TRs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="26G-oD-aRT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQD-Of-c1d">
-                                <rect key="frame" x="0.0" y="321" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="255" width="320" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -242,12 +242,18 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mJg-es-noM" customClass="iCarousel">
-                                <rect key="frame" x="0.0" y="75" width="320" height="176"/>
+                                <rect key="frame" x="0.0" y="7" width="320" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4qJ-sn-VjG" customClass="DLStarRatingControl">
+                                <rect key="frame" x="0.0" y="198" width="320" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems>
                         <barButtonItem title="Contribute" style="plain" id="5kX-mm-BsW">
                             <connections>
@@ -265,6 +271,7 @@
                     <connections>
                         <outlet property="carousel" destination="mJg-es-noM" id="8OW-MU-I2h"/>
                         <outlet property="foodItemName" destination="dPE-9l-L10" id="2dh-aV-Vns"/>
+                        <outlet property="stars" destination="4qJ-sn-VjG" id="dxm-rY-QG1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZE-ck-scb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -505,7 +512,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6lp-JY-ogu"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5gu-NE-RdY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="192"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
