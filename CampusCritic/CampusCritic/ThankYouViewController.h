@@ -7,13 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 #import <Parse/Parse.h>
 
-@interface ThankYouViewController : UIViewController<UITextFieldDelegate>
+@interface ThankYouViewController : UIViewController<UITextFieldDelegate, MBProgressHUDDelegate> {
+    
+    MBProgressHUD *HUD;
+}
+
+@property (strong, nonatomic) MBProgressHUD *HUD;
 
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 
 @property (strong, nonatomic) PFObject *passedItemReview;
+
+@property (strong, nonatomic) PFObject *itemReview;
 
 - (IBAction)returnTriggered:(id)sender;
 

@@ -60,7 +60,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (IBAction)returnTriggered:(id)sender
 {
    
@@ -80,8 +79,17 @@
     
     NSLog(@"Item Review: %@", itemReview);
     
-    [itemReview saveInBackgroundWithTarget:self
-                                  selector:@selector(saveCallback:error:)];
+    self.itemReview = itemReview;
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+	[self.navigationController.view addSubview:HUD];
+	
+	HUD.delegate = self;
+	HUD.labelText = @"Upload in Progress";
+	HUD.detailsLabelText = @"Uploading Review";
+	HUD.square = YES;
+	
+	[HUD showWhileExecuting:@selector(saveCallback:error:) onTarget:self withObject:nil animated:YES];
     
 }
 @end

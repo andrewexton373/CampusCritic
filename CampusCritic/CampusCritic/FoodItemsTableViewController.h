@@ -16,8 +16,6 @@
     
     MBProgressHUD *HUD;
     
-	long long expectedLength;
-	long long currentLength;
 }
 
 @property NetworkStatus internetConnectionStatus;
