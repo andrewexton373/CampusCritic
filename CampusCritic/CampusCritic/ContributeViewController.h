@@ -14,7 +14,6 @@
 @interface ContributeViewController : UIViewController<DLStarRatingDelegate, UITextViewDelegate, UITextFieldDelegate>
 {
     NSNumber *userRating;
-    IBOutlet UIScrollView *scroller;
 }
 
 @property (strong, nonatomic) NSNumber *userRating;

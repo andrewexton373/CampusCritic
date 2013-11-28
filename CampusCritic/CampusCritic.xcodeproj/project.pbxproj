@@ -57,6 +57,7 @@
 		16D254B418203D21006079CD /* star_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254AA18203D21006079CD /* star_highlighted.png */; };
 		16D254B518203D21006079CD /* star_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254AB18203D21006079CD /* star_highlighted@2x.png */; };
 		16D254B618203D21006079CD /* UIView+Subviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D254AD18203D21006079CD /* UIView+Subviews.m */; };
+		16E0A5FD1846ED6C00275E49 /* ThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0A5FB18453CB300275E49 /* ThankYouViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -454,9 +455,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16E0A5FD1846ED6C00275E49 /* ThankYouViewController.m in Sources */,
 				16D254AE18203D21006079CD /* DLStarRatingControl.m in Sources */,
 				042769DF18205CBE00452B79 /* ContributeViewController.m in Sources */,
-				16E0A5FC18453CB300275E49 /* ThankYouViewController.m in Sources */,
 				16D254AF18203D21006079CD /* DLStarView.m in Sources */,
 				16D25455181B0E6F006079CD /* ViewController.m in Sources */,
 				16229C32183DBF2800DEB144 /* Reachability.m in Sources */,

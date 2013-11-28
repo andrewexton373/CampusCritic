@@ -32,18 +32,12 @@
     
 }
 
--(void) viewDidLayoutSubviews
-{
-    [scroller setScrollEnabled: YES];
-    [scroller setContentSize:CGSizeMake (0, 550) ];  //scroller stuff
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    _userReview.delegate = self;
+    self.userReview.delegate = self;
     
 }
 
