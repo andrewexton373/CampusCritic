@@ -11,8 +11,10 @@
 #import "ImageViewController.h"
 #import <Parse/Parse.h>
 
-@interface ContributeViewController : UIViewController<DLStarRatingDelegate, UITextViewDelegate, UITextFieldDelegate> {
+@interface ContributeViewController : UIViewController<DLStarRatingDelegate, UITextViewDelegate, UITextFieldDelegate>
+{
     NSNumber *userRating;
+    IBOutlet UIScrollView *scroller;
 }
 
 @property (strong, nonatomic) NSNumber *userRating;

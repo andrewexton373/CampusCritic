@@ -60,6 +60,13 @@
     self.protein.text = [NSString stringWithFormat:@"%@ grams", self.foodItem[@"proteinG"]];
 }
 
+-(void) viewDidLayoutSubviews
+{
+    [scroller setScrollEnabled: YES];
+    [scroller setContentSize:CGSizeMake (0, 550) ];  //scroller stuff
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
