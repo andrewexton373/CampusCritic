@@ -17,11 +17,14 @@
 @property bool vegan;
 @property bool vegetarian;
 @property bool glutenFree;
+@property bool dairyFree;
 
 
 - (IBAction)veganSwitch:(id)sender;
 - (IBAction)vegetarianSwitch:(id)sender;
 - (IBAction)glutenFreeSwitch:(id)sender;
+- (IBAction)dairyFreeSwitch:(id)sender;
+
 
 @property (strong, nonatomic) NSArray *sortOptionsArray;
 @property (strong, nonatomic) NSString *selectedSortOption;

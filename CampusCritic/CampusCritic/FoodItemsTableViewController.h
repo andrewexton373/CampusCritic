@@ -25,12 +25,16 @@
 
 @property (strong, nonatomic) NSString *passedSortOption;
 
-@property BOOL veganFilter;
-@property BOOL vegetarianFilter;
-@property BOOL glutenFreeFilter;
+@property bool veganFilter;
+@property bool vegetarianFilter;
+@property bool glutenFreeFilter;
+@property bool dairyFreeFilter;
+
+@property bool usingFilter;
 
 @property (strong, nonatomic) NSArray *sortedFoodItems;
 @property (strong, nonatomic) NSArray *foodItems;
+@property (strong, nonatomic) NSArray *filteredArray;
 
 @property (strong,nonatomic) NSArray *searchResults;
 

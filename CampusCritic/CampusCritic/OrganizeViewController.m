@@ -79,7 +79,6 @@
     
     if (sender.on) {
         self.vegan = true;
-        NSLog(@"Vegan Switch on");
     } else {
         self.vegan = false;
     }
@@ -90,7 +89,6 @@
     
     if (sender.on) {
         self.vegetarian = true;
-        NSLog(@"Vegetarian Switch on");
     } else {
         self.vegetarian = false;
     }
@@ -101,10 +99,21 @@
     
     if (sender.on) {
         self.glutenFree = true;
-        NSLog(@"Gluten Free Switch on");
     } else {
         self.glutenFree = false;
     }
+}
+
+- (IBAction)dairyFreeSwitch:(UISwitch*)sender
+{
+    
+    
+    if (sender.on) {
+        self.dairyFree = true;
+    } else {
+        self.dairyFree = false;
+    }
+
 }
 
 
