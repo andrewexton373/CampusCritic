@@ -18,7 +18,7 @@
 
 @implementation FoodItemsTableViewController
 
-@synthesize passedSortOption, filteredFoodItemsArray, foodItemSearchBar, sortedFoodItems, foodItems, searchResults, usingSearch, internetConnectionStatus;
+@synthesize passedSortOption, sortedFoodItems, filteredFoodItemsArray, foodItemSearchBar, foodItems, veganFilter, vegetarianFilter, glutenFreeFilter, dairyFreeFilter, searchResults, usingSearch, internetConnectionStatus;
 
 
 - (void) loadFoodInformationCallback: (NSArray*) foodItems error: (NSError*) error
@@ -424,13 +424,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return [self.searchResults count];
         
-    } else {
-        //otherwise, num rows is just the num of food items overall
-        return [self.foodItems count];
-        
+    // Return the number of rows in the section.
+    
+    if (self.filteredArray.count != 0) {
+        return self.filteredArray.count;
+    } else if (tableView == self.searchDisplayController.searchResultsTableView){
+        return self.searchResults.count;
+    } else  {
+        return self.foodItems.count;
     }
 }
 
