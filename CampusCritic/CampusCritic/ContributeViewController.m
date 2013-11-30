@@ -129,13 +129,4 @@
 - (IBAction)uploadPhotoTriggered:(id)sender {
 }
 
-- (void)saveCallback:(NSNumber *)result error:(NSError *)error {
-    
-    if (!error) {
-        
-        [self performSegueWithIdentifier: @"saveToThankYou" sender:self];
-        
-    }
-}
-
 @end

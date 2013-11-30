@@ -63,7 +63,7 @@
 - (IBAction)returnTriggered:(id)sender
 {
    
-    NSLog(@"Passed Item Review:", self.passedItemReview);
+    NSLog(@"Passed Item Review: %@", self.passedItemReview);
     
     PFObject *itemReview = self.passedItemReview;
     
@@ -79,17 +79,8 @@
     
     NSLog(@"Item Review: %@", itemReview);
     
-    self.itemReview = itemReview;
-    
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-	[self.navigationController.view addSubview:HUD];
-	
-	HUD.delegate = self;
-	HUD.labelText = @"Upload in Progress";
-	HUD.detailsLabelText = @"Uploading Review";
-	HUD.square = YES;
-	
-	[HUD showWhileExecuting:@selector(saveCallback:error:) onTarget:self withObject:nil animated:YES];
+    [itemReview saveInBackgroundWithTarget:self selector:@selector(saveCallback:error:)];
     
 }
+
 @end
