@@ -18,32 +18,8 @@
 
 @implementation FoodItemsTableViewController
 
-@synthesize passedSortOption, sortedFoodItems, filteredFoodItemsArray, foodItemSearchBar, foodItems, veganFilter, vegetarianFilter, glutenFreeFilter, dairyFreeFilter, searchResults, usingSearch, internetConnectionStatus;
+@synthesize passedSortOption, sortedFoodItems, filteredFoodItemsArray, foodItemSearchBar, foodItems = _foodItems, veganFilter, vegetarianFilter, glutenFreeFilter, dairyFreeFilter, searchResults, usingSearch, internetConnectionStatus;
 
-
-- (void) loadFoodInformationCallback: (NSArray*) foodItems error: (NSError*) error
-{
-    
-    //If there was not an error loading foodItems from Parse...
-    if (!error) {
-        
-        //Set foodItems Array from Data from Parse
-        self.foodItems = foodItems;
-        
-        //Sort foodItems Array Alphabetically by foodItem[@"foodName"] (Default)
-        NSSortDescriptor *sortDescriptor;
-        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"foodName"
-                                                     ascending:YES
-                                                      selector:@selector(localizedCaseInsensitiveCompare:)];
-        
-        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-        
-        //Return Alphabetically Sorted Array
-        self.foodItems = [self.foodItems sortedArrayUsingDescriptors:sortDescriptors];
-        //Reload tableView
-        [self.tableView reloadData];
-    }
-}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -137,7 +113,38 @@
         HUD.delegate = self;
         HUD.labelText = @"Fetching Food Data...";
         
-        [HUD showWhileExecuting:@selector(myTask) onTarget:self withObject:nil animated:YES];
+        PFQuery *query = [PFQuery queryWithClassName:@"foodInformationCSV"];
+        
+        [HUD show:YES];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *foodItems, NSError *error) {
+            
+            //If there was not an error loading foodItems from Parse...
+            if (!error) {
+                
+                //Set foodItems Array from Data from Parse
+                self.foodItems = foodItems;
+                
+                //Sort foodItems Array Alphabetically by foodItem[@"foodName"] (Default)
+                NSSortDescriptor *sortDescriptor;
+                sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"foodName"
+                                                             ascending:YES
+                                                              selector:@selector(localizedCaseInsensitiveCompare:)];
+                
+                NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+                
+                //Return Alphabetically Sorted Array
+                self.foodItems = [self.foodItems sortedArrayUsingDescriptors:sortDescriptors];
+                //Reload tableView
+                
+                [HUD show:NO];
+                [HUD removeFromSuperview];
+                
+                [self.tableView reloadData];
+            }
+            
+        }];
+        
         
     } else {
         
@@ -152,14 +159,6 @@
     
     
 
-}
-
-- (void)myTask {
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"foodInformationCSV"];
-    [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodInformationCallback:error:)];
-    
-    sleep(2);
 }
 
 - (IBAction) unwindFromOrganizationPicker:(UIStoryboardSegue*) segue

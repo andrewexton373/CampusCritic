@@ -45,50 +45,6 @@
     }
 }
 
-- (void) loadFoodReviewsCallback: (NSArray*) foodReviews error: (NSError*) error
-{
-    
-    //If there was not an error loading foodItems from Parse...
-    if (!error) {
-        
-        if (foodReviews.count != 0) {
-            
-            float ratingSum = 0;
-            
-            self.userPhotos = [[NSMutableArray alloc] init];
-            
-            for (PFObject *review in foodReviews) {
-                
-                ratingSum = ratingSum + [review[@"userRating"] integerValue];
-                
-                if (review[@"userPhoto"] != nil) {
-                    
-                    NSData *photoData = [review[@"userPhoto"] getData];
-                    UIImage *userImage = [UIImage imageWithData:photoData];
-                    
-                    if (userImage != NULL) {
-                        [self.userPhotos addObject:userImage];
-                    }
-                    
-                }
-                
-            }
-            
-            self.ratingAverage = ratingSum / foodReviews.count;
-            
-            // setup a control with 3 fractional stars at a size of 320x230
-            DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 190, 320, 230) andStars:5 isFractional:YES];
-            ratingControl.rating = self.ratingAverage;
-            [ratingControl setEnabled:NO];
-            [self.view addSubview:ratingControl];
-            
-            [self.carousel reloadData];
-            
-        }
-        
-    }
-}
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     [self.carousel removeFromSuperview];
