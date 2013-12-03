@@ -7,12 +7,6 @@
 //
 
 #import "SingleItemsViewController.h"
-#import "NutritionFactsViewController.h"
-#import "ContributeViewController.h"
-#import "ReviewPagesViewController.h"
-#import "DLStarRatingControl.h"
-#import "DLStarView.h"
-#import <Parse/Parse.h>
 
 @interface SingleItemsViewController ()
 
@@ -51,50 +45,6 @@
     }
 }
 
-- (void) loadFoodReviewsCallback: (NSArray*) foodReviews error: (NSError*) error
-{
-    
-    //If there was not an error loading foodItems from Parse...
-    if (!error) {
-        
-        if (foodReviews.count != 0) {
-            
-            float ratingSum = 0;
-            
-            self.userPhotos = [[NSMutableArray alloc] init];
-            
-            for (PFObject *review in foodReviews) {
-                
-                ratingSum = ratingSum + [review[@"userRating"] integerValue];
-                
-                if (review[@"userPhoto"] != nil) {
-                    
-                    NSData *photoData = [review[@"userPhoto"] getData];
-                    UIImage *userImage = [UIImage imageWithData:photoData];
-                    
-                    if (userImage != NULL) {
-                        [self.userPhotos addObject:userImage];
-                    }
-                    
-                }
-                
-            }
-            
-            self.ratingAverage = ratingSum / foodReviews.count;
-            
-            // setup a control with 3 fractional stars at a size of 320x230
-            DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 190, 320, 230) andStars:5 isFractional:YES];
-            ratingControl.rating = self.ratingAverage;
-            [ratingControl setEnabled:NO];
-            [self.view addSubview:ratingControl];
-            
-            [self.carousel reloadData];
-            
-        }
-        
-    }
-}
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     [self.carousel removeFromSuperview];
@@ -113,6 +63,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    
     [self.navigationController setToolbarHidden:NO animated:YES];
     
 }
@@ -124,7 +77,71 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"Reviews"];
     [query whereKey:@"foodItem" equalTo:self.passedFoodItem];
-    [query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodReviewsCallback:error:)];
+    //[query findObjectsInBackgroundWithTarget:self selector:@selector(loadFoodReviewsCallback:error:)];
+    
+    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+	[self.navigationController.view addSubview:hud];
+	hud.labelText = @"Downloading Reviews...";
+	
+    [hud show:YES];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *foodReviews, NSError *error) {
+        
+        if (!error) {
+            
+            if (foodReviews.count != 0) {
+                
+                float ratingSum = 0;
+                
+                self.userPhotos = [[NSMutableArray alloc] init];
+                
+                for (PFObject *review in foodReviews) {
+                    
+                    ratingSum = ratingSum + [review[@"userRating"] integerValue];
+                    
+                    if (review[@"userPhoto"] != nil) {
+                        
+                        NSData *photoData = [review[@"userPhoto"] getData];
+                        UIImage *userImage = [UIImage imageWithData:photoData];
+                        
+                        if (userImage != NULL) {
+                            [self.userPhotos addObject:userImage];
+                        }
+                        
+                    }
+                    
+                }
+                
+                self.ratingAverage = ratingSum / foodReviews.count;
+                
+                // setup a control with 3 fractional stars at a size of 320x230
+                DLStarRatingControl *ratingControl = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(0, 190, 320, 230) andStars:5 isFractional:YES];
+                ratingControl.rating = self.ratingAverage;
+                [ratingControl setEnabled:NO];
+                [self.view addSubview:ratingControl];
+                
+                [self.carousel reloadData];
+                
+            } else {
+                
+                //If there are no reviews
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Oops!"
+                                                                message: @"No reviews have been contributed. Please Contribute!"
+                                                               delegate: self
+                                                      cancelButtonTitle:@"Back"
+                                                      otherButtonTitles:@"Contribute", nil];
+                [alert show];
+                
+            }
+            
+        }
+        
+        [hud show:NO];
+        [hud removeFromSuperview];
+        
+    }];
+    
     
     _foodItemName.title = _passedFoodItem[@"foodName"];
     
@@ -133,6 +150,18 @@
     
     carousel.type = iCarouselTypeLinear;
 
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    if (buttonIndex == 0) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    if (buttonIndex == 1) {
+        [self performSegueWithIdentifier:@"toContribute" sender:self];
+    }
 }
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel

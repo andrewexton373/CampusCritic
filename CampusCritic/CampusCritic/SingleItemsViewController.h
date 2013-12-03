@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 #import "iCarousel.h"
+#import "NutritionFactsViewController.h"
+#import "ContributeViewController.h"
+#import "ReviewPagesViewController.h"
+#import "DLStarRatingControl.h"
+#import "DLStarView.h"
+#import "MBProgressHUD.h"
 
-@interface SingleItemsViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
+@interface SingleItemsViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, MBProgressHUDDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) NSMutableArray *items;

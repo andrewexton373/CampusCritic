@@ -46,6 +46,14 @@
     }
 }
 
+- (void)viewWillAppear
+{
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
