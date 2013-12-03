@@ -16,7 +16,7 @@
 #import "DLStarView.h"
 #import "MBProgressHUD.h"
 
-@interface SingleItemsViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, MBProgressHUDDelegate>
+@interface SingleItemsViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, MBProgressHUDDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) NSMutableArray *items;

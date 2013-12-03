@@ -119,6 +119,17 @@
                 
                 [self.carousel reloadData];
                 
+            } else {
+                
+                //If there are no reviews
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Oops!"
+                                                                message: @"No reviews have been contributed. Please Contribute!"
+                                                               delegate: self
+                                                      cancelButtonTitle:@"Back"
+                                                      otherButtonTitles:@"Contribute", nil];
+                [alert show];
+                
             }
             
         }
@@ -136,6 +147,18 @@
     
     carousel.type = iCarouselTypeLinear;
 
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    if (buttonIndex == 0) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    if (buttonIndex == 1) {
+        [self performSegueWithIdentifier:@"toContribute" sender:self];
+    }
 }
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
