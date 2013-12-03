@@ -434,6 +434,7 @@
     } else  {
         return self.foodItems.count;
     }
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -448,6 +449,8 @@
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         foodItem = self.searchResults[indexPath.row];
         //usingSearch = true;
+    } else if (self.filteredArray.count != 0) {
+        foodItem = self.filteredArray[indexPath.row];
     } else {
         foodItem = self.foodItems[indexPath.row];
         //usingSearch = false;
