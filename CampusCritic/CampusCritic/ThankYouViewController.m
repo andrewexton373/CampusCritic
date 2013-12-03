@@ -23,19 +23,6 @@
     return self;
 }
 
-- (void)saveCallback:(NSNumber *)result error:(NSError *)error {
-    
-    if (!error) {
-        
-        [self performSegueWithIdentifier: @"thankYouToHome" sender:self];
-        
-    } else {
-        
-        NSLog(@"PARSE ERROR: %@", error);
-        
-    }
-}
-
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)text
 {
     if ([text isEqualToString:@"\n"]) {
@@ -87,7 +74,33 @@
     
     NSLog(@"Item Review: %@", itemReview);
     
-    [itemReview saveInBackgroundWithTarget:self selector:@selector(saveCallback:error:)];
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    
+    HUD.delegate = self;
+    HUD.labelText = @"Uploading Your Review :)";
+    
+    [HUD show:YES];
+    
+    [itemReview saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        if (!error) {
+            
+            [HUD show:NO];
+            [HUD removeFromSuperview];
+            
+            [self performSegueWithIdentifier: @"thankYouToHome" sender:self];
+            
+        } else {
+            
+            NSLog(@"PARSE ERROR: %@", error);
+            
+            [HUD show:NO];
+            [HUD removeFromSuperview];
+            
+        }
+        
+    }];
     
 }
 
