@@ -44,6 +44,13 @@
         [self.tableView reloadData];
     }
 }
+/*
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] ])
+}*/
+
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -69,9 +76,6 @@
         //Get foodItem Dictionary from foodItems Array @ Row
         NSDictionary *foodItem;
         
-        //NSLog(@"%ld", row);
-        
-        NSLog(@"%hhd", usingSearch);
         
         if (usingSearch == true) {
             foodItem = self.searchResults[row];
@@ -79,22 +83,31 @@
             foodItem = self.foodItems[row];
         }
         
-        //NSLog(@"%@", foodItem);
-        
         
         //Pass foodItem NSDictionary to singleItemViewController (Review View)
         singleItemViewController.passedFoodItem = foodItem;
     
-        if ([[segue identifier] isEqualToString:@"tableToOrganize"])
-        {
+            }
+    
+    if ([[segue identifier] isEqualToString:@"tableToOrganize"])
+    {
+        FoodItemsTableViewController *foodItemsTableViewController = segue.sourceViewController;
         
-            //Set Destination View Controller
-            OrganizeViewController *organizeViewController = [segue destinationViewController];
+        //Set Destination View Controller
+        OrganizeViewController *organizeViewController = [segue destinationViewController];
         
-            //Pass foodItems Array to Organize View (For Filters, but Obsolete now)
-            organizeViewController.passedFoodItems = self.foodItems;
-        }
+        organizeViewController.passedFoodItems = foodItemsTableViewController.foodItems;
+        organizeViewController.vegan = foodItemsTableViewController.veganFilter;
+        organizeViewController.glutenFree = foodItemsTableViewController.glutenFreeFilter;
+        organizeViewController.vegetarian = foodItemsTableViewController.vegetarianFilter;
+        organizeViewController.dairyFree = foodItemsTableViewController.dairyFreeFilter;
+        organizeViewController.selectedSortOption = foodItemsTableViewController.passedSortOption;
+        
+        
+        
+        
     }
+
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -192,7 +205,6 @@
     }];
     
     NSArray *veganArray = [self.foodItems objectsAtIndexes:veganFoods];
-    NSLog(@"Vegan Array: %@", veganArray);
     
     // Vegetarian Switch Array
     
@@ -208,7 +220,6 @@
     }];
     
     NSArray *vegetarianArray = [self.foodItems objectsAtIndexes:vegetarianFoods];
-    NSLog(@"Vegetarian Array: %@", vegetarianArray);
     
     // Gluten Free Switch Array
     
@@ -224,7 +235,6 @@
     }];
     
     NSArray *glutenFreeArray = [self.foodItems objectsAtIndexes:glutenFreeFoods];
-    NSLog(@"Gluten Free Array: %@", glutenFreeArray);
     
     // Dairy Free Switch Array
     
@@ -242,7 +252,6 @@
 
     
     NSArray *dairyFreeArray = [self.foodItems objectsAtIndexes:dairyFreeFoods];
-    NSLog(@"Dairy Free Array: %@", dairyFreeArray);
      
      */
     
@@ -325,7 +334,6 @@
     }];
     
     self.filteredArray = [self.foodItems objectsAtIndexes:filteredFoods];
-    NSLog(@"Filtered Array: %@", self.filteredArray);
     
     /*
      //changing the value of foodItems
@@ -496,7 +504,6 @@
          NSString *name = [food objectForKey:@"foodItemName"];
          
          NSRange range = [name rangeOfString:searchText options:NSCaseInsensitiveSearch];
-         NSLog(@"%d", range.length);
          
          //if (range.location)
          return YES;
@@ -508,7 +515,6 @@
         
         self.searchResults = [self.foodItems filteredArrayUsingPredicate:resultPredicate];
         
-        //NSLog(@"%@", self.searchResults);
         
     }
     

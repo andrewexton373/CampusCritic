@@ -10,7 +10,10 @@
 #import "FoodItemsTableCell.h"
 #import "MBProgressHUD.h"
 #import "Reachability.h"
+#import "OrganizeViewController.h"
 #import <SystemConfiguration/SystemConfiguration.h>
+@class FoodItemsTableViewController;
+
 
 @interface FoodItemsTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, MBProgressHUDDelegate> {
     
@@ -19,6 +22,7 @@
 }
 
 @property NetworkStatus internetConnectionStatus;
+
 
 @property (strong,nonatomic) NSMutableArray *filteredFoodItemsArray;
 @property IBOutlet UISearchBar *foodItemSearchBar;
