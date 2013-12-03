@@ -238,7 +238,7 @@
         <!--Single Items View Controller - Food Item Name-->
         <scene sceneID="BNO-Dz-oE1">
             <objects>
-                <viewController id="Xgy-gZ-NxG" customClass="SingleItemsViewController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="Xgy-gZ-NxG" customClass="SingleItemsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6v9-y3-vjy"/>
                         <viewControllerLayoutGuide type="bottom" id="iDx-OI-TRs"/>
