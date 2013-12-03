@@ -137,11 +137,11 @@
                 self.foodItems = [self.foodItems sortedArrayUsingDescriptors:sortDescriptors];
                 //Reload tableView
                 
-                [HUD show:NO];
-                [HUD removeFromSuperview];
-                
                 [self.tableView reloadData];
             }
+            
+            [HUD show:NO];
+            [HUD removeFromSuperview];
             
         }];
         

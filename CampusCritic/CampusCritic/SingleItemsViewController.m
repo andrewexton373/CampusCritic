@@ -117,14 +117,15 @@
                 [ratingControl setEnabled:NO];
                 [self.view addSubview:ratingControl];
                 
-                [hud show:NO];
-                [hud removeFromSuperview];
-                
                 [self.carousel reloadData];
                 
             }
             
         }
+        
+        [hud show:NO];
+        [hud removeFromSuperview];
+        
     }];
     
     
