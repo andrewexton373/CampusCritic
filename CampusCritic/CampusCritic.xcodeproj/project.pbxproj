@@ -13,7 +13,6 @@
 		12742AE118454672006F09A1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12742AE018454672006F09A1 /* Parse.framework */; };
 		16229C32183DBF2800DEB144 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 16229C31183DBF2800DEB144 /* Reachability.m */; };
 		16229C3B183E8F2300DEB144 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16229C3A183E8F2300DEB144 /* iCarousel.m */; };
-		16229C49183EADA400DEB144 /* foodPic.png in Resources */ = {isa = PBXBuildFile; fileRef = 16229C48183EADA400DEB144 /* foodPic.png */; };
 		1692152218355D4300936D24 /* ReviewPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1692152018355D4300936D24 /* ReviewPagesViewController.m */; };
 		1692152318355D4300936D24 /* ReviewPagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1692152118355D4300936D24 /* ReviewPagesViewController.xib */; };
 		1692152718355D5800936D24 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1692152518355D5800936D24 /* ContentViewController.m */; };
@@ -57,6 +56,8 @@
 		16D254B518203D21006079CD /* star_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D254AB18203D21006079CD /* star_highlighted@2x.png */; };
 		16D254B618203D21006079CD /* UIView+Subviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D254AD18203D21006079CD /* UIView+Subviews.m */; };
 		16E0A5FD1846ED6C00275E49 /* ThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0A5FB18453CB300275E49 /* ThankYouViewController.m */; };
+		16E0A600184ED1D000275E49 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E0A5FE184ED1D000275E49 /* AppIcon.png */; };
+		16E0A601184ED1D000275E49 /* Launchimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E0A5FF184ED1D000275E49 /* Launchimage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +81,6 @@
 		16229C31183DBF2800DEB144 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		16229C39183E8F2300DEB144 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		16229C3A183E8F2300DEB144 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
-		16229C48183EADA400DEB144 /* foodPic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodPic.png; sourceTree = "<group>"; };
 		1692151F18355D4300936D24 /* ReviewPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewPagesViewController.h; sourceTree = "<group>"; };
 		1692152018355D4300936D24 /* ReviewPagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewPagesViewController.m; sourceTree = "<group>"; };
 		1692152118355D4300936D24 /* ReviewPagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewPagesViewController.xib; sourceTree = "<group>"; };
@@ -140,6 +140,8 @@
 		16D254AD18203D21006079CD /* UIView+Subviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Subviews.m"; sourceTree = "<group>"; };
 		16E0A5FA18453CB300275E49 /* ThankYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThankYouViewController.h; sourceTree = "<group>"; };
 		16E0A5FB18453CB300275E49 /* ThankYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThankYouViewController.m; sourceTree = "<group>"; };
+		16E0A5FE184ED1D000275E49 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		16E0A5FF184ED1D000275E49 /* Launchimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launchimage.png; sourceTree = "<group>"; };
 		3CAC2A31182C381C0097B739 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -274,8 +276,9 @@
 				1692152518355D5800936D24 /* ContentViewController.m */,
 				1692152618355D5800936D24 /* ContentViewController.xib */,
 				16D2548D181E19CD006079CD /* CCLogo.png */,
-				16229C48183EADA400DEB144 /* foodPic.png */,
 				040EDC431828336F0041D17C /* NutritionFacts.png */,
+				16E0A5FE184ED1D000275E49 /* AppIcon.png */,
+				16E0A5FF184ED1D000275E49 /* Launchimage.png */,
 				16229C3C183E8F2B00DEB144 /* iCarousel */,
 				16229C33183DBF2E00DEB144 /* Reachability */,
 				04187DAB183C6EFE009E448A /* MBProgressHUD */,
@@ -420,9 +423,9 @@
 			files = (
 				16D2548E181E19CD006079CD /* CCLogo.png in Resources */,
 				16D254B118203D21006079CD /* star@2x.png in Resources */,
-				16229C49183EADA400DEB144 /* foodPic.png in Resources */,
 				1692152818355D5800936D24 /* ContentViewController.xib in Resources */,
 				16D25457181B0E6F006079CD /* Images.xcassets in Resources */,
+				16E0A600184ED1D000275E49 /* AppIcon.png in Resources */,
 				1692152318355D4300936D24 /* ReviewPagesViewController.xib in Resources */,
 				16D25449181B0E6F006079CD /* InfoPlist.strings in Resources */,
 				16D254B018203D21006079CD /* star.png in Resources */,
@@ -430,6 +433,7 @@
 				16D254B218203D21006079CD /* star_highlighted-darker.png in Resources */,
 				16D254B418203D21006079CD /* star_highlighted.png in Resources */,
 				16D254B318203D21006079CD /* star_highlighted-darker@2x.png in Resources */,
+				16E0A601184ED1D000275E49 /* Launchimage.png in Resources */,
 				16D254B518203D21006079CD /* star_highlighted@2x.png in Resources */,
 				16D25452181B0E6F006079CD /* Main.storyboard in Resources */,
 			);
