@@ -19,6 +19,11 @@
 @property bool glutenFree;
 @property bool dairyFree;
 
+@property (weak, nonatomic) IBOutlet UISwitch *glutenFreeSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *vegetarianSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *veganSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *dairyFreeSwitch;
+@property (weak, nonatomic) IBOutlet UIPickerView *thePicker;
 
 - (IBAction)veganSwitch:(id)sender;
 - (IBAction)vegetarianSwitch:(id)sender;

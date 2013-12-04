@@ -15,7 +15,7 @@
 
 @implementation OrganizeViewController
 
-@synthesize sortOptionsArray, sortOptionPicker, selectedSortOption, vegan, vegetarian, glutenFree;
+@synthesize sortOptionsArray, sortOptionPicker, selectedSortOption, vegan, vegetarian, glutenFree, dairyFree, veganSwitch, vegetarianSwitch, glutenFreeSwitch, dairyFreeSwitch, thePicker;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,10 +38,44 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     self.sortOptionsArray = [[NSArray alloc] initWithObjects:@"Alphabetically", @"By Rating", @"By Price", @"By Calories", nil];
+    
+    if (vegan == TRUE) {
+        [veganSwitch setOn:TRUE];
+        
+    }
+    if (glutenFree == TRUE) {
+        [glutenFreeSwitch setOn:TRUE];
+    }
+    if (dairyFree == TRUE) {
+        [dairyFreeSwitch setOn:TRUE];
+    }
+    if (vegetarian == TRUE) {
+        [vegetarianSwitch setOn:TRUE];
+    }
+    
+    /*
+    if ([self.selectedSortOption  isEqualToString: @"Alphabetically"]) {
+        [thePicker selectedRowInComponent:0];
+    }
+    
+    if ([self.selectedSortOption  isEqualToString: @"By Rating"]) {
+        [thePicker selectedRowInComponent:1];
+    }
+
+    if ([self.selectedSortOption  isEqualToString: @"By Price"]) {
+        [thePicker selectedRowInComponent:2];
+    }
+
+    if ([self.selectedSortOption  isEqualToString: @"By Calories"]) {
+        [thePicker selectedRowInComponent:3];
+    }
+*/
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,13 +103,10 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    
-    NSLog(@"Selected Sort Option: %@", self.sortOptionsArray[row]);
-    
+        
     self.selectedSortOption = self.sortOptionsArray[row];
     
 }
-
 
 - (IBAction)veganSwitch:(UISwitch*)sender
 {
